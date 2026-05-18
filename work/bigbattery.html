@@ -288,7 +288,7 @@
       display: flex; align-items: center; justify-content: center;
     }
     .cs-mosaic-item img {
-      width: 100%; height: 100%; object-fit: contain; display: block;
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
     .cs-mosaic-item.cs-mosaic-wide {
       grid-column: span 2; aspect-ratio: 16/9;
@@ -496,6 +496,44 @@
       .cs-verticals-grid { grid-template-columns: 1fr; }
       .cs-channel-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── Hero two-column with cover image ── */
+    .cs-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 56px 40px 0;
+      width: 100%;
+    }
+    .cs-hero-text { display: flex; flex-direction: column; }
+    .cs-hero-inner .cs-h1 {
+      font-size: clamp(26px, 3.6vw, 42px);
+      letter-spacing: -0.025em;
+      line-height: 1.07;
+    }
+    .cs-hero-inner .cs-sub { margin-bottom: 0; max-width: 480px; }
+    .cs-meta { grid-column: 1 / -1; margin-top: 0; }
+
+    .cs-hero-cover {
+      align-self: stretch;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 0.5px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(255,255,255,0.06);
+      background: #1A0E00;
+      display: flex;
+    }
+    .cs-hero-cover img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    @media (max-width: 860px) {
+      .cs-hero-inner { grid-template-columns: 1fr; gap: 24px; padding: 44px 24px 0; }
+      .cs-meta { grid-column: auto; }
+      .cs-hero-cover { align-self: auto; aspect-ratio: 16/9; }
+    }
   </style>
 </head>
 <body>
@@ -525,18 +563,30 @@
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <div class="cs-hero cs-hero-bg">
   <div class="cs-hero-inner">
-    <div class="cs-eyebrow">
-      <span class="cs-eyebrow-dot"></span>
-      <span class="cs-eyebrow-text">B2B · B2C · Ecommerce · Product & Brand Design · 2022–Current</span>
+
+    <!-- Left: text -->
+    <div class="cs-hero-text">
+      <div class="cs-eyebrow">
+        <span class="cs-eyebrow-dot"></span>
+        <span class="cs-eyebrow-text">B2B · B2C · Ecommerce · Product & Brand Design · 2022–Current</span>
+      </div>
+      <h1 class="cs-h1">Designing inside a live business.<br>Where every decision had<br><em>real consequences.</em></h1>
+      <p class="cs-sub">At BigBattery LLC, I grew from owning product UX to leading brand and conversion design — across a live ecommerce operation serving B2B and B2C customers in 6 energy verticals. Real production. Real data. Real business impact.</p>
     </div>
-    <h1 class="cs-h1">Designing inside a live business.<br>Where every decision had<br><em>real consequences.</em></h1>
-    <p class="cs-sub">At BigBattery LLC, I grew from owning product UX to leading brand and conversion design — across a live ecommerce operation serving B2B and B2C customers in 6 energy verticals. Real production. Real data. Real business impact.</p>
+
+    <!-- Right: cover image -->
+    <div class="cs-hero-cover">
+      <img src="../bigbattery/cover.png" alt="BigBattery LLC — product & brand design overview" loading="lazy" />
+    </div>
+
+    <!-- Meta row — spans full width -->
     <div class="cs-meta">
       <div class="cs-meta-cell"><div class="cs-meta-label">My role</div><div class="cs-meta-val">Product & Brand Designer</div></div>
       <div class="cs-meta-cell"><div class="cs-meta-label">Business</div><div class="cs-meta-val">B2B + B2C ecommerce</div></div>
       <div class="cs-meta-cell"><div class="cs-meta-label">Duration</div><div class="cs-meta-val">2022 – Current</div></div>
       <div class="cs-meta-cell"><div class="cs-meta-label">Collaborators</div><div class="cs-meta-val">CEO · CTO · Dev · Marketing</div></div>
     </div>
+
   </div>
 </div>
 
@@ -1029,103 +1079,162 @@
       </div>
     </div>
 
-    <!-- Image mosaic — replace src values with actual asset paths -->
-    <div class="cs-mosaic">
-      <div class="cs-mosaic-item cs-mosaic-wide">
-        <img src="../bigbattery/infographics/ethosrain.gif" alt="Off-grid solar system diagram infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographics/huskypointers.png" alt="Battery capacity comparison infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-03.png" alt="RV power system use-case visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-04.png" alt="Marine battery system breakdown" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-05.png" alt="Golf cart lithium upgrade visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item cs-mosaic-wide">
-        <img src="../bigbattery/infographic-06.png" alt="Industrial energy storage system infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-07.png" alt="Grid-tied solar system diagram" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-08.png" alt="Battery wiring comparison chart" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-09.png" alt="Energy system component breakdown" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-10.png" alt="Lithium vs AGM comparison graphic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-11.png" alt="Inverter sizing guide visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-12.png" alt="Charge controller selection infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
-      </div>
-    </div>
-    <p style="font-size:11px;color:var(--c-text-3);font-family:var(--font-mono);text-align:center;margin-top:-8px;letter-spacing:0.03em">Selected infographic assets · place your 30 images by replacing the src paths above with ../bigbattery/your-filename.png</p>
+    <!-- Infographic showcase: hero image first, then 3-col grid -->
 
-    <!-- Second mosaic row for remaining assets -->
-    <div class="cs-mosaic" style="margin-top:8px">
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-13.png" alt="Battery bank sizing calculator visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+    <!-- Hero infographic — full width, caption below -->
+    <div class="cs-asset" style="margin-top:20px">
+      <img src="../bigbattery/infographic-01.png" alt="Off-grid solar system diagram — end-to-end energy system visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+      <div class="cs-asset-caption">Infographic 01 · Off-grid solar system diagram · solar panels → charge controller → battery → inverter → loads</div>
+    </div>
+
+    <!-- Remaining 29 infographics — 3-col grid, each with caption -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px">
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-02.png" alt="Battery capacity comparison infographic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 02 · Battery capacity comparison</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-14.png" alt="Solar panel wattage guide" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-03.png" alt="RV power system use-case visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 03 · RV power system use-case</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-15.png" alt="Energy independence infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-04.png" alt="Marine battery system breakdown" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 04 · Marine battery system</div>
       </div>
-      <div class="cs-mosaic-item cs-mosaic-wide">
-        <img src="../bigbattery/infographic-16.png" alt="Full product range comparison banner" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-05.png" alt="Golf cart lithium upgrade visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 05 · Golf cart lithium upgrade</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-17.png" alt="Branded ad creative — Meta format" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-06.png" alt="Industrial energy storage system infographic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 06 · Industrial energy storage</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-18.png" alt="Email campaign visual asset" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-07.png" alt="Grid-tied solar system diagram" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 07 · Grid-tied solar system</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-19.png" alt="Landing page hero visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-08.png" alt="Battery wiring comparison chart" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 08 · Battery wiring comparison</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-20.png" alt="Product comparison ad creative" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-09.png" alt="Energy system component breakdown" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 09 · Energy system components</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-21.png" alt="B2B industrial energy infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-10.png" alt="Lithium vs AGM comparison graphic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 10 · Lithium vs AGM comparison</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-22.png" alt="System sizing guide visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-11.png" alt="Inverter sizing guide visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 11 · Inverter sizing guide</div>
       </div>
-      <div class="cs-mosaic-item cs-mosaic-wide">
-        <img src="../bigbattery/infographic-23.png" alt="Cross-channel brand asset overview" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-12.png" alt="Charge controller selection infographic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 12 · Charge controller selection</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-24.png" alt="Klaviyo email infographic asset" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-13.png" alt="Battery bank sizing calculator visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 13 · Battery bank sizing</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-25.png" alt="Google ads infographic creative" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-14.png" alt="Solar panel wattage guide" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 14 · Solar panel wattage guide</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-26.png" alt="Off-grid RV power visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-15.png" alt="Energy independence infographic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 15 · Energy independence</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-27.png" alt="Marine energy system infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-16.png" alt="Full product range comparison banner" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 16 · Full product range comparison</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-28.png" alt="Home backup battery infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-17.png" alt="Branded ad creative — Meta format" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 17 · Meta ad creative</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-29.png" alt="Industrial power storage visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-18.png" alt="Email campaign visual asset" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 18 · Email campaign visual</div>
       </div>
-      <div class="cs-mosaic-item">
-        <img src="../bigbattery/infographic-30.png" alt="Complete energy solution overview" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-19.png" alt="Landing page hero visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 19 · Landing page hero visual</div>
       </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-20.png" alt="Product comparison ad creative" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 20 · Product comparison ad</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-21.png" alt="B2B industrial energy infographic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 21 · B2B industrial energy</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-22.png" alt="System sizing guide visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 22 · System sizing guide</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-23.png" alt="Cross-channel brand asset overview" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 23 · Cross-channel brand assets</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-24.png" alt="Klaviyo email infographic asset" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 24 · Klaviyo email asset</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-25.png" alt="Google ads infographic creative" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 25 · Google ads creative</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-26.png" alt="Off-grid RV power visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 26 · Off-grid RV power</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-27.png" alt="Marine energy system infographic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 27 · Marine energy system</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-28.png" alt="Home backup battery infographic" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 28 · Home backup battery</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-29.png" alt="Industrial power storage visual" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 29 · Industrial power storage</div>
+      </div>
+
+      <div class="cs-asset" style="margin:0">
+        <img src="../bigbattery/infographic-30.png" alt="Complete energy solution overview" loading="lazy" style="width:100%;display:block;object-fit:contain;background:#FFFBF2;" />
+        <div class="cs-asset-caption">Infographic 30 · Complete energy solution</div>
+      </div>
+
     </div>
   </div>
 
@@ -1222,10 +1331,10 @@
     <!-- Hero visual: banner + phones -->
     <div class="cs-app-hero-split" style="margin-top:20px">
       <div class="cs-app-hero-phones">
-        <img src="../bigbattery/appcover.webp" alt="BigBattery Husky 2 app on three iPhones showing dashboard, charging, and diagnostics screens" loading="lazy" />
+        <img src="../bigbattery/husky2-app-phones.png" alt="BigBattery Husky 2 app on three iPhones showing dashboard, charging, and diagnostics screens" loading="lazy" />
       </div>
       <div class="cs-app-hero-banner">
-        <img src="../bigbattery/appuse.webp" alt="BigBattery Husky 2 Smart Monitoring App — Power and Control at your fingertips" loading="lazy" />
+        <img src="../bigbattery/husky2-hero-banner.png" alt="BigBattery Husky 2 Smart Monitoring App — Power and Control at your fingertips" loading="lazy" />
       </div>
     </div>
 
@@ -1262,19 +1371,19 @@
 
     <div class="cs-phone-grid">
       <div class="cs-phone-frame">
-        <img src="../bigbattery/app2.webp" alt="Husky 2 app — Low Charge state, 15%, fill time estimate" loading="lazy" />
+        <img src="../bigbattery/husky2-screen-lowcharge.png" alt="Husky 2 app — Low Charge state, 15%, fill time estimate" loading="lazy" />
         <div class="cs-phone-caption">Low charge alert · 15% · time-to-full warning</div>
       </div>
       <div class="cs-phone-frame">
-        <img src="../bigbattery/app3.webp" alt="Husky 2 app — Charging state, 75%, full in 15 min, temperature tab" loading="lazy" />
+        <img src="../bigbattery/husky2-screen-charging.png" alt="Husky 2 app — Charging state, 75%, full in 15 min, temperature tab" loading="lazy" />
         <div class="cs-phone-caption">Charging · 75% · temperature sensor array</div>
       </div>
       <div class="cs-phone-frame">
-        <img src="../bigbattery/app1.webp" alt="Husky 2 app — Discharging state, 72%, cell voltage tab showing 16 cells" loading="lazy" />
+        <img src="../bigbattery/husky2-screen-discharging.png" alt="Husky 2 app — Discharging state, 72%, cell voltage tab showing 16 cells" loading="lazy" />
         <div class="cs-phone-caption">Discharging · 72% · individual cell voltage grid</div>
       </div>
       <div class="cs-phone-frame">
-        <img src="../bigbattery/app4.webp" alt="Husky 2 app — Protocol settings, module ID, CAN and RS485 configuration" loading="lazy" />
+        <img src="../bigbattery/husky2-screen-settings.png" alt="Husky 2 app — Protocol settings, module ID, CAN and RS485 configuration" loading="lazy" />
         <div class="cs-phone-caption">Settings · Bluetooth ID · CAN + RS485 protocol config</div>
       </div>
     </div>
