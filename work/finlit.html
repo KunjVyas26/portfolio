@@ -407,10 +407,65 @@
       position: relative;
     }
 
-    .cs-feature-video video {
+    .cs-video-trigger {
       width: 100%;
       display: block;
+      position: relative;
+      padding: 0;
+      border: 0;
+      cursor: pointer;
+      background: #0A0A0A;
+      color: inherit;
+      overflow: hidden;
+    }
+
+    .cs-video-trigger img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
       border-radius: var(--r-lg) var(--r-lg) 0 0;
+      opacity: 0.82;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .cs-video-trigger:hover img {
+      transform: scale(1.015);
+      opacity: 0.95;
+    }
+
+    .cs-video-trigger::after {
+      content: 'Play';
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      color: #111;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+
+    .cs-video-duration {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.72);
+      color: rgba(255,255,255,0.86);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.04em;
     }
 
     .cs-feature-video-cap {
@@ -421,6 +476,53 @@
       letter-spacing: 0.03em;
       background: var(--c-parchment);
       border-top: 0.5px solid var(--c-border);
+    }
+
+    .cs-video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .cs-video-modal.is-open {
+      display: flex;
+    }
+
+    .cs-video-dialog {
+      width: min(1080px, 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #050505;
+      box-shadow: 0 28px 90px rgba(0,0,0,0.55);
+      position: relative;
+    }
+
+    .cs-video-dialog video {
+      width: 100%;
+      max-height: 82vh;
+      display: block;
+      background: #000;
+    }
+
+    .cs-video-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      color: #111;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
     }
 
     /* ── Feature highlight list ── */
@@ -1154,9 +1256,12 @@
       </p>
 
       <div class="cs-feature-video">
-        <video id="finnews-video" autoplay muted loop playsinline preload="metadata" style="border-radius:13px 13px 0 0;">
-          <source src="../fined/FinancialNewsVideo.mp4" type="video/mp4" />
-        </video>
+        <button class="cs-video-trigger" type="button" data-video-src="../fined/FinancialNewsVideo.mp4"
+          data-video-title="Financial News feature">
+          <img src="../fined/finnewspreview.png"
+            alt="Preview for the Financial News feature video" loading="lazy" />
+          <span class="cs-video-duration">2 min</span>
+        </button>
         <div class="cs-feature-video-cap">Financial News feature · category-driven news with AI summaries, source
           attribution, and direct module links</div>
       </div>
@@ -1209,10 +1314,11 @@
 
       <!-- Video: full-width, tall, prominent below the list -->
       <div class="cs-feature-video" style="margin-top:24px;margin-bottom:0">
-        <video id="gami-video" autoplay muted loop playsinline preload="metadata"
-          style="border-radius:13px 13px 0 0;width:100%;display:block;max-height:520px;object-fit:contain;background:#000;">
-          <source src="../fined/GamificationVideo.mp4" type="video/mp4" />
-        </video>
+        <button class="cs-video-trigger" type="button" data-video-src="../fined/GamificationVideo.mp4"
+          data-video-title="Gamification system">
+          <img src="../fined/gamificationpreview.png" alt="Preview for the Gamification system video" loading="lazy" />
+          <span class="cs-video-duration">2 min</span>
+        </button>
         <div class="cs-feature-video-cap">Gamification system · XP, cash reserves, streak tracking, and badge milestones
           in the learning flow</div>
       </div>
@@ -1399,26 +1505,42 @@
 
   <script src="case-study.js"></script>
   <script>
-    // ── Video playback speed: 1.4× for news and gamification videos ──
-    // Applied after canplay fires to ensure smooth playback across all browsers
     (function () {
-      var targets = [
-        { id: 'finnews-video', rate: 1.4 },
-        { id: 'gami-video',    rate: 1.4 }
-      ];
-      targets.forEach(function (t) {
-        var el = document.getElementById(t.id);
-        if (!el) return;
-        // Set immediately in case the video is already ready
-        el.playbackRate = t.rate;
-        // Also set on canplay in case it loads after this script runs
-        el.addEventListener('canplay', function () {
-          el.playbackRate = t.rate;
-        }, { once: false });
-        // Fallback: restore rate if browser resets it on loop
-        el.addEventListener('play', function () {
-          if (el.playbackRate !== t.rate) el.playbackRate = t.rate;
+      var modal = document.createElement('div');
+      modal.className = 'cs-video-modal';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.innerHTML = '<div class="cs-video-dialog" role="dialog" aria-modal="true" aria-label="Case study video"><button class="cs-video-close" type="button" aria-label="Close video">×</button><video controls playsinline preload="metadata"></video></div>';
+      document.body.appendChild(modal);
+
+      var video = modal.querySelector('video');
+      var closeBtn = modal.querySelector('.cs-video-close');
+
+      function closeVideo() {
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.cs-video-trigger').forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+          video.src = trigger.getAttribute('data-video-src');
+          video.playbackRate = 1.4;
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          video.play().catch(function () {});
         });
+      });
+
+      closeBtn.addEventListener('click', closeVideo);
+      modal.addEventListener('click', function (event) {
+        if (event.target === modal) closeVideo();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) closeVideo();
       });
     })();
   </script>
