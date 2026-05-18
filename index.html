@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kunj Vyas — Product Designer</title>
+  <meta name="description" content="Product designer specializing in AI and fintech products. 5+ years turning complex systems into clear, measurable outcomes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">Kunj Vyas</a>
+    <div class="nav-links">
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="mailto:kunjvyas26@gmail.com" class="nav-cta">Let's talk →</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#work" class="mobile-link" data-close>Work</a>
+    <a href="#about" class="mobile-link" data-close>About</a>
+    <a href="#contact" class="mobile-link" data-close>Contact</a>
+    <a href="mailto:kunjvyas26@gmail.com" class="mobile-cta" data-close>Let's talk →</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        <span>Available · Product Designer · Bay Area</span>
+      </div>
+      <h1 class="hero-h1">
+        <span class="hero-line" data-delay="0">Fintech is complex.</span>
+        <span class="hero-line hero-accent" data-delay="80">I make it feel obvious.</span>
+      </h1>
+      <p class="hero-sub">
+        End-to-end product design for AI and financial products —<br class="br-hide">
+        from user research to shipped systems. Ex-Accenture data engineering.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View work</a>
+        <a href="#" class="btn-ghost">Download resume ↓</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-cell">
+          <div class="proof-num" data-count="80" data-suffix="%">0%</div>
+          <div class="proof-lbl">task comprehension uplift, BankSphere</div>
+        </div>
+        <div class="proof-cell">
+          <div class="proof-num" data-count="22" data-prefix="−" data-suffix="%">−0%</div>
+          <div class="proof-lbl">bounce rate, FinLit redesign</div>
+        </div>
+        <div class="proof-cell">
+          <div class="proof-num" data-count="2" data-suffix="×">0×</div>
+          <div class="proof-lbl">faster launch via design system</div>
+        </div>
+        <div class="proof-cell">
+          <div class="proof-num" data-count="5" data-suffix=" yr">0 yr</div>
+          <div class="proof-lbl">end-to-end product design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="work-header">
+        <span class="section-label">Selected work</span>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- FinLit -->
+        <article class="card card--default reveal" data-href="work/finlit.html">
+          <div class="card-thumb card-thumb--purple">
+            <span class="card-thumb-glyph">FinLit</span>
+            <span class="card-badge badge--purple">Fintech · EdTech</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Case study · 2023</div>
+            <h2 class="card-title">FinLit — gamified financial learning</h2>
+            <p class="card-desc">Designed a 0→1 learning platform that turns abstract money concepts into a skill tree. Reduced bounce 22%, grew organic traffic 35%.</p>
+            <div class="card-stats">
+              <div class="stat"><div class="stat-num">−22%</div><div class="stat-lbl">Bounce rate</div></div>
+              <div class="stat"><div class="stat-num">+35%</div><div class="stat-lbl">Organic traffic</div></div>
+              <div class="stat"><div class="stat-num">2×</div><div class="stat-lbl">Launch speed</div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- BankSphere -->
+        <article class="card card--default reveal" data-delay="80" data-href="work/banksphere.html">
+          <div class="card-thumb card-thumb--teal">
+            <span class="card-thumb-glyph">Bank</span>
+            <span class="card-badge badge--teal">AI · Spatial UI</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Case study · 2024</div>
+            <h2 class="card-title">BankSphere — AI-powered banking</h2>
+            <p class="card-desc">Rethought banking for an AI-first world. Validated through user research: 80% of testers completed complex tasks with measurably less friction.</p>
+            <div class="card-stats">
+              <div class="stat"><div class="stat-num">80%</div><div class="stat-lbl">Comprehension</div></div>
+              <div class="stat"><div class="stat-num">−30%</div><div class="stat-lbl">Decision time</div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ManageSphere wide -->
+        <article class="card card--wide reveal" data-delay="120" data-href="work/managesphere.html">
+          <div class="card-thumb card-thumb--stone">
+            <span class="card-thumb-glyph">Manage</span>
+            <span class="card-badge badge--stone">B2B SaaS</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Case study · 2024</div>
+            <h2 class="card-title">ManageSphere — workspace management</h2>
+            <p class="card-desc">Designed a B2B task platform for teams drowning in context-switching. Consolidated 10+ fragmented flows into a single unified surface. Shipped a 48-component design system.</p>
+            <div class="card-stats">
+              <div class="stat"><div class="stat-num">−35%</div><div class="stat-lbl">Task-switch time</div></div>
+              <div class="stat"><div class="stat-num">+41%</div><div class="stat-lbl">CTA visibility</div></div>
+              <div class="stat"><div class="stat-num">48</div><div class="stat-lbl">Components</div></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-left reveal">
+        <div class="section-label section-label--light">About</div>
+        <h2 class="about-h2">Designer who reads data.<br>Engineer who thinks in systems.</h2>
+        <p class="about-body">At Accenture, I worked on data pipelines before moving fully into product design. That cross-disciplinary background means I can talk to engineers fluently, read research data critically, and ship designs that actually work in complex systems.</p>
+        <p class="about-body">I specialize in fintech and AI products — the domains where getting complexity wrong costs users real money or real trust.</p>
+        <div class="skills-grid">
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">UX Research</span>
+          <span class="skill-pill">Design Systems</span>
+          <span class="skill-pill">Prototyping</span>
+          <span class="skill-pill">A/B Testing</span>
+          <span class="skill-pill">WCAG / a11y</span>
+          <span class="skill-pill">SQL + Data</span>
+          <span class="skill-pill">Maze · Hotjar</span>
+        </div>
+      </div>
+      <div class="about-right reveal" data-delay="80">
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-info">
+              <div class="exp-role">Product / UX Designer</div>
+              <div class="exp-org">BigBattery, LLC</div>
+            </div>
+            <div class="exp-year">2022–2024</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-info">
+              <div class="exp-role">UX Designer + Data Analyst</div>
+              <div class="exp-org">Accenture</div>
+            </div>
+            <div class="exp-year">2020–2022</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-info">
+              <div class="exp-role">Freelance Product Designer</div>
+              <div class="exp-org">Various startups</div>
+            </div>
+            <div class="exp-year">2019–2020</div>
+          </div>
+        </div>
+        <a href="#" class="btn-light">Download resume ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner reveal">
+        <div class="section-label">Contact</div>
+        <h2 class="contact-h2">Let's build something<br>worth shipping.</h2>
+        <p class="contact-sub">Open to Product Designer and UX roles at fintech, AI, and product-led companies.</p>
+        <a href="mailto:kunjvyas26@gmail.com" class="btn-primary btn-large">kunjvyas26@gmail.com →</a>
+        <div class="contact-links">
+          <a href="https://linkedin.com/in/kunjvyas" target="_blank" class="contact-link">LinkedIn ↗</a>
+          <a href="https://dribbble.com/kunjvyas" target="_blank" class="contact-link">Dribbble ↗</a>
+          <a href="#" class="contact-link">Resume ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2024 Kunj Vyas</span>
+      <span class="footer-note">Designed & built by Kunj</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
