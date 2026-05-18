@@ -117,20 +117,50 @@
     .cs-eco-desc { font-size: 12px; color: var(--c-text-2); line-height: 1.5; }
 
     /* ── KPI strip ── */
+    .cs-kpi-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(180px, 0.36fr);
+      gap: 32px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+    .cs-kpi-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
     .cs-kpi-strip {
-      display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 0; margin: 20px 0;
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 0; margin: 0;
       border: 0.5px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden;
     }
     .cs-kpi-cell {
-      padding: 18px 20px; border-right: 0.5px solid var(--c-border);
+      padding: 18px 20px;
       background: var(--c-chalk);
     }
-    .cs-kpi-cell:last-child { border-right: none; }
+    .cs-kpi-cell:nth-child(odd) { border-right: 0.5px solid var(--c-border); }
+    .cs-kpi-cell:nth-child(-n+2) { border-bottom: 0.5px solid var(--c-border); }
     .cs-kpi-name {
       font-size: 12px; font-weight: 500; color: var(--c-text-1); margin-bottom: 5px;
     }
     .cs-kpi-desc { font-size: 11px; color: var(--c-text-2); line-height: 1.45; }
+    .cs-kpi-media {
+      display: flex;
+      justify-content: flex-end;
+      align-items: stretch;
+    }
+    .cs-kpi-media img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: contain;
+      display: block;
+    }
+    .cs-account-copy {
+      margin-top: 28px;
+    }
 
     /* ── AI use case items ── */
     .cs-ai-cases { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
@@ -183,8 +213,51 @@
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 32px; align-items: start; margin-top: 24px;
     }
-    .cs-split-img { border-radius: var(--r-lg); overflow: hidden; border: 0.5px solid var(--c-border); }
-    .cs-split-img img { width: 100%; display: block; }
+    .cs-split-img {
+      width: fit-content;
+      max-width: 100%;
+      margin-left: auto;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 0.5px solid var(--c-border);
+    }
+    .cs-split-img img {
+      width: auto;
+      max-width: 100%;
+      max-height: min(640px, 78vh);
+      display: block;
+      object-fit: contain;
+    }
+    .cs-split-img--frameless {
+      border: none;
+      border-radius: 0;
+    }
+    .cs-advisor-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+      gap: 36px;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+    .cs-advisor-copy {
+      max-width: 560px;
+    }
+    .cs-advisor-media {
+      display: flex;
+      justify-content: flex-end;
+      align-items: stretch;
+      margin-top: -14px;
+      margin-bottom: -4px;
+    }
+    .cs-advisor-media img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      min-height: 560px;
+      max-height: 780px;
+      display: block;
+      object-fit: contain;
+    }
     .cs-split-h3 {
       font-size: 15px; font-weight: 500; color: var(--c-text-1);
       letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 10px;
@@ -206,17 +279,24 @@
     @media (max-width: 860px) {
       .cs-principles-grid { grid-template-columns: 1fr 1fr; }
       .cs-ecosystem { grid-template-columns: 1fr 1fr; }
-      .cs-kpi-strip { grid-template-columns: 1fr 1fr; }
-      .cs-kpi-cell:nth-child(2) { border-right: none; }
-      .cs-kpi-cell:nth-child(3) { border-top: 0.5px solid var(--c-border); border-right: 0.5px solid var(--c-border); }
-      .cs-kpi-cell:nth-child(4) { border-top: 0.5px solid var(--c-border); border-right: none; }
+      .cs-kpi-showcase { grid-template-columns: 1fr; gap: 20px; }
+      .cs-kpi-media { justify-content: center; }
+      .cs-kpi-media img { height: auto; max-height: 520px; }
       .cs-split { grid-template-columns: 1fr; gap: 16px; }
+      .cs-split-img { margin-right: auto; }
+      .cs-advisor-showcase { grid-template-columns: 1fr; gap: 24px; }
+      .cs-advisor-copy { max-width: none; }
+      .cs-advisor-media { justify-content: center; margin-top: 0; margin-bottom: 0; }
+      .cs-advisor-media img { height: auto; min-height: 0; max-height: 680px; }
       .cs-section--immersive { margin-left: -24px; margin-right: -24px; padding: 36px 24px; }
     }
     @media (max-width: 680px) {
       .cs-asset-pair, .cs-asset-trio { grid-template-columns: 1fr; }
       .cs-principles-grid { grid-template-columns: 1fr; }
       .cs-ecosystem { grid-template-columns: 1fr; }
+      .cs-kpi-strip { grid-template-columns: 1fr; }
+      .cs-kpi-cell:nth-child(odd) { border-right: none; }
+      .cs-kpi-cell:nth-child(-n+3) { border-bottom: 0.5px solid var(--c-border); }
     }
   </style>
 </head>
@@ -599,36 +679,39 @@
   <div class="cs-section reveal">
     <div class="cs-section-eyebrow">10 <span class="cs-section-eyebrow-line"></span> Financial health</div>
     <h2 class="cs-section-h2">Four KPIs that make financial wellness visible at a glance.</h2>
-    <p class="cs-p">The Financial Health panel was the most debated surface in the project. The question: how do you present a user's financial reality — including stress and carbon footprint — without creating anxiety or feeling invasive? The answer was <strong>radial gauges with plain-language ratings</strong> ("Good", "Very Good", "Normal") rather than scores or percentages.</p>
 
-    <div class="cs-kpi-strip">
-      <div class="cs-kpi-cell">
-        <div class="cs-kpi-name">Financial Health Index</div>
-        <div class="cs-kpi-desc">Composite score across liability coverage, risk protection, and long-term savings strategy. Provides a single headline indicator without overwhelming detail.</div>
+    <div class="cs-kpi-showcase">
+      <div class="cs-kpi-copy">
+        <p class="cs-p">The Financial Health panel was the most debated surface in the project. The question: how do you present a user's financial reality — including stress and carbon footprint — without creating anxiety or feeling invasive? The answer was <strong>radial gauges with plain-language ratings</strong> ("Good", "Very Good", "Normal") rather than scores or percentages.</p>
+
+        <div class="cs-kpi-strip">
+          <div class="cs-kpi-cell">
+            <div class="cs-kpi-name">Financial Health Index</div>
+            <div class="cs-kpi-desc">Composite score across liability coverage, risk protection, and long-term savings strategy. Provides a single headline indicator without overwhelming detail.</div>
+          </div>
+          <div class="cs-kpi-cell">
+            <div class="cs-kpi-name">Credit Score</div>
+            <div class="cs-kpi-desc">Real-time credit health tracking with AI explanations for any changes — not just a number, but context for what drove it and what could improve it.</div>
+          </div>
+          <div class="cs-kpi-cell">
+            <div class="cs-kpi-name">Stress Level</div>
+            <div class="cs-kpi-desc">Financial stress tracked via connected health data (Apple Watch integration in concept). Surfaces at moments when proactive AI support could reduce anxiety.</div>
+          </div>
+          <div class="cs-kpi-cell">
+            <div class="cs-kpi-name">Carbon Footprint</div>
+            <div class="cs-kpi-desc">Spending-based carbon impact tracking for users who want to align their financial decisions with environmental values. Opt-in, never surfaced as a guilt mechanism.</div>
+          </div>
+        </div>
       </div>
-      <div class="cs-kpi-cell">
-        <div class="cs-kpi-name">Credit Score</div>
-        <div class="cs-kpi-desc">Real-time credit health tracking with AI explanations for any changes — not just a number, but context for what drove it and what could improve it.</div>
-      </div>
-      <div class="cs-kpi-cell">
-        <div class="cs-kpi-name">Stress Level</div>
-        <div class="cs-kpi-desc">Financial stress tracked via connected health data (Apple Watch integration in concept). Surfaces at moments when proactive AI support could reduce anxiety.</div>
-      </div>
-      <div class="cs-kpi-cell">
-        <div class="cs-kpi-name">Carbon Footprint</div>
-        <div class="cs-kpi-desc">Spending-based carbon impact tracking for users who want to align their financial decisions with environmental values. Opt-in, never surfaced as a guilt mechanism.</div>
+      <div class="cs-kpi-media">
+        <img src="../banksphere/kpi.png" alt="Four Basic KPIs — Financial Health Index, Credit Score, Stress Level, Carbon Footprint — and account management overview" loading="lazy" />
       </div>
     </div>
 
-    <div class="cs-split" style="margin-top:20px">
-      <div>
-        <div class="cs-split-h3">Access to all accounts — in one surface</div>
-        <p class="cs-p">Through the Open Banking API, BankSphere aggregates data from multiple banks and fintech services — checking, family, team, junior, savings, investment, third-party bank accounts, crypto, and eWallets — all visible without switching apps.</p>
-        <p class="cs-p">Users can also set automated money transfers between accounts based on balance thresholds or shortfalls — the financial equivalent of having a smart assistant manage the plumbing while you focus on the strategy.</p>
-      </div>
-      <div class="cs-split-img">
-        <img src="../banksphere/kpi.png" alt="Four Basic KPIs — Financial Health Index, Credit Score, Stress Level, Carbon Footprint — and account management overview" loading="lazy" />
-      </div>
+    <div class="cs-account-copy">
+      <div class="cs-split-h3">Access to all accounts — in one surface</div>
+      <p class="cs-p">Through the Open Banking API, BankSphere aggregates data from multiple banks and fintech services — checking, family, team, junior, savings, investment, third-party bank accounts, crypto, and eWallets — all visible without switching apps.</p>
+      <p class="cs-p">Users can also set automated money transfers between accounts based on balance thresholds or shortfalls — the financial equivalent of having a smart assistant manage the plumbing while you focus on the strategy.</p>
     </div>
   </div>
 
@@ -667,11 +750,10 @@
   <div class="cs-section reveal cs-section--immersive">
     <div class="cs-section-eyebrow">12 <span class="cs-section-eyebrow-line"></span> AI Advisor</div>
     <h2 class="cs-section-h2">Not a chatbot. A financial co-pilot.</h2>
-    <p class="cs-p">The AI Advisor is the most critical surface in BankSphere — and the one that required the most design discipline. The instinct was to make it powerful. The design challenge was making it <strong>trustworthy</strong>.</p>
-    <p class="cs-p">It acts as a co-pilot: context-aware of what banking surface is active, proactive rather than reactive, and transparent about its reasoning. Every recommendation surfaces as a chat message with an actionable card — not a notification that appears and disappears.</p>
-
-    <div class="cs-split">
-      <div>
+    <div class="cs-advisor-showcase">
+      <div class="cs-advisor-copy">
+        <p class="cs-p">The AI Advisor is the most critical surface in BankSphere — and the one that required the most design discipline. The instinct was to make it powerful. The design challenge was making it <strong>trustworthy</strong>.</p>
+        <p class="cs-p">It acts as a co-pilot: context-aware of what banking surface is active, proactive rather than reactive, and transparent about its reasoning. Every recommendation surfaces as a chat message with an actionable card — not a notification that appears and disappears.</p>
         <div class="cs-tag-pills">
           <span class="cs-tag-pill">Transparency</span>
           <span class="cs-tag-pill">Trust</span>
@@ -681,7 +763,7 @@
         <p class="cs-p">Recommendations are delivered as conversational messages with embedded action cards — users can approve, decline, or explore deeper without leaving the current context. Voice interaction is supported for hands-free use cases.</p>
         <p class="cs-p" style="margin-top:12px"><strong>The design philosophy:</strong> reflect the financial dimension of the user's lifestyle — not just their account data. The AI considers goals, events, health data, and values. This proactivity is the foundation for long-term trust between AI-powered banks and their customers.</p>
       </div>
-      <div class="cs-split-img">
+      <div class="cs-advisor-media">
         <img src="../banksphere/advisor.png" alt="AI Advisor panel — co-pilot banking assistant with context-aware recommendations and conversational action cards" loading="lazy" />
       </div>
     </div>
