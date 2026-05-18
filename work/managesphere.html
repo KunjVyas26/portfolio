@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ManageSphere — Case Study · Kunj Vyas</title>
+  <meta name="description" content="ManageSphere: How I redesigned a B2B workspace tool, reduced context-switch time 35%, and shipped a 48-component design system." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="case-study.css" />
+  <style>
+    /* ManageSphere accent: Stone */
+    .cs-hero-bg          { background: #0F0F0F; }
+    .cs-eyebrow-dot      { background: #888780; }
+    .cs-h1 em            { color: #B4B2A9; }
+    .cs-tl-week          { color: var(--c-stone-mid); }
+    .cs-metric-num       { color: var(--c-stone-dark); }
+    .cs-insight-num      { color: var(--c-stone-dark); }
+    .cs-outcome-num--pri { color: var(--c-stone-dark); }
+    .cs-outcome-num--sec { color: #888780; }
+    .cs-decision-num     { background: var(--c-stone-tint); color: var(--c-stone-dark); }
+    .cs-quote            { background: var(--c-stone-tint); border-color: #888780; }
+    .cs-quote-text       { color: #2C2C2A; }
+    .cs-quote-attr       { color: #888780; }
+    .nav-progress-bar    { background: var(--c-stone-dark); }
+    .cs-next-btn         { background: var(--c-stone-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-back">
+        <span class="nav-back-arrow">←</span> Work
+      </a>
+      <div class="nav-sep"></div>
+      <span class="nav-page-title">ManageSphere · Case Study</span>
+    </div>
+    <div class="nav-right">
+      <a href="../index.html#work" class="nav-link">Work</a>
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="mailto:kunjvyas26@gmail.com" class="nav-cta">Let's talk →</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+    <div class="nav-progress-wrap">
+      <div class="nav-progress-bar" id="progressBar"></div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" class="mobile-link" data-close>← Back to work</a>
+    <a href="../index.html#about" class="mobile-link" data-close>About</a>
+    <a href="mailto:kunjvyas26@gmail.com" class="mobile-cta" data-close>Let's talk →</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="cs-hero cs-hero-bg">
+    <div class="cs-hero-inner">
+      <div class="cs-eyebrow">
+        <span class="cs-eyebrow-dot"></span>
+        <span class="cs-eyebrow-text">B2B SaaS · Productivity · 2024 · 14 weeks</span>
+      </div>
+      <h1 class="cs-h1">Teams weren't failing<br>at work. They were<br>failing at <em>finding it.</em></h1>
+      <p class="cs-sub">ManageSphere started as a task management redesign. The research revealed something harder: a context-switching problem that no amount of better lists was going to solve.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-cell">
+          <div class="cs-meta-label">My role</div>
+          <div class="cs-meta-val">Lead product designer</div>
+        </div>
+        <div class="cs-meta-cell">
+          <div class="cs-meta-label">Platform</div>
+          <div class="cs-meta-val">Web app (B2B)</div>
+        </div>
+        <div class="cs-meta-cell">
+          <div class="cs-meta-label">Timeline</div>
+          <div class="cs-meta-val">14 weeks</div>
+        </div>
+        <div class="cs-meta-cell">
+          <div class="cs-meta-label">Tools</div>
+          <div class="cs-meta-val">Figma · Dovetail · FullStory</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METRICS BAR -->
+  <div class="cs-metrics">
+    <div class="cs-metric-cell">
+      <div class="cs-metric-num">−35%</div>
+      <div class="cs-metric-lbl">Context-switch time across active projects in usability tests</div>
+    </div>
+    <div class="cs-metric-cell">
+      <div class="cs-metric-num">+41%</div>
+      <div class="cs-metric-lbl">CTA visibility score vs. original interface baseline</div>
+    </div>
+    <div class="cs-metric-cell">
+      <div class="cs-metric-num">48</div>
+      <div class="cs-metric-lbl">Components shipped, halved design review cycles</div>
+    </div>
+    <div class="cs-metric-cell">
+      <div class="cs-metric-num">71%</div>
+      <div class="cs-metric-lbl">Users voluntarily switched to new UI within 4 weeks</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="cs-body">
+
+    <!-- 01 Problem -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">01 <span class="cs-section-eyebrow-line"></span> The real problem</div>
+      <h2 class="cs-section-h2">The ask was "better task management." The problem was losing 45 minutes a day just getting oriented.</h2>
+      <p class="cs-p">The brief: redesign a B2B workspace tool for teams managing 10+ concurrent projects. The existing product had tasks, timelines, and dashboards. Usage data told a different story — <strong>users opened the app an average of 11 times a day, but completed meaningful work in fewer than 4 of those sessions.</strong> The other 7 were orientation: finding where something was, checking what someone else had done, or trying to remember what they'd been working on before a meeting interrupted them.</p>
+      <p class="cs-p">The problem wasn't task management. It was context loss — the cost of switching between projects and having to rebuild your mental model every single time.</p>
+      <div class="cs-quote">
+        <p class="cs-quote-text">"I spend more time figuring out what I should be doing than actually doing it. Every morning I open five tabs just to remember where I left off yesterday."</p>
+        <cite class="cs-quote-attr">User interview · Senior PM, 14-person product team, 12 active projects</cite>
+      </div>
+      <p class="cs-p">The reframe: <strong>don't build a better task list — build a faster way back to context.</strong> Every surface decision followed from that.</p>
+    </div>
+
+    <!-- 02 Constraints -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">02 <span class="cs-section-eyebrow-line"></span> Real constraints</div>
+      <h2 class="cs-section-h2">B2B constraints are different. The buyer and the user are rarely the same person.</h2>
+      <div class="cs-constraint-list">
+        <div class="cs-constraint-item">
+          <div class="cs-c-dot cs-c-dot--hard"></div>
+          <div>
+            <div class="cs-c-label">Existing data model couldn't change — hard engineering constraint</div>
+            <div class="cs-c-sub">The backend modeled tasks under projects under workspaces in a strict hierarchy. Users didn't think hierarchically. I had to create a UI that felt flat and associative while the data stayed nested. Every cross-project view had to work within that constraint.</div>
+          </div>
+        </div>
+        <div class="cs-constraint-item">
+          <div class="cs-c-dot cs-c-dot--hard"></div>
+          <div>
+            <div class="cs-c-label">8 different team personas, all in the same product</div>
+            <div class="cs-c-sub">PMs, engineers, designers, QA, and executives. A dashboard useful to a PM was noise to an engineer. Role-based defaults were required, but couldn't be mandated — admins resisted anything that "forced" behavior on their teams.</div>
+          </div>
+        </div>
+        <div class="cs-constraint-item">
+          <div class="cs-c-dot cs-c-dot--soft"></div>
+          <div>
+            <div class="cs-c-label">Migration risk — 3,000+ active users couldn't be disrupted</div>
+            <div class="cs-c-sub">Every structural change had to be phased, with escape hatches back to old patterns. I designed a side-by-side "classic / new" toggle that ran for 8 weeks post-launch to reduce churn risk.</div>
+          </div>
+        </div>
+        <div class="cs-constraint-item">
+          <div class="cs-c-dot cs-c-dot--soft"></div>
+          <div>
+            <div class="cs-c-label">Design system was non-existent — had to be built in parallel</div>
+            <div class="cs-c-sub">No shared component library. Engineers and designers each made their own button. 48 unique CTA styles found via FullStory. Building the system wasn't a separate workstream — it was a prerequisite for shipping anything consistent.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Research -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">03 <span class="cs-section-eyebrow-line"></span> What research actually found</div>
+      <h2 class="cs-section-h2">Four findings. The most important one came from FullStory, not interviews.</h2>
+      <div class="cs-insight-grid">
+        <div class="cs-insight-card">
+          <div class="cs-insight-num">11×</div>
+          <div class="cs-insight-txt">Average daily app opens per user. Meaningful work sessions: fewer than 4. The other 7 opens were orientation — finding context, not doing work.</div>
+        </div>
+        <div class="cs-insight-card">
+          <div class="cs-insight-num">48</div>
+          <div class="cs-insight-txt">Unique CTA button styles found via FullStory click analysis. Not 48 use cases — 48 inconsistent implementations of the same actions. Users had learned to ignore half of them.</div>
+        </div>
+        <div class="cs-insight-card">
+          <div class="cs-insight-num">73%</div>
+          <div class="cs-insight-txt">Of cross-project status checks were done by navigating to the home dashboard — not the project sidebar. The sidebar navigation model was wrong for the most common workflow.</div>
+        </div>
+        <div class="cs-insight-card">
+          <div class="cs-insight-num">2 min</div>
+          <div class="cs-insight-txt">Average time to re-orient after a calendar interruption. Users called it "the restart tax." Every designer on the team recognised it immediately from their own experience.</div>
+        </div>
+      </div>
+      <p class="cs-p" style="margin-top:16px">The FullStory data was the most valuable input. <strong>Users had developed workarounds that revealed exactly where the IA had failed them</strong> — browser bookmarks to specific project states, duplicate tabs kept open as "memory," and comments left on tasks as personal notes to their future selves.</p>
+    </div>
+
+    <!-- 04 Process -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">04 <span class="cs-section-eyebrow-line"></span> How I worked</div>
+      <h2 class="cs-section-h2">14 weeks. One architectural pivot. A design system built from necessity, not process.</h2>
+      <div class="cs-timeline">
+        <div class="cs-tl-item">
+          <div class="cs-tl-week">Wk 1–3</div>
+          <div class="cs-tl-card">
+            <div class="cs-tl-phase">Audit + behavioral research</div>
+            <div class="cs-tl-note">FullStory session review (40 sessions), 14 user interviews across 5 roles, competitor teardown of Linear, Notion, Asana, and Height. Mapped "the restart tax" as the core problem.</div>
+          </div>
+        </div>
+        <div class="cs-tl-item">
+          <div class="cs-tl-week">Wk 4–5</div>
+          <div class="cs-tl-card">
+            <div class="cs-tl-phase">IA redesign — attempt 1: activity feed model</div>
+            <div class="cs-tl-note">Designed a Twitter-style activity feed as the home surface. Every change across all projects surfaced chronologically. Tested with 8 users. Overwhelming — too much noise, no priority signal.</div>
+            <span class="cs-tl-flag cs-tl-flag--pivot">Pivoted</span>
+          </div>
+        </div>
+        <div class="cs-tl-item">
+          <div class="cs-tl-week">Wk 6–8</div>
+          <div class="cs-tl-card">
+            <div class="cs-tl-phase">Focus View + context resume model</div>
+            <div class="cs-tl-note">Built around "where you were" not "what happened." Home surface shows last 3 active projects with a resumable context snapshot. 9/10 users found their work within 20 seconds.</div>
+            <span class="cs-tl-flag cs-tl-flag--shipped">Shipped direction</span>
+          </div>
+        </div>
+        <div class="cs-tl-item">
+          <div class="cs-tl-week">Wk 9–11</div>
+          <div class="cs-tl-card">
+            <div class="cs-tl-phase">Design system — 48 components</div>
+            <div class="cs-tl-note">Audited all 48 CTA variants. Consolidated to 3 button types. Built full component library with usage docs, states, and accessibility specs. Ran team training before handoff.</div>
+            <span class="cs-tl-flag cs-tl-flag--shipped">System shipped</span>
+          </div>
+        </div>
+        <div class="cs-tl-item">
+          <div class="cs-tl-week">Wk 12–14</div>
+          <div class="cs-tl-card">
+            <div class="cs-tl-phase">Migration design + classic toggle + QA</div>
+            <div class="cs-tl-note">Designed the classic/new toggle and migration onboarding. Cut scope: removed AI-suggested task prioritization — no baseline data to validate suggestions against. Shipped clean.</div>
+            <span class="cs-tl-flag cs-tl-flag--cut">1 feature deferred</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 Decisions -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">05 <span class="cs-section-eyebrow-line"></span> The decisions that mattered</div>
+      <h2 class="cs-section-h2">Three choices that defined the product. And why I made them.</h2>
+      <div class="cs-decision-list">
+        <div class="cs-decision">
+          <div class="cs-decision-header">
+            <div class="cs-decision-num">1</div>
+            <div class="cs-decision-q">"Where you were" over "what happened" as the home surface organizing principle</div>
+          </div>
+          <div class="cs-decision-body">
+            <div class="cs-decision-why-label">Why</div>
+            <div class="cs-decision-why">The activity feed (attempt 1) showed everything that changed. It was accurate — and completely useless for getting back to work. Users needed to answer one question: "where was I?" not "what happened while I was gone?" The Focus View answers in under 20 seconds: last open task, next blocker, last person who touched it. 9/10 users chose it over the activity feed for morning orientation.</div>
+            <div class="cs-decision-tradeoff"><strong>What I killed:</strong> The "All Updates" inbox pattern. Requested by 4 of 14 interviewees — but those 4 were all managers checking on others' work, not individual contributors doing their own. I built a separate team-view for that persona rather than making the home surface serve both equally badly.</div>
+          </div>
+        </div>
+        <div class="cs-decision">
+          <div class="cs-decision-header">
+            <div class="cs-decision-num">2</div>
+            <div class="cs-decision-q">Build the design system before any new features — even when it delayed visible progress</div>
+          </div>
+          <div class="cs-decision-body">
+            <div class="cs-decision-why-label">Why</div>
+            <div class="cs-decision-why">48 unique CTA implementations meant users had learned to ignore roughly half of all action buttons in the product. Consistency isn't aesthetic — it's functional. A button that looks like a button gets clicked. Spending weeks 9–11 on the system instead of new features narrowed scope. Everything that shipped was consistent, predictable, and accessible from day one. CTA visibility scores increased 41%.</div>
+            <div class="cs-decision-tradeoff"><strong>The resistance I faced:</strong> Engineering pushed back — it felt like slowing down for paperwork. I made the case with the FullStory data: 48 button styles was an engineering maintenance cost, not just a design problem. Once framed as technical debt reduction, the system work was approved without further negotiation.</div>
+          </div>
+        </div>
+        <div class="cs-decision">
+          <div class="cs-decision-header">
+            <div class="cs-decision-num">3</div>
+            <div class="cs-decision-q">Classic/new toggle at launch instead of hard cutover — even though it doubled QA scope</div>
+          </div>
+          <div class="cs-decision-body">
+            <div class="cs-decision-why-label">Why</div>
+            <div class="cs-decision-why">3,000+ active users with established workflows is a real migration risk. A hard cutover with no rollback has killed products. The toggle gave users control: try new, switch back if needed, decide on your own timeline. It ran for 8 weeks. By week 4, 71% of users had permanently switched — without being forced. By week 8, the classic toggle was removed. No support tickets. No churn spike.</div>
+            <div class="cs-decision-tradeoff"><strong>What this cost:</strong> Every feature had to be built and tested in both interface states. QA scope doubled for 8 weeks. The right cost to pay — forced migration on a B2B product without proof the new experience is better is a trust violation you can't undo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 Impact -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">06 <span class="cs-section-eyebrow-line"></span> Impact</div>
+      <h2 class="cs-section-h2">What moved at launch — and the assumption I'm still not sure about.</h2>
+      <div class="cs-outcome-grid">
+        <div class="cs-outcome-card cs-outcome-card--primary">
+          <div class="cs-outcome-num cs-outcome-num--pri">−35%</div>
+          <div class="cs-outcome-label">Context-switch time</div>
+          <div class="cs-outcome-sub">Measured as time to locate and resume an active task after navigating away. Tested in timed usability sessions across 3 simultaneous project contexts.</div>
+        </div>
+        <div class="cs-outcome-card cs-outcome-card--primary">
+          <div class="cs-outcome-num cs-outcome-num--pri">+41%</div>
+          <div class="cs-outcome-label">CTA visibility</div>
+          <div class="cs-outcome-sub">Measured via first-click testing in Maze. Consolidating 48 variants down to 3 button types produced the single largest improvement in task-start rate.</div>
+        </div>
+        <div class="cs-outcome-card cs-outcome-card--secondary">
+          <div class="cs-outcome-num cs-outcome-num--sec">71%</div>
+          <div class="cs-outcome-label">Voluntary new UI adoption at week 4</div>
+          <div class="cs-outcome-sub">Without coercion. Users chose the new interface. This is the migration metric that mattered most — adoption by choice is the cleanest signal that the redesign was genuinely better.</div>
+        </div>
+        <div class="cs-outcome-card cs-outcome-card--secondary">
+          <div class="cs-outcome-num cs-outcome-num--sec">−32%</div>
+          <div class="cs-outcome-label">Cross-project status check time</div>
+          <div class="cs-outcome-sub">Focus View + team overview reduced the time to answer "what is the status of all my projects?" — the single most common executive use case in the product.</div>
+        </div>
+      </div>
+      <p class="cs-p" style="margin-top:18px"><strong>What I'm still not sure about:</strong> Whether Focus View helps over months, not weeks. The "restart tax" is a daily problem — but as users build new habits, do they need the resumable context surface as much, or does it become scaffolding they outgrow? That's the question I'd instrument and answer in Q2 post-launch.</p>
+    </div>
+
+    <!-- 07 Reflection -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">07 <span class="cs-section-eyebrow-line"></span> Reflection</div>
+      <h2 class="cs-section-h2">What I learned. What I'd do differently.</h2>
+      <div class="cs-reflection-grid">
+        <div class="cs-reflection-card cs-reflection-card--learn">
+          <div class="cs-reflection-label cs-reflection-label--teal">What this project taught me</div>
+          <div class="cs-reflection-text cs-reflection-text--teal">In B2B, the most valuable research data is behavioral, not attitudinal. What users told me in interviews and what FullStory showed they actually did were different enough to completely change the design direction. Interview data got me to the activity feed. Behavioral data killed it. Always instrument before you interview — the gap between stated and actual behavior is where the real design problem lives.</div>
+        </div>
+        <div class="cs-reflection-card cs-reflection-card--next">
+          <div class="cs-reflection-label cs-reflection-label--stone">What I'd change</div>
+          <div class="cs-reflection-text cs-reflection-text--stone">I'd push for the design system in week 1, not week 9. I built it mid-project because the inconsistency became impossible to ignore. An upfront audit would have revealed the same problem faster and given me leverage to negotiate the timeline before scope was committed. In any B2B redesign, the design system should be workstream 1, not a response to the chaos of workstream 3.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cs-body -->
+
+  <!-- NEXT PROJECT -->
+  <div class="cs-next">
+    <div>
+      <div class="cs-next-label">Back to the start</div>
+      <div class="cs-next-title">FinLit — gamified financial learning →</div>
+    </div>
+    <a href="finlit.html" class="cs-next-btn">View case study</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="cs-footer">
+    <span>© 2024 Kunj Vyas</span>
+    <a href="../index.html">← Back to all work</a>
+  </footer>
+
+  <script src="case-study.js"></script>
+</body>
+</html>

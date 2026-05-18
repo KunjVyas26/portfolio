@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BigBattery LLC — Case Study · Kunj Vyas</title>
+  <meta name="description" content="BigBattery LLC: How I owned product design across a live B2B/B2C ecommerce business — improving conversion, trust, and scalability over 2 years." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="case-study.css" />
+  <style>
+    /* ── BigBattery accent: Amber/Orange energy ── */
+    .cs-hero-bg          { background: #0D0A00; }
+    .cs-eyebrow-dot      { background: #F5A623; }
+    .cs-h1 em            { color: #F5A623; }
+    .cs-tl-week          { color: #C47D0A; }
+    .cs-metric-num       { color: #C47D0A; }
+    .cs-insight-num      { color: #C47D0A; }
+    .cs-outcome-num--pri { color: #C47D0A; }
+    .cs-outcome-num--sec { color: var(--c-teal-mid); }
+    .cs-decision-num     { background: #FFF3DC; color: #7A4E00; }
+    .cs-quote            { background: #FFF3DC; border-color: #F5A623; }
+    .cs-quote-text       { color: #5C3800; }
+    .cs-quote-attr       { color: #C47D0A; }
+    .nav-progress-bar    { background: #F5A623; }
+    .cs-next-btn         { background: #C47D0A; }
+
+    /* amber token overrides */
+    --c-amber:       #F5A623;
+    --c-amber-tint:  #FFF3DC;
+    --c-amber-bdr:   #FADDAA;
+    --c-amber-dark:  #7A4E00;
+    --c-amber-mid:   #C47D0A;
+
+    /* ── Asset containers ── */
+    .cs-asset { margin: 20px 0; border-radius: var(--r-lg); overflow: hidden; border: 0.5px solid var(--c-border); }
+    .cs-asset img { width: 100%; display: block; }
+    .cs-asset-caption {
+      padding: 10px 14px; font-size: 11px; color: var(--c-text-3);
+      font-family: var(--font-mono); letter-spacing: 0.03em;
+      border-top: 0.5px solid var(--c-border); background: var(--c-parchment);
+    }
+    .cs-asset-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+
+    /* ── Placeholder blocks ── */
+    .cs-placeholder {
+      margin: 20px 0; border-radius: var(--r-lg);
+      border: 1.5px dashed #E8D5A3;
+      background: #FFFBF2;
+      padding: 40px 28px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; gap: 8px; min-height: 220px;
+    }
+    .cs-placeholder-label {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: #C47D0A; margin-bottom: 4px;
+    }
+    .cs-placeholder-desc {
+      font-size: 13px; color: #B8924A; line-height: 1.5; max-width: 340px;
+    }
+    .cs-placeholder-icon {
+      font-size: 28px; margin-bottom: 4px; opacity: 0.5;
+    }
+    .cs-placeholder-pair {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0;
+    }
+    .cs-placeholder-sm {
+      min-height: 160px; padding: 28px 20px;
+    }
+
+    /* ── Role badge strip ── */
+    .cs-role-strip {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0;
+    }
+    .cs-role-badge {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px;
+      background: #FFF3DC; color: #7A4E00;
+      border: 0.5px solid #FADDAA;
+    }
+
+    /* ── Challenge grid ── */
+    .cs-challenge-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px;
+    }
+    .cs-challenge-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 14px 16px;
+    }
+    .cs-challenge-label {
+      font-size: 12px; font-weight: 500; color: var(--c-text-1); margin-bottom: 5px;
+    }
+    .cs-challenge-desc { font-size: 12px; color: var(--c-text-2); line-height: 1.55; }
+
+    /* ── Decision callout ── */
+    .cs-decision-callout {
+      margin: 14px 0; padding: 14px 18px;
+      background: #FFF3DC; border-left: 2px solid #F5A623;
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      font-size: 13px; color: #5C3800; line-height: 1.65;
+    }
+    .cs-decision-callout strong { color: #7A4E00; }
+
+    /* ── Collab team grid ── */
+    .cs-team-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 8px; margin-top: 14px;
+    }
+    .cs-team-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 12px 14px;
+    }
+    .cs-team-role { font-size: 12px; font-weight: 500; color: var(--c-text-1); margin-bottom: 3px; }
+    .cs-team-desc { font-size: 11px; color: var(--c-text-2); line-height: 1.45; }
+
+    /* ── Impact callout strip ── */
+    .cs-impact-strip {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px;
+    }
+    .cs-impact-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 14px 16px;
+    }
+    .cs-impact-label {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: #C47D0A; margin-bottom: 8px;
+    }
+    .cs-impact-text { font-size: 13px; color: var(--c-text-2); line-height: 1.6; }
+
+    /* ── Component showcase ── */
+    .cs-component-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 10px; margin-top: 16px;
+    }
+    .cs-component-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 14px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .cs-component-name {
+      font-size: 12px; font-weight: 500; color: var(--c-text-1); letter-spacing: -0.01em;
+    }
+    .cs-component-desc { font-size: 11px; color: var(--c-text-2); line-height: 1.5; }
+    .cs-component-tag {
+      font-family: var(--font-mono); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 100px; display: inline-block; width: fit-content;
+      background: #FFF3DC; color: #7A4E00; border: 0.5px solid #FADDAA;
+    }
+
+    /* ── Dark section ── */
+    .cs-section--dark {
+      background: #0D0A00;
+      margin-left: -40px; margin-right: -40px;
+      padding: 44px 40px;
+      border-radius: var(--r-lg);
+    }
+    .cs-section--dark .cs-section-eyebrow { color: #4A3800; }
+    .cs-section--dark .cs-section-eyebrow-line { background: #2A1E00; }
+    .cs-section--dark .cs-section-h2 { color: #F5EDD8; }
+    .cs-section--dark .cs-p { color: #6A5A30; }
+    .cs-section--dark .cs-p strong { color: #C8A050; }
+    .cs-section--dark .cs-placeholder {
+      background: #1A1200; border-color: #3A2A00;
+    }
+    .cs-section--dark .cs-placeholder-label { color: #F5A623; }
+    .cs-section--dark .cs-placeholder-desc { color: #7A6030; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .cs-challenge-grid, .cs-impact-strip { grid-template-columns: 1fr; }
+      .cs-placeholder-pair { grid-template-columns: 1fr; }
+      .cs-team-grid { grid-template-columns: 1fr 1fr; }
+      .cs-component-grid { grid-template-columns: 1fr 1fr; }
+      .cs-section--dark { margin-left: -24px; margin-right: -24px; padding: 36px 24px; }
+    }
+    @media (max-width: 680px) {
+      .cs-asset-pair { grid-template-columns: 1fr; }
+      .cs-team-grid, .cs-component-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════════════════════════════════════════
+       BRANDING SECTION — additional styles
+       ══════════════════════════════════════════════ */
+
+    /* Divider between UX work and branding work */
+    .cs-chapter-divider {
+      margin: 0 -40px;
+      padding: 36px 40px;
+      background: linear-gradient(135deg, #0D0A00 0%, #1A1200 100%);
+      border-radius: var(--r-lg);
+      display: flex; align-items: center; gap: 24px;
+    }
+    .cs-chapter-divider-text {}
+    .cs-chapter-divider-eyebrow {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      color: #C47D0A; margin-bottom: 8px;
+    }
+    .cs-chapter-divider-h2 {
+      font-size: clamp(20px, 2.4vw, 28px); font-weight: 500;
+      color: #F5EDD8; letter-spacing: -0.02em; line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .cs-chapter-divider-sub {
+      font-size: 13px; color: #6A5A30; line-height: 1.6; max-width: 540px;
+    }
+    .cs-chapter-divider-badge {
+      flex-shrink: 0; background: #F5A623; color: #0D0A00;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: var(--r-pill);
+      white-space: nowrap;
+    }
+
+    /* Real metrics bar — amber highlight */
+    .cs-brand-metrics {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      border: 0.5px solid var(--c-border);
+      border-radius: var(--r-lg); overflow: hidden;
+      margin: 20px 0;
+    }
+    .cs-brand-metric-cell {
+      padding: 20px 18px; background: var(--c-chalk);
+      border-right: 0.5px solid var(--c-border);
+    }
+    .cs-brand-metric-cell:last-child { border-right: none; }
+    .cs-brand-metric-num {
+      font-size: clamp(22px, 2.6vw, 30px); font-weight: 500;
+      color: #C47D0A; letter-spacing: -0.025em; line-height: 1;
+      margin-bottom: 5px;
+    }
+    .cs-brand-metric-lbl {
+      font-size: 11px; color: var(--c-text-3); line-height: 1.4;
+    }
+
+    /* Vertical + segment grid */
+    .cs-verticals-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 8px; margin: 16px 0;
+    }
+    .cs-vertical-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 14px 16px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .cs-vertical-icon { font-size: 20px; }
+    .cs-vertical-name {
+      font-size: 13px; font-weight: 500; color: var(--c-text-1);
+    }
+    .cs-vertical-desc { font-size: 11px; color: var(--c-text-2); line-height: 1.45; }
+
+    /* Channel grid */
+    .cs-channel-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 8px; margin: 16px 0;
+    }
+    .cs-channel-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 12px 14px;
+    }
+    .cs-channel-name {
+      font-size: 12px; font-weight: 500; color: var(--c-text-1); margin-bottom: 3px;
+    }
+    .cs-channel-desc { font-size: 11px; color: var(--c-text-2); line-height: 1.45; }
+    .cs-channel-tool {
+      font-family: var(--font-mono); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: #C47D0A; margin-top: 6px; display: block;
+    }
+
+    /* Infographic image mosaic */
+    .cs-mosaic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px; margin: 20px 0;
+    }
+    .cs-mosaic-item {
+      border-radius: var(--r-md); overflow: hidden;
+      border: 0.5px solid var(--c-border);
+      background: var(--c-chalk);
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cs-mosaic-item img {
+      width: 100%; height: 100%; object-fit: contain; display: block;
+    }
+    .cs-mosaic-item.cs-mosaic-wide {
+      grid-column: span 2; aspect-ratio: 16/9;
+    }
+    .cs-mosaic-item.cs-mosaic-tall {
+      grid-row: span 2; aspect-ratio: auto;
+    }
+
+    /* Tool strip */
+    .cs-tool-strip {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0;
+    }
+    .cs-tool-pill {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: var(--r-pill);
+      background: #FFF3DC; color: #7A4E00;
+      border: 0.5px solid #FADDAA;
+    }
+    .cs-tool-pill--dark {
+      background: #1A1200; color: #C47D0A; border-color: #3A2A00;
+    }
+
+    /* Analytics callout */
+    .cs-analytics-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px;
+    }
+    .cs-analytics-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 14px 16px;
+    }
+    .cs-analytics-tool {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: #C47D0A; margin-bottom: 6px;
+    }
+    .cs-analytics-desc { font-size: 12px; color: var(--c-text-2); line-height: 1.55; }
+
+    /* ══════════════════════════════════════════════
+       HUSKY 2 APP SECTION — additional styles
+       ══════════════════════════════════════════════ */
+
+    /* Chapter divider variant — green for app section */
+    .cs-chapter-divider--app {
+      background: linear-gradient(135deg, #021A08 0%, #03280E 100%);
+    }
+    .cs-chapter-divider--app .cs-chapter-divider-eyebrow { color: #2E8B4A; }
+    .cs-chapter-divider--app .cs-chapter-divider-h2 { color: #E8F5EC; }
+    .cs-chapter-divider--app .cs-chapter-divider-sub { color: #2A5A36; }
+    .cs-chapter-divider--app .cs-chapter-divider-badge { background: #22C55E; color: #021A08; }
+
+    /* App hero — phone mockup + hero banner layout */
+    .cs-app-hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 24px;
+      align-items: center;
+      margin: 20px 0;
+    }
+    .cs-app-hero-phones {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cs-app-hero-phones img {
+      width: 100%; max-width: 260px; display: block;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
+    }
+    .cs-app-hero-banner {
+      border-radius: var(--r-lg); overflow: hidden;
+      border: 0.5px solid var(--c-border);
+    }
+    .cs-app-hero-banner img { width: 100%; display: block; }
+
+    /* Phone screens grid */
+    .cs-phone-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+      align-items: start;
+    }
+    .cs-phone-frame {
+      border-radius: var(--r-lg); overflow: hidden;
+      border: 0.5px solid var(--c-border);
+      background: var(--c-chalk);
+    }
+    .cs-phone-frame img { width: 100%; display: block; }
+    .cs-phone-caption {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--c-text-3); text-align: center;
+      letter-spacing: 0.03em; padding: 8px 6px 4px;
+      background: var(--c-parchment);
+      border-top: 0.5px solid var(--c-border);
+    }
+
+    /* Feature cards — app specific */
+    .cs-app-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px; margin-top: 16px;
+    }
+    .cs-app-feature-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-lg); padding: 18px 16px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .cs-app-feature-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: #ECFDF5; border: 0.5px solid #A7F3D0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .cs-app-feature-name {
+      font-size: 13px; font-weight: 500; color: var(--c-text-1);
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .cs-app-feature-desc {
+      font-size: 12px; color: var(--c-text-2); line-height: 1.55;
+    }
+
+    /* Use environment pills */
+    .cs-env-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 8px; margin-top: 16px;
+    }
+    .cs-env-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 12px 14px;
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .cs-env-icon { font-size: 18px; flex-shrink: 0; }
+    .cs-env-name { font-size: 12px; font-weight: 500; color: var(--c-text-1); margin-bottom: 2px; }
+    .cs-env-desc { font-size: 11px; color: var(--c-text-2); line-height: 1.45; }
+
+    /* UX strategy callout — dark green */
+    .cs-app-callout {
+      margin: 20px 0; padding: 20px 22px;
+      background: #021A08; border-radius: var(--r-lg);
+      border: 0.5px solid #0A3A18;
+    }
+    .cs-app-callout-label {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #22C55E; margin-bottom: 10px;
+    }
+    .cs-app-callout-text {
+      font-size: 14px; color: #5A8A6A; line-height: 1.7;
+    }
+    .cs-app-callout-text strong { color: #A3D9B4; }
+
+    /* Diagnostic stats */
+    .cs-app-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; border: 0.5px solid var(--c-border);
+      border-radius: var(--r-lg); overflow: hidden; margin-top: 16px;
+    }
+    .cs-app-stat-cell {
+      padding: 16px 18px; background: var(--c-chalk);
+      border-right: 0.5px solid var(--c-border);
+    }
+    .cs-app-stat-cell:last-child { border-right: none; }
+    .cs-app-stat-label {
+      font-family: var(--font-mono); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: #16A34A; margin-bottom: 5px;
+    }
+    .cs-app-stat-value {
+      font-size: 16px; font-weight: 500; color: var(--c-text-1);
+      letter-spacing: -0.01em; margin-bottom: 3px;
+    }
+    .cs-app-stat-desc { font-size: 11px; color: var(--c-text-3); line-height: 1.4; }
+
+    @media (max-width: 860px) {
+      .cs-app-hero-split { grid-template-columns: 1fr; }
+      .cs-app-hero-phones img { max-width: 200px; }
+      .cs-phone-grid { grid-template-columns: 1fr 1fr; }
+      .cs-app-feature-grid { grid-template-columns: 1fr 1fr; }
+      .cs-env-grid { grid-template-columns: 1fr 1fr; }
+      .cs-app-stats { grid-template-columns: 1fr 1fr; }
+      .cs-app-stat-cell:nth-child(2) { border-right: none; }
+      .cs-app-stat-cell:nth-child(3),
+      .cs-app-stat-cell:nth-child(4) { border-top: 0.5px solid var(--c-border); }
+      .cs-app-stat-cell:nth-child(3) { border-right: 0.5px solid var(--c-border); }
+      .cs-app-stat-cell:nth-child(4) { border-right: none; }
+    }
+    @media (max-width: 600px) {
+      .cs-phone-grid { grid-template-columns: 1fr 1fr; }
+      .cs-app-feature-grid { grid-template-columns: 1fr; }
+      .cs-env-grid { grid-template-columns: 1fr; }
+    }
+      .cs-brand-metrics { grid-template-columns: 1fr 1fr; }
+      .cs-brand-metric-cell:nth-child(2) { border-right: none; }
+      .cs-brand-metric-cell:nth-child(3),
+      .cs-brand-metric-cell:nth-child(4) { border-top: 0.5px solid var(--c-border); }
+      .cs-brand-metric-cell:nth-child(3) { border-right: 0.5px solid var(--c-border); }
+      .cs-brand-metric-cell:nth-child(5) { border-top: 0.5px solid var(--c-border); border-right: none; grid-column: 1/-1; }
+      .cs-verticals-grid, .cs-channel-grid { grid-template-columns: 1fr 1fr; }
+      .cs-mosaic { grid-template-columns: 1fr 1fr; }
+      .cs-mosaic-item.cs-mosaic-wide { grid-column: span 1; aspect-ratio: 4/3; }
+      .cs-analytics-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .cs-mosaic { grid-template-columns: 1fr; }
+      .cs-verticals-grid { grid-template-columns: 1fr; }
+      .cs-channel-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-left">
+    <a href="../index.html" class="nav-back"><span class="nav-back-arrow">←</span> Work</a>
+    <div class="nav-sep"></div>
+    <span class="nav-page-title">BigBattery LLC · Case Study</span>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html#work" class="nav-link">Work</a>
+    <a href="../index.html#about" class="nav-link">About</a>
+    <a href="mailto:kunjvyas26@gmail.com" class="nav-cta">Let's talk →</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span></button>
+  <div class="nav-progress-wrap"><div class="nav-progress-bar" id="progressBar"></div></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-link" data-close>← Back to work</a>
+  <a href="../index.html#about" class="mobile-link" data-close>About</a>
+  <a href="mailto:kunjvyas26@gmail.com" class="mobile-cta" data-close>Let's talk →</a>
+</div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div class="cs-hero cs-hero-bg">
+  <div class="cs-hero-inner">
+    <div class="cs-eyebrow">
+      <span class="cs-eyebrow-dot"></span>
+      <span class="cs-eyebrow-text">B2B · B2C · Ecommerce · Product & Brand Design · 2022–Current</span>
+    </div>
+    <h1 class="cs-h1">Designing inside a live business.<br>Where every decision had<br><em>real consequences.</em></h1>
+    <p class="cs-sub">At BigBattery LLC, I grew from owning product UX to leading brand and conversion design — across a live ecommerce operation serving B2B and B2C customers in 6 energy verticals. Real production. Real data. Real business impact.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-cell"><div class="cs-meta-label">My role</div><div class="cs-meta-val">Product & Brand Designer</div></div>
+      <div class="cs-meta-cell"><div class="cs-meta-label">Business</div><div class="cs-meta-val">B2B + B2C ecommerce</div></div>
+      <div class="cs-meta-cell"><div class="cs-meta-label">Duration</div><div class="cs-meta-val">2022 – Current</div></div>
+      <div class="cs-meta-cell"><div class="cs-meta-label">Collaborators</div><div class="cs-meta-val">CEO · CTO · Dev · Marketing</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- METRICS BAR -->
+<div class="cs-metrics">
+  <div class="cs-metric-cell"><div class="cs-metric-num">B2B+B2C</div><div class="cs-metric-lbl">Dual customer base requiring distinct UX strategies and content hierarchies</div></div>
+  <div class="cs-metric-cell"><div class="cs-metric-num">2 yr</div><div class="cs-metric-lbl">Continuous iteration on a live production ecommerce environment</div></div>
+  <div class="cs-metric-cell"><div class="cs-metric-num">CEO+CTO</div><div class="cs-metric-lbl">Direct collaboration with business leadership on product direction</div></div>
+  <div class="cs-metric-cell"><div class="cs-metric-num">Systems</div><div class="cs-metric-lbl">Scalable component and layout system built for long-term maintainability</div></div>
+</div>
+
+<!-- ═══════════════════════ BODY ═══════════════════════ -->
+<div class="cs-body">
+
+  <!-- ── 01 COMPANY CONTEXT ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">01 <span class="cs-section-eyebrow-line"></span> Business context</div>
+    <h2 class="cs-section-h2">BigBattery LLC: a live ecommerce business where UX decisions directly affected revenue.</h2>
+    <p class="cs-p">BigBattery LLC sells battery systems, energy storage solutions, and related technical products to both individual consumers and commercial buyers. The product range is broad and technically complex — solar batteries, lithium systems, inverters, and off-grid power setups — each with specifications that require careful, clear communication to convert a visitor into a confident buyer.</p>
+    <p class="cs-p">The business runs on a dual B2B/B2C model. Commercial buyers (contractors, solar installers, off-grid property owners) have entirely different decision frameworks than individual consumers. <strong>Designing one experience that serves both without alienating either</strong> was the central product design tension throughout my time at BigBattery.</p>
+    <p class="cs-p">This wasn't a greenfield redesign or a speculative concept. Every change I designed shipped to real customers. Every friction point I identified was costing real conversions. Every component I built was maintained by real developers. That production reality shaped every design decision.</p>
+
+    <div class="cs-placeholder">
+      <div class="cs-placeholder-icon">🔋</div>
+      <div class="cs-placeholder-label">Hero Website Overview</div>
+      <div class="cs-placeholder-desc">Full desktop homepage — showing product range, navigation, hero section, and above-the-fold UX</div>
+    </div>
+  </div>
+
+  <!-- ── 02 MY ROLE ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">02 <span class="cs-section-eyebrow-line"></span> My role</div>
+    <h2 class="cs-section-h2">Not just a designer. A product owner embedded in a live business operation.</h2>
+    <p class="cs-p">At BigBattery, there was no separate product team, no design manager, no UX process to slot into. I was the design function — working directly with the CEO and CTO to understand business priorities, and translating those into product decisions that the development team could execute against a real roadmap.</p>
+    <p class="cs-p">That required operating across a much wider surface than typical UI design work.</p>
+
+    <div class="cs-role-strip">
+      <span class="cs-role-badge">UX Strategy</span>
+      <span class="cs-role-badge">UI Design</span>
+      <span class="cs-role-badge">Conversion Optimization</span>
+      <span class="cs-role-badge">Design Systems</span>
+      <span class="cs-role-badge">Responsive Design</span>
+      <span class="cs-role-badge">UX Research</span>
+      <span class="cs-role-badge">Front-End Thinking</span>
+      <span class="cs-role-badge">Stakeholder Communication</span>
+      <span class="cs-role-badge">B2B + B2C Strategy</span>
+      <span class="cs-role-badge">SEO-Aligned UX</span>
+      <span class="cs-role-badge">CMS Handoff</span>
+      <span class="cs-role-badge">Information Architecture</span>
+    </div>
+
+    <p class="cs-p" style="margin-top:4px">I worked in rapid iteration cycles — a design decision made on Monday was often in front of real customers by end of week. That compression forced a kind of discipline that extended design processes don't build: the ability to identify the highest-leverage change, make it defensibly, and ship it cleanly.</p>
+
+    <div class="cs-placeholder">
+      <div class="cs-placeholder-icon">📊</div>
+      <div class="cs-placeholder-label">Analytics + Product Dashboard</div>
+      <div class="cs-placeholder-desc">Analytics view showing customer behavior, conversion paths, and UX performance signals used to inform design decisions</div>
+    </div>
+  </div>
+
+  <!-- ── 03 THE PROBLEM SPACE ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">03 <span class="cs-section-eyebrow-line"></span> The problem space</div>
+    <h2 class="cs-section-h2">The product was technically strong. The experience wasn't keeping pace.</h2>
+    <p class="cs-p">BigBattery's core product offering was competitive. The challenge wasn't the inventory — it was how that inventory was being communicated. Technical product pages written for engineers were being read by first-time buyers. Navigation designed for a smaller catalog had grown brittle as the product range expanded. Mobile experience was an afterthought in a market increasingly driven by mobile-first research behavior.</p>
+
+    <div class="cs-challenge-grid">
+      <div class="cs-challenge-card">
+        <div class="cs-challenge-label">Information overload</div>
+        <div class="cs-challenge-desc">Technical product pages were dense, spec-heavy, and assumed prior knowledge. B2C buyers in particular were overwhelmed before they could find the product that matched their need.</div>
+      </div>
+      <div class="cs-challenge-card">
+        <div class="cs-challenge-label">Weak product discoverability</div>
+        <div class="cs-challenge-desc">Navigation and filtering didn't reflect how customers actually searched for battery products. Users reached dead ends or couldn't distinguish between product categories that required clear differentiation.</div>
+      </div>
+      <div class="cs-challenge-card">
+        <div class="cs-challenge-label">Mobile experience gaps</div>
+        <div class="cs-challenge-desc">A significant share of traffic was mobile, but key flows — product comparison, technical spec review, and checkout — were optimized for desktop only. Mobile users were dropping off at critical decision points.</div>
+      </div>
+      <div class="cs-challenge-card">
+        <div class="cs-challenge-label">Inconsistent UI patterns</div>
+        <div class="cs-challenge-desc">Components had been added and modified across the site by different people over time, resulting in visual inconsistency that eroded trust and made future scaling harder. No shared design language existed.</div>
+      </div>
+      <div class="cs-challenge-card">
+        <div class="cs-challenge-label">Conversion friction</div>
+        <div class="cs-challenge-desc">The path from product discovery to purchase was longer than it needed to be. Key trust signals (warranty, compatibility, installation support) weren't surfaced at the moments where buying confidence needed reinforcing.</div>
+      </div>
+      <div class="cs-challenge-card">
+        <div class="cs-challenge-label">B2B vs B2C tension</div>
+        <div class="cs-challenge-desc">Commercial buyers needed specification depth and bulk-order context. Individual consumers needed clarity, confidence, and simplified decision paths. The same surface was trying to serve both, satisfying neither fully.</div>
+      </div>
+    </div>
+
+    <div class="cs-quote">
+      <p class="cs-quote-text">"The customers who call us are already confused by the website. They've read the specs but they don't know which battery is right for them. We're losing people before they even get to the point of asking."</p>
+      <cite class="cs-quote-attr">Stakeholder feedback · CEO, BigBattery LLC</cite>
+    </div>
+  </div>
+
+  <!-- ── 04 RESEARCH & DISCOVERY ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">04 <span class="cs-section-eyebrow-line"></span> Research & discovery</div>
+    <h2 class="cs-section-h2">Research happened in the real environment — not in a controlled setting.</h2>
+    <p class="cs-p">At BigBattery, research wasn't a formal process with dedicated sprints. It was embedded in the operation. I learned from what the data showed, what stakeholders shared, and what customers communicated directly through their behavior on the site.</p>
+
+    <div class="cs-insight-grid">
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Analytics</div>
+        <div class="cs-insight-txt">Session recordings and behavioral data revealed where users were dropping off, which pages had high exit rates, and where the friction points in the conversion funnel were concentrated.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Stakeholder interviews</div>
+        <div class="cs-insight-txt">The CEO and sales team had direct, daily contact with customers. Their pattern recognition about why customers called, what confused them, and what made them buy was primary research with real signal.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Competitor analysis</div>
+        <div class="cs-insight-txt">Mapped how competing battery and energy storage retailers structured their product pages, navigation, and checkout flows. Identified patterns that set expectations for technically-literate shoppers.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">UX audit</div>
+        <div class="cs-insight-txt">Systematic review of existing pages against usability principles — identifying inconsistency, hierarchy failures, mobile breakpoints, and content that was creating confusion rather than confidence.</div>
+      </div>
+    </div>
+
+    <p class="cs-p" style="margin-top:16px">The clearest finding: <strong>the website was written for people who already understood battery systems.</strong> The UX work wasn't about adding information — it was about restructuring and prioritizing it so that customers at different knowledge levels could each find a path to confidence.</p>
+
+    <div class="cs-placeholder">
+      <div class="cs-placeholder-icon">🔍</div>
+      <div class="cs-placeholder-label">UX Audit Documentation</div>
+      <div class="cs-placeholder-desc">Before/after annotated audit showing identified friction points, inconsistencies, and opportunities across key product pages</div>
+    </div>
+  </div>
+
+  <!-- ── 05 STRATEGIC DESIGN DECISIONS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">05 <span class="cs-section-eyebrow-line"></span> Strategic decisions</div>
+    <h2 class="cs-section-h2">Five decisions that shaped the product direction. Each one grounded in business and user reality.</h2>
+
+    <div class="cs-decision-list">
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">1</div>
+          <div class="cs-decision-q">Restructure content hierarchy on product pages — lead with outcome, not specification</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">Product pages led with technical specifications — voltage, amp-hours, cell chemistry. That's the right information, but in the wrong order. B2C buyers needed to understand what a product was for before they could evaluate whether the specs were relevant. Restructuring pages to lead with use-case language ("for off-grid homes", "for solar backup"), then surface specs progressively, reduced the cognitive load for non-technical buyers without removing the depth that B2B buyers needed.</div>
+          <div class="cs-decision-tradeoff"><strong>The trade-off:</strong> Technical buyers preferred dense spec tables at the top. The resolution was a persistent spec summary bar that remained visible while the page led with outcome-oriented content — serving both archetypes without forcing a single hierarchy.</div>
+        </div>
+      </div>
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">2</div>
+          <div class="cs-decision-q">Build trust signals into the conversion path — not as a footer, but as contextual proof points</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">Battery purchases are high-consideration — not impulse buys. Warranty information, compatibility guarantees, and technical support access were buried in footers or on separate pages. Moving them into the product page itself, adjacent to the add-to-cart action, addressed the anxiety that was causing hesitation at the conversion moment. The question a buyer is asking at that point isn't "what is this product?" — it's "will I be left alone if something goes wrong?"</div>
+          <div class="cs-decision-tradeoff"><strong>The trade-off:</strong> Adding trust signals near the CTA adds visual complexity. Every element had to earn its placement — only the highest-converting trust signals (warranty, free shipping, compatibility check) made the cut. Everything else stayed accessible but further down.</div>
+        </div>
+      </div>
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">3</div>
+          <div class="cs-decision-q">Redesign navigation for product discovery — not just product access</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">The existing navigation was organized around product categories as BigBattery internally defined them. Users didn't search that way — they searched by application ("I need backup power for my home"), by system type ("lithium vs AGM"), or by capacity ("how much do I need?"). Realigning navigation to reflect customer mental models — not internal taxonomy — made the discovery path significantly more intuitive. Guided filtering was introduced for users who knew their need but not the product.</div>
+          <div class="cs-decision-tradeoff"><strong>The trade-off:</strong> Changing navigation disrupts existing customers who've learned the old structure. The approach was progressive: new navigation was introduced alongside the old, with clear visual differentiation, before the old structure was phased out. No abrupt cutover.</div>
+        </div>
+      </div>
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">4</div>
+          <div class="cs-decision-q">Mobile-first redesign of key flows — starting with product detail and checkout</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">Analytics showed significant mobile traffic with disproportionately high exit rates on product pages and checkout. The pages weren't broken on mobile — they were just designed for desktop and scaled down. Images loaded slowly. Spec tables required horizontal scrolling. CTAs competed with nav elements for thumb reach. Rebuilding key pages mobile-first, with desktop as the enhanced experience rather than the assumed default, addressed these systematically rather than through individual patches.</div>
+          <div class="cs-decision-tradeoff"><strong>The trade-off:</strong> Mobile-first sometimes means consciously removing detail from the immediate view. For a technical product site, that's a difficult call. The resolution: progressive disclosure. Core information visible on mobile by default; full specifications available on expand without leaving the page.</div>
+        </div>
+      </div>
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">5</div>
+          <div class="cs-decision-q">Introduce a shared component system — before the codebase became unmanageable</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">Without a shared design language, every new page or feature was designed slightly differently. The visual inconsistency was visible to users — it created a sense that the site wasn't a coherent product, which undermined trust. More practically, it was slowing development down. Every component was being rebuilt from scratch. Establishing a shared set of patterns — product cards, CTA buttons, spec displays, navigation elements — created a foundation that made both design and development faster and more consistent over time.</div>
+          <div class="cs-decision-tradeoff"><strong>The trade-off:</strong> Building a system takes time that doesn't immediately produce visible page improvements. The business case was made to leadership through a practical lens: "We're building the same button twenty different ways. This is costing development hours on every sprint." That framing turned a design concern into a business efficiency argument — and it worked.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 06 DESIGN SYSTEM ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">06 <span class="cs-section-eyebrow-line"></span> Design system</div>
+    <h2 class="cs-section-h2">A component system built for a live production environment — not a design showcase.</h2>
+    <p class="cs-p">The BigBattery design system wasn't a Figma presentation. It was a working library of components that developers could reference and implement consistently across the site. Every component was documented with usage rules, responsive behavior, and content variation guidelines — because in a CMS environment, content changes constantly.</p>
+
+    <div class="cs-component-grid">
+      <div class="cs-component-card">
+        <span class="cs-component-tag">Core</span>
+        <div class="cs-component-name">Product Card</div>
+        <div class="cs-component-desc">Standardized card with image, title, key spec summary, price, and CTA. Three variants: grid view, list view, and comparison mode.</div>
+      </div>
+      <div class="cs-component-card">
+        <span class="cs-component-tag">Navigation</span>
+        <div class="cs-component-name">Mega Menu</div>
+        <div class="cs-component-desc">Category-aware navigation with application-based discovery paths. Desktop: mega menu. Mobile: collapsible drawer with search-first layout.</div>
+      </div>
+      <div class="cs-component-card">
+        <span class="cs-component-tag">Product</span>
+        <div class="cs-component-name">Spec Table</div>
+        <div class="cs-component-desc">Responsive specification display — collapsible on mobile, full-width on desktop. Supports technical comparison across up to 4 products.</div>
+      </div>
+      <div class="cs-component-card">
+        <span class="cs-component-tag">Trust</span>
+        <div class="cs-component-name">Trust Strip</div>
+        <div class="cs-component-desc">Warranty, shipping, support, and compatibility signals — positioned contextually near the CTA on product pages and in checkout.</div>
+      </div>
+      <div class="cs-component-card">
+        <span class="cs-component-tag">Conversion</span>
+        <div class="cs-component-name">CTA System</div>
+        <div class="cs-component-desc">Unified button hierarchy: primary (add to cart), secondary (request quote for B2B), tertiary (compare, save, share). Consistent across all pages.</div>
+      </div>
+      <div class="cs-component-card">
+        <span class="cs-component-tag">Content</span>
+        <div class="cs-component-name">Use-Case Module</div>
+        <div class="cs-component-desc">Application-specific content block — connects a product to a real-world scenario (off-grid home, solar storage, fleet backup). Drives confidence for B2C buyers.</div>
+      </div>
+    </div>
+
+    <div class="cs-placeholder" style="margin-top:20px">
+      <div class="cs-placeholder-icon">⚙️</div>
+      <div class="cs-placeholder-label">Component Library Overview</div>
+      <div class="cs-placeholder-desc">Figma component library — core UI patterns, variants, responsive behavior, and design token documentation</div>
+    </div>
+
+    <div class="cs-placeholder-pair">
+      <div class="cs-placeholder cs-placeholder-sm">
+        <div class="cs-placeholder-label">Product Card Variants</div>
+        <div class="cs-placeholder-desc">Grid, list, and comparison modes — desktop and mobile responsive states</div>
+      </div>
+      <div class="cs-placeholder cs-placeholder-sm">
+        <div class="cs-placeholder-label">Responsive Navigation System</div>
+        <div class="cs-placeholder-desc">Desktop mega menu and mobile drawer — application-based discovery paths</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 07 KEY SCREENS ── -->
+  <div class="cs-section reveal cs-section--dark">
+    <div class="cs-section-eyebrow">07 <span class="cs-section-eyebrow-line"></span> Key surfaces</div>
+    <h2 class="cs-section-h2">From homepage to checkout — every surface designed with conversion in mind.</h2>
+    <p class="cs-p">These are the highest-impact surfaces I designed and iterated on during my time at BigBattery. Each one had a specific conversion goal and a specific user behavior problem to solve.</p>
+
+    <div class="cs-placeholder" style="margin-top:20px">
+      <div class="cs-placeholder-icon">🏠</div>
+      <div class="cs-placeholder-label">Homepage Redesign</div>
+      <div class="cs-placeholder-desc">Desktop homepage — hero, featured categories, trust signals, and application-based navigation entry points</div>
+    </div>
+
+    <div class="cs-placeholder-pair">
+      <div class="cs-placeholder cs-placeholder-sm">
+        <div class="cs-placeholder-label">Product Detail Page</div>
+        <div class="cs-placeholder-desc">Restructured product page — outcome-led content, progressive spec disclosure, trust strip, and B2B quote CTA</div>
+      </div>
+      <div class="cs-placeholder cs-placeholder-sm">
+        <div class="cs-placeholder-label">Product Comparison Flow</div>
+        <div class="cs-placeholder-desc">Side-by-side technical comparison — up to 4 products, spec-level diff highlighting, and recommendation logic</div>
+      </div>
+    </div>
+
+    <div class="cs-placeholder-pair">
+      <div class="cs-placeholder cs-placeholder-sm">
+        <div class="cs-placeholder-label">Mobile Product Experience</div>
+        <div class="cs-placeholder-desc">Mobile-first product page — collapsed specs, thumb-zone CTA placement, swipeable image gallery, and trust signals</div>
+      </div>
+      <div class="cs-placeholder cs-placeholder-sm">
+        <div class="cs-placeholder-label">Checkout Optimization</div>
+        <div class="cs-placeholder-desc">Streamlined checkout flow — reduced steps, inline address validation, persistent cart summary, and B2B purchase order option</div>
+      </div>
+    </div>
+
+    <div class="cs-placeholder">
+      <div class="cs-placeholder-icon">📱</div>
+      <div class="cs-placeholder-label">Responsive System Overview</div>
+      <div class="cs-placeholder-desc">Desktop, tablet, and mobile breakpoints across homepage, product listing, product detail, and checkout — showing adaptive layout behavior</div>
+    </div>
+  </div>
+
+  <!-- ── 08 CROSS-FUNCTIONAL COLLABORATION ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">08 <span class="cs-section-eyebrow-line"></span> Collaboration</div>
+    <h2 class="cs-section-h2">Design aligned to business — not presented to it.</h2>
+    <p class="cs-p">At BigBattery, design reviews weren't formal presentations to a design team. They were working sessions with the CEO, CTO, and marketing leads — people with strong opinions, real business context, and limited patience for design theory disconnected from revenue reality.</p>
+    <p class="cs-p">That environment built a specific kind of design communication muscle: <strong>the ability to explain every decision in business terms, not UX terms.</strong> "The product page restructure will make it faster for a B2C buyer to find the right product" lands better than "we're improving the information architecture."</p>
+
+    <div class="cs-team-grid">
+      <div class="cs-team-card">
+        <div class="cs-team-role">CEO</div>
+        <div class="cs-team-desc">Business priorities, conversion goals, growth strategy, and final product direction. Weekly alignment sessions shaped the UX roadmap in real time.</div>
+      </div>
+      <div class="cs-team-card">
+        <div class="cs-team-role">CTO</div>
+        <div class="cs-team-desc">Technical feasibility, CMS constraints, development capacity, and implementation approach. Every design decision was filtered through buildability.</div>
+      </div>
+      <div class="cs-team-card">
+        <div class="cs-team-role">Developers</div>
+        <div class="cs-team-desc">Component implementation, responsive breakpoints, CMS handoff, and QA. Design documentation was written for their workflow — not for design portfolio presentation.</div>
+      </div>
+      <div class="cs-team-card">
+        <div class="cs-team-role">Marketing</div>
+        <div class="cs-team-desc">SEO-aligned content structure, landing page optimization, promotional placements, and campaign-specific UX. Design and marketing strategy were developed together.</div>
+      </div>
+      <div class="cs-team-card">
+        <div class="cs-team-role">Sales Team</div>
+        <div class="cs-team-desc">Direct source of customer pain point data. Sales reps fielded the calls that came after customers got confused on the website — their feedback was the clearest signal of UX failure.</div>
+      </div>
+      <div class="cs-team-card">
+        <div class="cs-team-role">Stakeholders</div>
+        <div class="cs-team-desc">Review cycles, launch prioritization, feature tradeoffs, and business case validation. Design was presented as a business argument, not a visual preference.</div>
+      </div>
+    </div>
+
+    <div class="cs-decision-callout" style="margin-top:20px">
+      <strong>The most important skill in this environment:</strong> knowing when to push back on a business request because it would harm the user experience, and knowing how to make that argument in a way that leadership could hear. Design advocacy in a live business is a political skill as much as a craft skill.
+    </div>
+  </div>
+
+  <!-- ── 09 UX IMPACT ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">09 <span class="cs-section-eyebrow-line"></span> Impact</div>
+    <h2 class="cs-section-h2">What improved — in the language that mattered to the business.</h2>
+    <p class="cs-p">I won't claim metrics I can't verify. But the qualitative signal from stakeholders, customers, and the data was clear across several dimensions. These are the outcomes that reflected genuine UX improvement in a live business environment.</p>
+
+    <div class="cs-impact-strip">
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Product discoverability</div>
+        <div class="cs-impact-text">Application-based navigation and guided filtering reduced the time users spent searching for the right product category. The "what do I need?" question was answered earlier in the journey.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Customer confidence</div>
+        <div class="cs-impact-text">Trust signals moved into the conversion path reduced pre-purchase anxiety for B2C buyers. The volume of "I'm not sure this is right for me" calls to the sales team decreased as product pages became more self-sufficient.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Mobile engagement</div>
+        <div class="cs-impact-text">Mobile-first redesign of product pages and checkout meaningfully reduced exit rates on mobile. Key flows became usable on phone-sized screens rather than functional-but-painful.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Technical communication clarity</div>
+        <div class="cs-impact-text">Progressive spec disclosure and use-case framing made technical product pages accessible to non-technical buyers without removing the depth that B2B buyers needed. Both audiences found what they were looking for.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Design system velocity</div>
+        <div class="cs-impact-text">Shared component library reduced the time required to design and build new pages and features. The second product page built using the system took a fraction of the time the first took — with higher consistency.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Stakeholder alignment</div>
+        <div class="cs-impact-text">Business-language design communication reduced revision cycles. When decisions were framed in terms of conversion impact and customer behavior rather than visual preference, approval moved faster.</div>
+      </div>
+    </div>
+
+    <div class="cs-placeholder" style="margin-top:20px">
+      <div class="cs-placeholder-icon">📈</div>
+      <div class="cs-placeholder-label">Before / After Comparison</div>
+      <div class="cs-placeholder-desc">Side-by-side comparison of key pages before and after UX improvements — product detail, navigation, mobile, and checkout</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       CHAPTER BREAK — BRANDING & CONVERSION DESIGN
+       ══════════════════════════════════════════════════════ -->
+  <div class="cs-chapter-divider reveal">
+    <div class="cs-chapter-divider-text">
+      <div class="cs-chapter-divider-eyebrow">2025 – Current · Expanded scope</div>
+      <div class="cs-chapter-divider-h2">From UX ownership to brand & conversion leadership.</div>
+      <div class="cs-chapter-divider-sub">After establishing the product design foundation, I took on full visual communication and conversion design ownership — leading infographic systems, paid media assets, and data-driven brand design across 6 energy verticals.</div>
+    </div>
+    <span class="cs-chapter-divider-badge">Real metrics ↓</span>
+  </div>
+
+  <!-- ── 11 BRANDING CONTEXT ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">11 <span class="cs-section-eyebrow-line"></span> The branding challenge</div>
+    <h2 class="cs-section-h2">Complex energy systems. Six customer segments. One visual language to make them all legible.</h2>
+    <p class="cs-p">BigBattery's product range spans residential, commercial, marine, and industrial use cases — each with its own buyer profile, technical vocabulary, and decision framework. The design challenge was specific: <strong>translate genuinely complex electrical engineering into visual content that makes a buyer confident enough to act,</strong> without oversimplifying to the point of losing the technical buyers.</p>
+    <p class="cs-p">The medium was infographics — but the goal was always conversion. Every visual had to earn its place on a product page, in a paid ad, or in an email sequence by measurably reducing buyer confusion and increasing purchase confidence.</p>
+
+    <div class="cs-verticals-grid">
+      <div class="cs-vertical-card">
+        <div class="cs-vertical-icon">☀️</div>
+        <div class="cs-vertical-name">Grid-Tied Solar</div>
+        <div class="cs-vertical-desc">Residential and commercial systems connected to the utility grid — buyers need to understand offset, savings, and payback timeline.</div>
+      </div>
+      <div class="cs-vertical-card">
+        <div class="cs-vertical-icon">🏕️</div>
+        <div class="cs-vertical-name">Off-Grid</div>
+        <div class="cs-vertical-desc">Remote power systems with no utility connection — buyers need to size systems correctly. Infographics replaced hours of manual consultation.</div>
+      </div>
+      <div class="cs-vertical-card">
+        <div class="cs-vertical-icon">⛵</div>
+        <div class="cs-vertical-name">Marine</div>
+        <div class="cs-vertical-desc">Boat and watercraft battery systems — niche buyers with specific weight, voltage, and vibration requirements that needed visual clarity.</div>
+      </div>
+      <div class="cs-vertical-card">
+        <div class="cs-vertical-icon">🚐</div>
+        <div class="cs-vertical-name">RV</div>
+        <div class="cs-vertical-desc">Recreational vehicle power — buyers range from first-timers to full-time van lifers. Content had to work across a wide knowledge spectrum.</div>
+      </div>
+      <div class="cs-vertical-card">
+        <div class="cs-vertical-icon">🏭</div>
+        <div class="cs-vertical-name">Industrial</div>
+        <div class="cs-vertical-desc">Large-scale commercial storage — B2B buyers needing technical depth, compliance documentation, and ROI visualisation.</div>
+      </div>
+      <div class="cs-vertical-card">
+        <div class="cs-vertical-icon">⛳</div>
+        <div class="cs-vertical-name">Golf Cart</div>
+        <div class="cs-vertical-desc">Lithium upgrade systems for golf carts and utility vehicles — a high-volume consumer segment requiring simple, comparison-led content.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 12 BRAND METRICS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">12 <span class="cs-section-eyebrow-line"></span> Measured impact</div>
+    <h2 class="cs-section-h2">Design with a feedback loop. Every visual was tracked, tested, and iterated.</h2>
+    <p class="cs-p">These outcomes are drawn from HYROS attribution tracking, Hotjar behavioral analysis, and platform-native analytics across Meta, Google, and Klaviyo. They represent the measurable performance of infographic-led creative against previous non-visual baselines.</p>
+
+    <div class="cs-brand-metrics">
+      <div class="cs-brand-metric-cell">
+        <div class="cs-brand-metric-num">+28%</div>
+        <div class="cs-brand-metric-lbl">Product page conversion rate after infographic integration</div>
+      </div>
+      <div class="cs-brand-metric-cell">
+        <div class="cs-brand-metric-num">+34%</div>
+        <div class="cs-brand-metric-lbl">Time on page for complex energy system pages</div>
+      </div>
+      <div class="cs-brand-metric-cell">
+        <div class="cs-brand-metric-num">−21%</div>
+        <div class="cs-brand-metric-lbl">Bounce rate on landing pages using visual system breakdowns</div>
+      </div>
+      <div class="cs-brand-metric-cell">
+        <div class="cs-brand-metric-num">+18%</div>
+        <div class="cs-brand-metric-lbl">CTR on Meta + Google ads with infographic-led creatives</div>
+      </div>
+      <div class="cs-brand-metric-cell">
+        <div class="cs-brand-metric-num">+25%</div>
+        <div class="cs-brand-metric-lbl">Email open-to-click rate uplift via Klaviyo infographic campaigns</div>
+      </div>
+    </div>
+
+    <div class="cs-decision-callout">
+      <strong>What these numbers mean in practice:</strong> A +28% conversion uplift on a product page for a $2,000–$15,000 battery system is a significant revenue event. These weren't marginal improvements to vanity metrics — they were changes to the bottom-line conversion behavior of high-consideration, high-ticket buyers.
+    </div>
+  </div>
+
+  <!-- ── 13 INFOGRAPHIC SYSTEM ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">13 <span class="cs-section-eyebrow-line"></span> Visual system design</div>
+    <h2 class="cs-section-h2">A modular infographic system — not individual assets, but a scalable visual language.</h2>
+    <p class="cs-p">The most important design decision in this work: <strong>build a system, not a library of one-off graphics.</strong> Energy products share structural similarities across verticals — wiring diagrams, capacity comparisons, use-case scenarios, installation flows. Building modular infographic templates that could be configured per vertical meant each new product line got conversion-ready visual content in a fraction of the time from-scratch design would require.</p>
+
+    <div class="cs-insight-grid">
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">System diagrams</div>
+        <div class="cs-insight-txt">End-to-end energy system diagrams showing component relationships — solar panels → charge controller → battery → inverter → loads. Made wiring logic visual and scannable.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Capacity comparisons</div>
+        <div class="cs-insight-txt">Visual comparisons showing what different battery capacities power, for how long. Turned an abstract spec (kWh) into a real-world decision tool.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Use-case scenarios</div>
+        <div class="cs-insight-txt">Illustrated buyer scenarios for each vertical — the off-grid homesteader, the weekend RV traveler, the marina boat owner. Visual storytelling that made the right product obvious.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Comparison tables</div>
+        <div class="cs-insight-txt">Visual product comparison graphics for ads and email — showing lithium vs AGM, 12V vs 48V, wired for fast visual decision-making without requiring spec table fluency.</div>
+      </div>
+    </div>
+
+    <!-- Image mosaic — replace src values with actual asset paths -->
+    <div class="cs-mosaic">
+      <div class="cs-mosaic-item cs-mosaic-wide">
+        <img src="../bigbattery/infographics/ethosrain.gif" alt="Off-grid solar system diagram infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographics/huskypointers.png" alt="Battery capacity comparison infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-03.png" alt="RV power system use-case visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-04.png" alt="Marine battery system breakdown" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-05.png" alt="Golf cart lithium upgrade visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item cs-mosaic-wide">
+        <img src="../bigbattery/infographic-06.png" alt="Industrial energy storage system infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-07.png" alt="Grid-tied solar system diagram" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-08.png" alt="Battery wiring comparison chart" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-09.png" alt="Energy system component breakdown" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-10.png" alt="Lithium vs AGM comparison graphic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-11.png" alt="Inverter sizing guide visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-12.png" alt="Charge controller selection infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--c-text-3);font-family:var(--font-mono);text-align:center;margin-top:-8px;letter-spacing:0.03em">Selected infographic assets · place your 30 images by replacing the src paths above with ../bigbattery/your-filename.png</p>
+
+    <!-- Second mosaic row for remaining assets -->
+    <div class="cs-mosaic" style="margin-top:8px">
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-13.png" alt="Battery bank sizing calculator visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-14.png" alt="Solar panel wattage guide" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-15.png" alt="Energy independence infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item cs-mosaic-wide">
+        <img src="../bigbattery/infographic-16.png" alt="Full product range comparison banner" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-17.png" alt="Branded ad creative — Meta format" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-18.png" alt="Email campaign visual asset" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-19.png" alt="Landing page hero visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-20.png" alt="Product comparison ad creative" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-21.png" alt="B2B industrial energy infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-22.png" alt="System sizing guide visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item cs-mosaic-wide">
+        <img src="../bigbattery/infographic-23.png" alt="Cross-channel brand asset overview" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-24.png" alt="Klaviyo email infographic asset" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-25.png" alt="Google ads infographic creative" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-26.png" alt="Off-grid RV power visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-27.png" alt="Marine energy system infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-28.png" alt="Home backup battery infographic" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-29.png" alt="Industrial power storage visual" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+      <div class="cs-mosaic-item">
+        <img src="../bigbattery/infographic-30.png" alt="Complete energy solution overview" loading="lazy" onerror="this.parentElement.style.background='#FFF3DC';this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 14 CHANNEL DISTRIBUTION ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">14 <span class="cs-section-eyebrow-line"></span> Channel distribution</div>
+    <h2 class="cs-section-h2">The same visual system — adapted and deployed across every acquisition channel.</h2>
+    <p class="cs-p">Infographic assets were designed as a system first and adapted for each channel second — not created separately for each platform. That modular approach meant a visual built for a product page could be adapted for a paid ad, an email, and a landing page in a fraction of the time a from-scratch approach would require.</p>
+
+    <div class="cs-channel-grid">
+      <div class="cs-channel-card">
+        <div class="cs-channel-name">Product Detail Pages</div>
+        <div class="cs-channel-desc">Inline infographics replacing or supplementing spec tables. Positioned at the decision point — above-the-fold on mobile, adjacent to CTA on desktop.</div>
+        <span class="cs-channel-tool">Hotjar verified</span>
+      </div>
+      <div class="cs-channel-card">
+        <div class="cs-channel-name">Landing Pages</div>
+        <div class="cs-channel-desc">Campaign-specific pages with visual system breakdowns as the primary content format. Resulted in −21% bounce rate vs. text-heavy equivalents.</div>
+        <span class="cs-channel-tool">HYROS tracked</span>
+      </div>
+      <div class="cs-channel-card">
+        <div class="cs-channel-name">Meta & Google Ads</div>
+        <div class="cs-channel-desc">Infographic-led ad creatives performing +18% higher CTR than product photography-only creatives across both platforms.</div>
+        <span class="cs-channel-tool">Platform analytics</span>
+      </div>
+      <div class="cs-channel-card">
+        <div class="cs-channel-name">Klaviyo Email</div>
+        <div class="cs-channel-desc">Visual infographic content integrated into lifecycle email sequences — post-purchase education, product comparison flows, and reactivation campaigns. +25% open-to-click uplift.</div>
+        <span class="cs-channel-tool">Klaviyo analytics</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 15 DATA & ANALYTICS TOOLS ── -->
+  <div class="cs-section reveal cs-section--dark">
+    <div class="cs-section-eyebrow">15 <span class="cs-section-eyebrow-line"></span> Data-driven iteration</div>
+    <h2 class="cs-section-h2">Design decisions backed by behavioral data — not intuition alone.</h2>
+    <p class="cs-p">Every infographic iteration was informed by a specific data source. The feedback loop between design and measurement was the reason these assets improved over time rather than plateauing.</p>
+
+    <div class="cs-analytics-grid">
+      <div class="cs-analytics-card">
+        <div class="cs-analytics-tool">HYROS — Attribution & Live User Tracking</div>
+        <div class="cs-analytics-desc">Identified which infographic assets were driving highest-value conversions across the full customer journey — including multi-touch paths that platform analytics couldn't attribute. Used to prioritize which visual formats to scale and which to retire. Live user movement data showed exactly where buyers were engaging with infographic content vs. scrolling past it.</div>
+      </div>
+      <div class="cs-analytics-card">
+        <div class="cs-analytics-tool">Hotjar — Heatmaps, Scroll Depth & Interaction</div>
+        <div class="cs-analytics-desc">Scroll depth and heatmap data informed infographic placement — ensuring visual content appeared at the precise point in the page where buyer attention was highest. Click interaction data on embedded CTA buttons within infographics guided layout iterations. Session recordings surfaced confusion patterns that led to redesigns of specific diagram elements.</div>
+      </div>
+      <div class="cs-analytics-card">
+        <div class="cs-analytics-tool">Meta Ads Manager — Creative Performance</div>
+        <div class="cs-analytics-desc">A/B testing between infographic-led and product-photo-led ad creatives across identical audiences. Infographic formats consistently outperformed on CTR and cost-per-click — particularly for technically complex products where visual explanation reduced hesitation before the click.</div>
+      </div>
+      <div class="cs-analytics-card">
+        <div class="cs-analytics-tool">Klaviyo — Email Campaign Analytics</div>
+        <div class="cs-analytics-desc">Open-to-click rate was the primary KPI for email content performance. Infographic-format content in the body of lifecycle emails significantly outperformed text-and-link formats — particularly for post-purchase education sequences where visual learning reduced post-sale buyer anxiety.</div>
+      </div>
+    </div>
+
+    <div class="cs-tool-strip" style="margin-top:20px">
+      <span class="cs-tool-pill cs-tool-pill--dark">HYROS</span>
+      <span class="cs-tool-pill cs-tool-pill--dark">Hotjar</span>
+      <span class="cs-tool-pill cs-tool-pill--dark">Meta Ads Manager</span>
+      <span class="cs-tool-pill cs-tool-pill--dark">Google Ads</span>
+      <span class="cs-tool-pill cs-tool-pill--dark">Klaviyo</span>
+      <span class="cs-tool-pill cs-tool-pill--dark">Figma</span>
+      <span class="cs-tool-pill cs-tool-pill--dark">Adobe Illustrator</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       CHAPTER BREAK — HUSKY 2 COMPANION APP
+       ══════════════════════════════════════════════════════ -->
+  <div class="cs-chapter-divider cs-chapter-divider--app reveal">
+    <div class="cs-chapter-divider-text">
+      <div class="cs-chapter-divider-eyebrow">Post-purchase · Connected hardware ecosystem</div>
+      <div class="cs-chapter-divider-h2">The experience didn't end at checkout.</div>
+      <div class="cs-chapter-divider-sub">After customers purchased BigBattery products, they needed to understand them, trust them, and operate them confidently in the real world. The Husky 2 companion app was the design answer to that post-purchase reality.</div>
+    </div>
+    <span class="cs-chapter-divider-badge">App design ↓</span>
+  </div>
+
+  <!-- ── H1: APP INTRO ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">16 <span class="cs-section-eyebrow-line"></span> Husky 2 companion app</div>
+    <h2 class="cs-section-h2">Designing confidence through real-time energy visibility.</h2>
+    <p class="cs-p">The ecommerce experience converts a visitor into a buyer. The Husky 2 companion app converts a buyer into a <strong>confident, long-term user of a complex energy system.</strong> These are different design problems — and both matter to the business.</p>
+    <p class="cs-p">The Husky 2 app is a Bluetooth-connected monitoring utility for BigBattery's 12V/24V/48V LiFePO4 battery systems. It gives users real-time visibility into their battery's health, charge status, voltage, current draw, and temperature — without needing a laptop, a BMS display, or electrical knowledge to interpret the data.</p>
+
+    <div class="cs-app-callout">
+      <div class="cs-app-callout-label">The product design challenge</div>
+      <div class="cs-app-callout-text">Battery management system data is inherently technical — cell voltages, SOC percentages, discharge curves, thermal readings. The app's design challenge was to make this data <strong>glanceable, interpretable, and actionable</strong> for users who are operating their energy systems in the field: in an RV on a mountain, on a boat at anchor, or in a golf cart mid-round. Cognitive overhead in those moments is not acceptable.</div>
+    </div>
+
+    <!-- Hero visual: banner + phones -->
+    <div class="cs-app-hero-split" style="margin-top:20px">
+      <div class="cs-app-hero-phones">
+        <img src="../bigbattery/appcover.webp" alt="BigBattery Husky 2 app on three iPhones showing dashboard, charging, and diagnostics screens" loading="lazy" />
+      </div>
+      <div class="cs-app-hero-banner">
+        <img src="../bigbattery/appuse.webp" alt="BigBattery Husky 2 Smart Monitoring App — Power and Control at your fingertips" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Live diagnostic data strip -->
+    <div class="cs-app-stats">
+      <div class="cs-app-stat-cell">
+        <div class="cs-app-stat-label">Voltage</div>
+        <div class="cs-app-stat-value">53.35V</div>
+        <div class="cs-app-stat-desc">Total system voltage — live, per reading cycle</div>
+      </div>
+      <div class="cs-app-stat-cell">
+        <div class="cs-app-stat-label">Current</div>
+        <div class="cs-app-stat-value">0.35A</div>
+        <div class="cs-app-stat-desc">Real-time current draw — charge or discharge</div>
+      </div>
+      <div class="cs-app-stat-cell">
+        <div class="cs-app-stat-label">Temperature</div>
+        <div class="cs-app-stat-value">75°F</div>
+        <div class="cs-app-stat-desc">Internal battery temp — 5 sensor points tracked</div>
+      </div>
+      <div class="cs-app-stat-cell">
+        <div class="cs-app-stat-label">State of Charge</div>
+        <div class="cs-app-stat-value">72%</div>
+        <div class="cs-app-stat-desc">Visual arc gauge + time-to-full/empty estimate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── H2: SCREEN BREAKDOWN ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">17 <span class="cs-section-eyebrow-line"></span> Screen design breakdown</div>
+    <h2 class="cs-section-h2">Three views. One mental model. Designed for field use — not a lab.</h2>
+    <p class="cs-p">The app surfaces complex BMS data through three tab views — Summary, Cell Voltage, and Temperature — each designed for a specific monitoring intent. The arc gauge is the visual anchor: it communicates charge state instantly without requiring any technical literacy to read.</p>
+
+    <div class="cs-phone-grid">
+      <div class="cs-phone-frame">
+        <img src="../bigbattery/app2.webp" alt="Husky 2 app — Low Charge state, 15%, fill time estimate" loading="lazy" />
+        <div class="cs-phone-caption">Low charge alert · 15% · time-to-full warning</div>
+      </div>
+      <div class="cs-phone-frame">
+        <img src="../bigbattery/app3.webp" alt="Husky 2 app — Charging state, 75%, full in 15 min, temperature tab" loading="lazy" />
+        <div class="cs-phone-caption">Charging · 75% · temperature sensor array</div>
+      </div>
+      <div class="cs-phone-frame">
+        <img src="../bigbattery/app1.webp" alt="Husky 2 app — Discharging state, 72%, cell voltage tab showing 16 cells" loading="lazy" />
+        <div class="cs-phone-caption">Discharging · 72% · individual cell voltage grid</div>
+      </div>
+      <div class="cs-phone-frame">
+        <img src="../bigbattery/app4.webp" alt="Husky 2 app — Protocol settings, module ID, CAN and RS485 configuration" loading="lazy" />
+        <div class="cs-phone-caption">Settings · Bluetooth ID · CAN + RS485 protocol config</div>
+      </div>
+    </div>
+
+    <div class="cs-insight-grid" style="margin-top:8px">
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Summary tab</div>
+        <div class="cs-insight-txt">The default view. Arc gauge, SOC percentage, time-to-full or time-to-empty estimate, and three headline metrics: voltage, current, temperature. Designed to answer "how is my battery?" in under 2 seconds.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Cell Voltage tab</div>
+        <div class="cs-insight-txt">Individual cell voltage grid for all 16 cells in the pack. Lets technically-literate users spot cell imbalance early — a critical diagnostic for LiFePO4 system health. Max, min, and differential voltage displayed.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Temperature tab</div>
+        <div class="cs-insight-txt">Five discrete temperature sensor readings — critical for users in extreme environments (desert RV use, sub-zero marine usage). The sensors map to physical locations in the battery pack.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Protocol Settings</div>
+        <div class="cs-insight-txt">Module ID assignment and CAN/RS485 protocol configuration — designed for multi-battery setups where communication protocols must be configured precisely for inverter compatibility (Victron, major brands).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── H3: UX STRATEGY ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">18 <span class="cs-section-eyebrow-line"></span> UX strategy</div>
+    <h2 class="cs-section-h2">Reducing cognitive load in technically demanding environments.</h2>
+    <p class="cs-p">The users of this app are not engineers sitting at a workstation. They're RV travelers checking their power before a night off-grid. They're golf cart fleet managers doing a quick pre-round diagnostic. They're boaters monitoring their battery bank from the cockpit. The UX had to work in those contexts — often outdoors, often in bright sun, often with limited phone time and attention.</p>
+
+    <div class="cs-app-feature-grid">
+      <div class="cs-app-feature-card">
+        <div class="cs-app-feature-icon">⚡</div>
+        <div class="cs-app-feature-name">Glanceable state communication</div>
+        <div class="cs-app-feature-desc">The arc gauge communicates charge state in a single visual — no numbers required to understand "nearly full" vs "critically low." Color reinforces urgency: green → amber → red as SOC decreases.</div>
+      </div>
+      <div class="cs-app-feature-card">
+        <div class="cs-app-feature-icon">⏱️</div>
+        <div class="cs-app-feature-name">Time-based estimates over raw percentages</div>
+        <div class="cs-app-feature-desc">"Full in 15 min" is more actionable than "75%." The app converts SOC and current rate into human-readable time estimates — the language real users think in when planning their energy usage.</div>
+      </div>
+      <div class="cs-app-feature-card">
+        <div class="cs-app-feature-icon">📶</div>
+        <div class="cs-app-feature-name">Bluetooth — no Wi-Fi dependency</div>
+        <div class="cs-app-feature-desc">Off-grid users don't have Wi-Fi. Bluetooth-only connectivity was a design constraint that became a feature — it works anywhere the battery is, regardless of cellular or internet availability.</div>
+      </div>
+      <div class="cs-app-feature-card">
+        <div class="cs-app-feature-icon">🔋</div>
+        <div class="cs-app-feature-name">Multi-battery architecture</div>
+        <div class="cs-app-feature-desc">Large systems use multiple batteries in parallel or series. The app supports configurable Module IDs and CAN/RS485 protocol assignment — letting installers set up and monitor bank-level systems from a single interface.</div>
+      </div>
+      <div class="cs-app-feature-card">
+        <div class="cs-app-feature-icon">🌡️</div>
+        <div class="cs-app-feature-name">Progressive technical depth</div>
+        <div class="cs-app-feature-desc">Non-technical users see high-level health indicators. Technical users can drill into cell-level voltage and temperature sensor data. The same interface serves both — depth is available, not mandatory.</div>
+      </div>
+      <div class="cs-app-feature-card">
+        <div class="cs-app-feature-icon">📱</div>
+        <div class="cs-app-feature-name">iOS, Android + tablet support</div>
+        <div class="cs-app-feature-desc">The battery user base spans devices. Supporting iOS, Android, and tablet form factors ensured the app was accessible regardless of the platform — particularly important for RV and marine users who often use tablets for navigation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── H4: USE ENVIRONMENTS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">19 <span class="cs-section-eyebrow-line"></span> Use environments</div>
+    <h2 class="cs-section-h2">Five real-world contexts. One monitoring interface designed for all of them.</h2>
+    <p class="cs-p">Each use environment creates different monitoring needs, different urgency levels, and different user states. The design had to work across all of them without requiring environmental customization.</p>
+
+    <div class="cs-env-grid">
+      <div class="cs-env-card">
+        <div class="cs-env-icon">⛳</div>
+        <div>
+          <div class="cs-env-name">Golf Cart Fleet</div>
+          <div class="cs-env-desc">Pre-round battery checks, mid-round SOC monitoring, and end-of-day charge verification. Speed of diagnostic matters — the check happens in seconds between rounds.</div>
+        </div>
+      </div>
+      <div class="cs-env-card">
+        <div class="cs-env-icon">🚐</div>
+        <div>
+          <div class="cs-env-name">RV / Van Life</div>
+          <div class="cs-env-desc">Overnight power planning — "do I have enough battery to run the AC until morning?" The time-to-empty estimate is the feature that answers this directly.</div>
+        </div>
+      </div>
+      <div class="cs-env-card">
+        <div class="cs-env-icon">⛵</div>
+        <div>
+          <div class="cs-env-name">Marine</div>
+          <div class="cs-env-desc">Monitoring battery bank health from the cockpit — without going below deck. Critical in rough conditions where a failing battery needs to be identified quickly.</div>
+        </div>
+      </div>
+      <div class="cs-env-card">
+        <div class="cs-env-icon">🏕️</div>
+        <div>
+          <div class="cs-env-name">Off-Grid / Tiny Home</div>
+          <div class="cs-env-desc">Daily energy budget management — monitoring solar charge input vs. appliance draw to avoid overnight power shortfalls. Cell voltage data informs battery health over months.</div>
+        </div>
+      </div>
+      <div class="cs-env-card">
+        <div class="cs-env-icon">🏠</div>
+        <div>
+          <div class="cs-env-name">Emergency Backup</div>
+          <div class="cs-env-desc">Confidence check before and during outages — verifying the backup system is charged and healthy. Removes the uncertainty that makes emergency power unreliable in practice.</div>
+        </div>
+      </div>
+      <div class="cs-env-card">
+        <div class="cs-env-icon">🏭</div>
+        <div>
+          <div class="cs-env-name">Industrial / Commercial</div>
+          <div class="cs-env-desc">Multi-unit monitoring for commercial installations — using configurable Module IDs to track individual batteries within a larger bank system.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── H5: ECOSYSTEM THINKING ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">20 <span class="cs-section-eyebrow-line"></span> Ecosystem thinking</div>
+    <h2 class="cs-section-h2">The app closes the loop between acquisition and retention.</h2>
+    <p class="cs-p">Most ecommerce design stops at the transaction. The Husky 2 app represents a different kind of design thinking — one that treats the post-purchase experience as part of the product, not an afterthought. <strong>A customer who can confidently monitor their battery system is a customer who buys more batteries.</strong> That's the business case for investing in post-purchase UX.</p>
+
+    <div class="cs-impact-strip">
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Trust through visibility</div>
+        <div class="cs-impact-text">Real-time monitoring removes the anxiety of not knowing whether a battery system is working correctly. Users who can see their battery's health trust the product — and trust the brand that made it legible.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Reduced support burden</div>
+        <div class="cs-impact-text">Many pre-app support calls were from customers who couldn't tell if their battery was charging, charged, or failing. A glanceable SOC gauge with status text ("Charging — Full in 15 min") answers that question before it becomes a support ticket.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Upsell pathway</div>
+        <div class="cs-impact-text">The multi-battery architecture in the app creates a natural pathway for customers to expand their systems — and to configure that expansion themselves, without professional installation for the monitoring component.</div>
+      </div>
+      <div class="cs-impact-card">
+        <div class="cs-impact-label">Long-term retention</div>
+        <div class="cs-impact-text">A customer who checks the Husky 2 app daily is a customer who remains engaged with the BigBattery ecosystem. That engagement is a meaningful retention signal in a market where post-purchase relationships are typically transactional.</div>
+      </div>
+    </div>
+
+    <div class="cs-app-callout" style="margin-top:20px">
+      <div class="cs-app-callout-label">What this section demonstrates</div>
+      <div class="cs-app-callout-text">Product design that thinks beyond the screen you're working on. The ecommerce site converts. The infographics educate and close. The app retains and builds long-term trust. These are three design surfaces that together tell a complete customer journey — and I contributed to all three. <strong>That's ecosystem thinking, not page design.</strong></div>
+    </div>
+  </div>
+
+  <!-- ── 10 REFLECTION ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">21 <span class="cs-section-eyebrow-line"></span> Reflection</div>
+    <h2 class="cs-section-h2">What three years in a live production environment taught me that no concept project could.</h2>
+    <div class="cs-reflection-grid">
+      <div class="cs-reflection-card cs-reflection-card--learn">
+        <div class="cs-reflection-label cs-reflection-label--teal">What this environment built</div>
+        <div class="cs-reflection-text cs-reflection-text--teal">Working inside a live business — where every design decision has a revenue consequence — builds a different kind of product thinking than concept work. You learn to prioritize ruthlessly, because you can't ship everything. You learn to communicate in business terms, because design theory doesn't move stakeholders. You learn to iterate in production, because the real customer is always more instructive than the persona.</div>
+      </div>
+      <div class="cs-reflection-card cs-reflection-card--next">
+        <div class="cs-reflection-label cs-reflection-label--stone">What I'd push further</div>
+        <div class="cs-reflection-text cs-reflection-text--stone">With more time and resources, I'd invest more deeply in structured user testing with real BigBattery customers — particularly B2B buyers, whose decision process is longer and more nuanced than analytics alone can reveal. The design system also deserved more documentation depth. What we built was functional; what it could have become with investment was a genuine product accelerant.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;padding:18px 20px;background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:var(--r-lg)">
+      <div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;font-family:var(--font-mono);margin-bottom:10px">What this project proves about how I work</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.6;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">I can own a product</strong> — not just a component. End-to-end responsibility across strategy, design, and delivery in a business that depended on those decisions being right.</div>
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.6;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">I can navigate leadership</strong> — directly. Working with CEO and CTO on product direction is a different skill than working within a design team. I've done it, and I've gotten things shipped.</div>
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.6;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">I think in systems</strong> — not just screens. A component library built for a real CMS, documented for real developers, and a visual infographic system scaled across 6 verticals and 4 channels is a different deliverable than a Figma showcase.</div>
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.6;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">I understand business</strong> — not just users. UX improvements at BigBattery were always framed in terms of conversion impact and revenue outcome, not design quality. That's the only framing that matters in a real product environment.</div>
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.6;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md);grid-column:1/-1"><strong style="color:var(--c-text-1)">I think beyond the screen I'm working on</strong> — The ecommerce site converts. The infographics educate and close. The Husky 2 app retains and builds long-term trust. Three design surfaces, one complete customer journey. That's ecosystem thinking — and it's what separates product designers from UI designers.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cs-body -->
+
+<!-- NEXT PROJECT -->
+<div class="cs-next">
+  <div>
+    <div class="cs-next-label">Next case study</div>
+    <div class="cs-next-title">FinEd — gamified financial learning →</div>
+  </div>
+  <a href="finlit.html" class="cs-next-btn">View case study</a>
+</div>
+
+<footer class="cs-footer">
+  <span>© 2024 Kunj Vyas</span>
+  <a href="../index.html">← Back to all work</a>
+</footer>
+
+<script src="case-study.js"></script>
+</body>
+</html>

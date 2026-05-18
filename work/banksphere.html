@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BankSphere — Case Study · Kunj Vyas</title>
+  <meta name="description" content="BankSphere: A spatial AI banking concept — designing trust, transparency, and financial intelligence into a near-future banking experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="case-study.css" />
+  <style>
+    /* ── BankSphere accent: Teal ── */
+    .cs-hero-bg          { background: #060E0C; }
+    .cs-eyebrow-dot      { background: #5DCAA5; }
+    .cs-h1 em            { color: #5DCAA5; }
+    .cs-tl-week          { color: var(--c-teal); }
+    .cs-metric-num       { color: var(--c-teal); }
+    .cs-insight-num      { color: var(--c-teal-mid); }
+    .cs-outcome-num--pri { color: var(--c-teal-mid); }
+    .cs-outcome-num--sec { color: var(--c-indigo); }
+    .cs-decision-num     { background: var(--c-teal-tint); color: var(--c-teal-dark); }
+    .cs-quote            { background: var(--c-teal-tint); border-color: var(--c-teal); }
+    .cs-quote-text       { color: var(--c-teal-dark); }
+    .cs-quote-attr       { color: var(--c-teal); }
+    .nav-progress-bar    { background: var(--c-teal); }
+    .cs-next-btn         { background: var(--c-teal-mid); }
+
+    /* ── Asset containers ── */
+    .cs-asset { margin: 20px 0; border-radius: var(--r-lg); overflow: hidden; border: 0.5px solid var(--c-border); }
+    .cs-asset img { width: 100%; display: block; }
+    .cs-asset-caption {
+      padding: 10px 14px; font-size: 11px; color: var(--c-text-3);
+      font-family: var(--font-mono); letter-spacing: 0.03em;
+      border-top: 0.5px solid var(--c-border); background: var(--c-parchment);
+    }
+    .cs-asset-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+    .cs-asset-trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0; }
+
+    /* ── Hero two-column layout with cover image ── */
+    .cs-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 56px 40px 0;
+      width: 100%;
+    }
+    .cs-hero-text { display: flex; flex-direction: column; }
+    .cs-hero-inner .cs-h1 {
+      font-size: clamp(26px, 3.6vw, 42px);
+      letter-spacing: -0.025em;
+      line-height: 1.07;
+    }
+    .cs-hero-inner .cs-sub { margin-bottom: 0; max-width: 480px; }
+    .cs-meta { grid-column: 1 / -1; margin-top: 0; }
+
+    .cs-hero-cover {
+      align-self: stretch;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 0.5px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(255,255,255,0.06);
+      background: #0A1A16;
+      display: flex;
+    }
+    .cs-hero-cover img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 860px) {
+      .cs-hero-inner { grid-template-columns: 1fr; gap: 24px; padding: 44px 24px 0; }
+      .cs-meta { grid-column: auto; }
+      .cs-hero-cover { align-self: auto; aspect-ratio: 16/9; }
+    }
+
+    /* ── Principle cards (Apple-like) ── */
+    .cs-principles-grid {
+      display: grid; grid-template-columns: repeat(5,1fr);
+      gap: 10px; margin-top: 20px;
+    }
+    .cs-principle-card {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-lg); padding: 18px 14px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .cs-principle-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--c-teal-tint); border: 0.5px solid var(--c-teal-bdr);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .cs-principle-name {
+      font-size: 13px; font-weight: 500; color: var(--c-text-1);
+      letter-spacing: -0.01em;
+    }
+    .cs-principle-desc {
+      font-size: 11px; color: var(--c-text-2); line-height: 1.55;
+    }
+
+    /* ── Architecture ecosystem pills ── */
+    .cs-ecosystem {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 10px; margin: 20px 0;
+    }
+    .cs-eco-item {
+      background: var(--c-chalk); border: 0.5px solid var(--c-border);
+      border-radius: var(--r-md); padding: 14px 16px;
+    }
+    .cs-eco-label {
+      font-size: 11px; font-weight: 500; color: var(--c-teal-mid);
+      font-family: var(--font-mono); letter-spacing: 0.05em;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .cs-eco-desc { font-size: 12px; color: var(--c-text-2); line-height: 1.5; }
+
+    /* ── KPI strip ── */
+    .cs-kpi-strip {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 0; margin: 20px 0;
+      border: 0.5px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden;
+    }
+    .cs-kpi-cell {
+      padding: 18px 20px; border-right: 0.5px solid var(--c-border);
+      background: var(--c-chalk);
+    }
+    .cs-kpi-cell:last-child { border-right: none; }
+    .cs-kpi-name {
+      font-size: 12px; font-weight: 500; color: var(--c-text-1); margin-bottom: 5px;
+    }
+    .cs-kpi-desc { font-size: 11px; color: var(--c-text-2); line-height: 1.45; }
+
+    /* ── AI use case items ── */
+    .cs-ai-cases { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+    .cs-ai-case {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 14px; background: var(--c-chalk);
+      border: 0.5px solid var(--c-border); border-radius: var(--r-md);
+      font-size: 13px; color: var(--c-text-2); line-height: 1.5;
+    }
+    .cs-ai-case::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--c-teal); flex-shrink: 0; margin-top: 5px;
+    }
+
+    /* ── Dark immersive section ── */
+    .cs-section--immersive {
+      background: #060E0C;
+      margin-left: -40px; margin-right: -40px;
+      padding: 44px 40px;
+      border-radius: var(--r-lg);
+    }
+    .cs-section--immersive .cs-section-eyebrow { color: #3A6B5A; }
+    .cs-section--immersive .cs-section-eyebrow-line { background: #1A2E28; }
+    .cs-section--immersive .cs-section-h2 { color: #E8F5F1; }
+    .cs-section--immersive .cs-p { color: #4A7A68; }
+    .cs-section--immersive .cs-p strong { color: #9DDEC9; }
+    .cs-section--immersive .cs-ai-case {
+      background: #0A1E18; border-color: #1A3028; color: #5A9E88;
+    }
+    .cs-section--immersive .cs-ai-case::before { background: #5DCAA5; }
+    .cs-section--immersive .cs-eco-item {
+      background: #0A1E18; border-color: #1A3028;
+    }
+    .cs-section--immersive .cs-eco-label { color: #5DCAA5; }
+    .cs-section--immersive .cs-eco-desc { color: #4A7A68; }
+    .cs-section--immersive .cs-principle-card {
+      background: #0A1E18; border-color: #1A3028;
+    }
+    .cs-section--immersive .cs-principle-icon {
+      background: #0F2A22; border-color: #1A3028;
+    }
+    .cs-section--immersive .cs-principle-name { color: #9DDEC9; }
+    .cs-section--immersive .cs-principle-desc { color: #4A7A68; }
+    .cs-section--immersive .cs-asset { border-color: #1A3028; }
+    .cs-section--immersive .cs-asset-caption { background: #0A1E18; border-color: #1A3028; color: #3A6B5A; }
+
+    /* ── Split layout: image + text ── */
+    .cs-split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px; align-items: start; margin-top: 24px;
+    }
+    .cs-split-img { border-radius: var(--r-lg); overflow: hidden; border: 0.5px solid var(--c-border); }
+    .cs-split-img img { width: 100%; display: block; }
+    .cs-split-h3 {
+      font-size: 15px; font-weight: 500; color: var(--c-text-1);
+      letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 10px;
+    }
+    .cs-section--immersive .cs-split-img { border-color: #1A3028; }
+    .cs-section--immersive .cs-split-h3 { color: #9DDEC9; }
+
+    /* ── Tag pills ── */
+    .cs-tag-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+    .cs-tag-pill {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px;
+      background: var(--c-teal-tint); color: var(--c-teal-dark);
+      border: 0.5px solid var(--c-teal-bdr);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .cs-principles-grid { grid-template-columns: 1fr 1fr; }
+      .cs-ecosystem { grid-template-columns: 1fr 1fr; }
+      .cs-kpi-strip { grid-template-columns: 1fr 1fr; }
+      .cs-kpi-cell:nth-child(2) { border-right: none; }
+      .cs-kpi-cell:nth-child(3) { border-top: 0.5px solid var(--c-border); border-right: 0.5px solid var(--c-border); }
+      .cs-kpi-cell:nth-child(4) { border-top: 0.5px solid var(--c-border); border-right: none; }
+      .cs-split { grid-template-columns: 1fr; gap: 16px; }
+      .cs-section--immersive { margin-left: -24px; margin-right: -24px; padding: 36px 24px; }
+    }
+    @media (max-width: 680px) {
+      .cs-asset-pair, .cs-asset-trio { grid-template-columns: 1fr; }
+      .cs-principles-grid { grid-template-columns: 1fr; }
+      .cs-ecosystem { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-left">
+    <a href="../index.html" class="nav-back"><span class="nav-back-arrow">←</span> Work</a>
+    <div class="nav-sep"></div>
+    <span class="nav-page-title">BankSphere · Case Study</span>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html#work" class="nav-link">Work</a>
+    <a href="../index.html#about" class="nav-link">About</a>
+    <a href="mailto:kunjvyas26@gmail.com" class="nav-cta">Let's talk →</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span></button>
+  <div class="nav-progress-wrap"><div class="nav-progress-bar" id="progressBar"></div></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-link" data-close>← Back to work</a>
+  <a href="../index.html#about" class="mobile-link" data-close>About</a>
+  <a href="mailto:kunjvyas26@gmail.com" class="mobile-cta" data-close>Let's talk →</a>
+</div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div class="cs-hero cs-hero-bg">
+  <div class="cs-hero-inner">
+
+    <!-- Left: text -->
+    <div class="cs-hero-text">
+      <div class="cs-eyebrow">
+        <span class="cs-eyebrow-dot"></span>
+        <span class="cs-eyebrow-text">AI · Spatial Computing · Banking · 2024 · 10 weeks</span>
+      </div>
+      <h1 class="cs-h1">AI made banking faster.<br>It also made it<br><em>harder to trust.</em></h1>
+      <p class="cs-sub">BankSphere is a speculative spatial banking concept — exploring what financial management could look like when AI and spatial computing meet. The central question: how do you design for confidence, not just capability?</p>
+    </div>
+
+    <!-- Right: cover image -->
+    <div class="cs-hero-cover">
+      <img src="../banksphere/Cover.png" alt="BankSphere — AI-powered spatial banking concept overview" loading="lazy" />
+    </div>
+
+    <!-- Meta row — spans full width below both columns -->
+    <div class="cs-meta">
+      <div class="cs-meta-cell"><div class="cs-meta-label">My role</div><div class="cs-meta-val">Solo product designer</div></div>
+      <div class="cs-meta-cell"><div class="cs-meta-label">Platform</div><div class="cs-meta-val">Spatial + web concept</div></div>
+      <div class="cs-meta-cell"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">10 weeks</div></div>
+      <div class="cs-meta-cell"><div class="cs-meta-label">Tools</div><div class="cs-meta-val">Figma · Maze · Lyssna</div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- METRICS BAR -->
+<div class="cs-metrics">
+  <div class="cs-metric-cell"><div class="cs-metric-num">80%</div><div class="cs-metric-lbl">Task comprehension uplift vs. standard banking UI</div></div>
+  <div class="cs-metric-cell"><div class="cs-metric-num">−30%</div><div class="cs-metric-lbl">Decision time in scenario-based usability tests</div></div>
+  <div class="cs-metric-cell"><div class="cs-metric-num">9 / 10</div><div class="cs-metric-lbl">Testers rated AI actions as "clearly explainable"</div></div>
+  <div class="cs-metric-cell"><div class="cs-metric-num">0</div><div class="cs-metric-lbl">Trust-breaking moments in final prototype round</div></div>
+</div>
+
+<!-- ═══════════════════════ BODY ═══════════════════════ -->
+<div class="cs-body">
+
+  <!-- ── 01 THE PROBLEM ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">01 <span class="cs-section-eyebrow-line"></span> The real problem</div>
+    <h2 class="cs-section-h2">The AI could do everything. That was exactly the problem.</h2>
+    <p class="cs-p">Traditional banking interfaces were built for a world of discrete, user-initiated actions. You tap, something happens. You know what changed, because you caused it. AI breaks that model completely — the system acts, sometimes proactively, sometimes invisibly. That's powerful. And for most users, terrifying.</p>
+    <p class="cs-p">Beyond AI, the broader problem is that existing banking experiences feel <strong>fragmented and static</strong>. Your credit score lives in one app. Your investments in another. Your budgets in a spreadsheet. The mental overhead of managing a modern financial life has grown faster than the tools designed to manage it.</p>
+    <p class="cs-p">Spatial computing offered a genuine design opportunity: not just bigger screens, but <strong>interconnected, contextual financial surfaces</strong> that could exist where you live and work — not just inside a phone.</p>
+    <div class="cs-quote">
+      <p class="cs-quote-text">"I'd use it if I could see what it was about to do before it did it. Right now it feels like handing someone your wallet and hoping they give it back."</p>
+      <cite class="cs-quote-attr">User interview · 34-year-old, self-employed, 3 active bank accounts</cite>
+    </div>
+    <p class="cs-p">The reframe: <strong>the design problem isn't building a capable AI interface — it's building a transparent one.</strong> Trust, not speed, became the primary design metric.</p>
+
+    <div class="cs-asset">
+      <img src="../banksphere/Cover.png" alt="BankSphere concept overview — spatial banking powered by AI on Apple Vision Pro form factor" loading="lazy" />
+      <div class="cs-asset-caption">BankSphere · spatial AI banking concept · designed for the next generation of financial interaction</div>
+    </div>
+  </div>
+
+  <!-- ── 02 WHY THIS MATTERS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">02 <span class="cs-section-eyebrow-line"></span> Why this matters</div>
+    <h2 class="cs-section-h2">Three converging forces that make this the right moment to explore spatial banking.</h2>
+    <div class="cs-insight-grid">
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">AR/VR adoption</div>
+        <div class="cs-insight-txt">Spatial computing headsets are moving from gaming peripherals to productivity tools. The design language for everyday spatial applications is still being written — banking has an opportunity to define it early.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">AI personalization</div>
+        <div class="cs-insight-txt">Hyper-personalization is the direction every major fintech is moving. The gap isn't capability — it's trust. Users want AI that explains itself, not AI that acts invisibly.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Financial fragmentation</div>
+        <div class="cs-insight-txt">The average financially active adult manages 4–6 separate financial services. No single interface gives them a unified, actionable view of their financial health in real time.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Open Banking APIs</div>
+        <div class="cs-insight-txt">The regulatory and technical infrastructure now exists to aggregate data across banks, wallets, and fintech services. The UX layer hasn't caught up. BankSphere is an exploration of what that UX could become.</div>
+      </div>
+    </div>
+    <p class="cs-p" style="margin-top:16px">This project is framed as a <strong>speculative product concept</strong> — a serious design exploration of a near-future banking experience, not a claim of a shipped product. The goal was to push past the constraints of current mobile banking UX and ask: if you had a spatial canvas and a capable AI co-pilot, what would financial management look like?</p>
+  </div>
+
+  <!-- ── 03 CONSTRAINTS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">03 <span class="cs-section-eyebrow-line"></span> Real constraints</div>
+    <h2 class="cs-section-h2">Designing for trust under constraints that pulled in opposite directions.</h2>
+    <div class="cs-constraint-list">
+      <div class="cs-constraint-item">
+        <div class="cs-c-dot cs-c-dot--hard"></div>
+        <div>
+          <div class="cs-c-label">Concept-only — no real AI backend to test against</div>
+          <div class="cs-c-sub">All AI behaviors were simulated in prototype. I had to be ruthlessly specific about what the AI would say, when it would act, and how it would explain itself — without a real model. Every AI response was hand-authored for each scenario.</div>
+        </div>
+      </div>
+      <div class="cs-constraint-item">
+        <div class="cs-c-dot cs-c-dot--hard"></div>
+        <div>
+          <div class="cs-c-label">Financial data is emotionally loaded — testing with fictional data has limits</div>
+          <div class="cs-c-sub">Users worked with fictional account data. Real banking involves anxiety, aspiration, and shame that don't surface in a 45-minute Maze session. Every finding had to be interpreted with that gap explicitly in mind.</div>
+        </div>
+      </div>
+      <div class="cs-constraint-item">
+        <div class="cs-c-dot cs-c-dot--soft"></div>
+        <div>
+          <div class="cs-c-label">Spatial UI was a direction, not a validated hypothesis</div>
+          <div class="cs-c-sub">Multi-panel spatial layouts were suggested by the brief. I had to validate whether they actually helped users or just looked impressive. Two testing rounds later: they helped in specific contexts only — not as the default state.</div>
+        </div>
+      </div>
+      <div class="cs-constraint-item">
+        <div class="cs-c-dot cs-c-dot--soft"></div>
+        <div>
+          <div class="cs-c-label">Two opposing user archetypes — same product surface</div>
+          <div class="cs-c-sub">Power users wanted full AI autonomy. Anxious users wanted to approve every step. A single modal pattern couldn't serve both — this forced a permission-tier system (Suggest / Confirm / Auto) that added significant design complexity but was the right call.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 04 RESEARCH ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">04 <span class="cs-section-eyebrow-line"></span> What research actually found</div>
+    <h2 class="cs-section-h2">Three findings that held. One assumption that collapsed on first test.</h2>
+    <div class="cs-insight-grid">
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">8 / 10</div>
+        <div class="cs-insight-txt">Users trusted an AI action more when they saw the reasoning before the result — not after. Sequence of disclosure mattered more than the quality of the explanation itself.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">−30%</div>
+        <div class="cs-insight-txt">Decision time reduction when context panels showed relevant account history alongside AI suggestions. Fewer tab-switches meant faster, more confident decisions.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">6 → 1</div>
+        <div class="cs-insight-txt">Task abandonment dropped from 6/10 to 1/10 when confidence percentages were replaced with 30-day sparklines. Users trusted trend evidence over abstract numbers.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">0 / 10</div>
+        <div class="cs-insight-txt">Users who wanted the three-panel spatial layout by default. It was overwhelming. Moved to opt-in power mode. The assumption that "spatial = better" didn't survive round one.</div>
+      </div>
+    </div>
+    <p class="cs-p" style="margin-top:16px">The most important finding: <strong>users don't distrust AI — they distrust unexplained AI.</strong> When the interface showed its work, trust scores increased across every segment, including the most skeptical users. Transparency isn't a UX feature — it's the product.</p>
+  </div>
+
+  <!-- ── 05 PROCESS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">05 <span class="cs-section-eyebrow-line"></span> How I worked</div>
+    <h2 class="cs-section-h2">10 weeks. Two major pivots. One direction that only emerged from testing.</h2>
+    <div class="cs-timeline">
+      <div class="cs-tl-item">
+        <div class="cs-tl-week">Wk 1–2</div>
+        <div class="cs-tl-card">
+          <div class="cs-tl-phase">Competitive audit + mental model mapping</div>
+          <div class="cs-tl-note">Audited 8 AI-adjacent fintech products (Cleo, Copilot, Mercury, Monarch). Mapped where AI actions were visible vs. hidden. Key finding: most hide AI reasoning entirely — treating it as a backend process, not a UX layer.</div>
+        </div>
+      </div>
+      <div class="cs-tl-item">
+        <div class="cs-tl-week">Wk 3–4</div>
+        <div class="cs-tl-card">
+          <div class="cs-tl-phase">Spatial layout — always-on three-panel model</div>
+          <div class="cs-tl-note">Designed a three-panel persistent layout: accounts / AI assistant / action context. Tested with 10 users. Unanimous response: overwhelming. No one knew where to look first.</div>
+          <span class="cs-tl-flag cs-tl-flag--pivot">Pivoted</span>
+        </div>
+      </div>
+      <div class="cs-tl-item">
+        <div class="cs-tl-week">Wk 5–6</div>
+        <div class="cs-tl-card">
+          <div class="cs-tl-phase">Context-on-demand model</div>
+          <div class="cs-tl-note">Rebuilt around a single-surface default with expandable context panels triggered by user action or AI suggestion. Retested — comprehension improved significantly. This became the architectural foundation.</div>
+          <span class="cs-tl-flag cs-tl-flag--shipped">Shipped direction</span>
+        </div>
+      </div>
+      <div class="cs-tl-item">
+        <div class="cs-tl-week">Wk 7–8</div>
+        <div class="cs-tl-card">
+          <div class="cs-tl-phase">Trust layer — AI explanation system</div>
+          <div class="cs-tl-note">Designed three components: the Reason Card (why the AI acted), the Preview Rail (what it will do before it does it), and the Audit Log (what it did and when). Each tested independently before being combined.</div>
+          <span class="cs-tl-flag cs-tl-flag--shipped">All 3 shipped</span>
+        </div>
+      </div>
+      <div class="cs-tl-item">
+        <div class="cs-tl-week">Wk 9–10</div>
+        <div class="cs-tl-card">
+          <div class="cs-tl-phase">Permission tiers + final prototype</div>
+          <div class="cs-tl-note">Designed a 3-tier autonomy model: Suggest / Confirm / Auto — set per-category by the user. Cut scope: removed AI-to-AI negotiation feature — too complex for v1 with no validation data to justify the complexity.</div>
+          <span class="cs-tl-flag cs-tl-flag--cut">1 feature cut</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 06 SPATIAL DESIGN PRINCIPLES ── -->
+  <div class="cs-section reveal cs-section--immersive">
+    <div class="cs-section-eyebrow">06 <span class="cs-section-eyebrow-line"></span> Design principles</div>
+    <h2 class="cs-section-h2">Five principles that guided every spatial design decision.</h2>
+    <p class="cs-p" style="margin-bottom:20px">Spatial computing introduces a new design vocabulary. These principles ensured that BankSphere felt like a <strong>natural evolution of banking</strong> — not a gimmick dressed in spatial form.</p>
+    <div class="cs-principles-grid">
+      <div class="cs-principle-card">
+        <div class="cs-principle-icon">🏠</div>
+        <div class="cs-principle-name">Familiar</div>
+        <div class="cs-principle-desc">Inspired by the card layout of Netflix and Apple TV — patterns users already understand. Reduce cognitive overhead at the surface level.</div>
+      </div>
+      <div class="cs-principle-card">
+        <div class="cs-principle-icon">🧑</div>
+        <div class="cs-principle-name">Human-Centred</div>
+        <div class="cs-principle-desc">Every spatial surface reflects the user's actual financial life — not an abstract dashboard. Goals, stress levels, carbon footprint: the whole person.</div>
+      </div>
+      <div class="cs-principle-card">
+        <div class="cs-principle-icon">📐</div>
+        <div class="cs-principle-name">Dimensional</div>
+        <div class="cs-principle-desc">Depth is used to communicate hierarchy — primary actions in the foreground, contextual detail layered behind. Space carries meaning.</div>
+      </div>
+      <div class="cs-principle-card">
+        <div class="cs-principle-icon">✅</div>
+        <div class="cs-principle-name">Authentic</div>
+        <div class="cs-principle-desc">No decorative 3D for its own sake. Every spatial element earns its place by making a financial concept clearer or a decision faster.</div>
+      </div>
+      <div class="cs-principle-card">
+        <div class="cs-principle-icon">🌐</div>
+        <div class="cs-principle-name">Immersive</div>
+        <div class="cs-principle-desc">The banking environment surrounds the user — but never overwhelms. Immersion serves focus, not spectacle. The room is a canvas, not a distraction.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 07 SNAPSHOT HOMESCREEN ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">07 <span class="cs-section-eyebrow-line"></span> Snapshot homescreen</div>
+    <h2 class="cs-section-h2">The home surface: every financial KPI, one spatial glance.</h2>
+    <p class="cs-p">The Snapshot Homescreen was designed around a single question: what does a user need to know about their financial health in the first 10 seconds of opening the app? The answer informed every layout decision.</p>
+    <p class="cs-p">Inspired by the card-based layouts of Netflix and Apple TV, the home surface presents a modular, <strong>fully customizable financial dashboard</strong> — users arrange panels according to what matters most to them. No two users need the same layout.</p>
+
+    <div class="cs-asset">
+      <img src="../banksphere/Home.png" alt="BankSphere Snapshot Homescreen — financial health KPIs, accounts overview, AI insights, and transaction timeline" loading="lazy" />
+      <div class="cs-asset-caption">Snapshot Homescreen · Financial Health Index, credit score, stress level, carbon footprint · accounts, insights, goals, and live transactions</div>
+    </div>
+
+    <div class="cs-insight-grid" style="margin-top:16px">
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Summary bar</div>
+        <div class="cs-insight-txt">Total balance, total income, total savings, and total expenses — all tracked with real-time delta indicators showing movement vs. last period.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Accounts + Cards</div>
+        <div class="cs-insight-txt">All connected accounts visible in one surface — Main, Family, and third-party bank accounts via Open Banking API. No app-switching required.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Insights panel</div>
+        <div class="cs-insight-txt">AI-generated highlights: monthly activity summary, upcoming event-based recommendations, and social impact tracking from charitable spending.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Live transactions</div>
+        <div class="cs-insight-txt">Real-time transaction feed with inline AI approval requests — users can approve or decline a payment transfer without navigating away from the home surface.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 08 SPATIAL ARCHITECTURE ── -->
+  <div class="cs-section reveal cs-section--immersive">
+    <div class="cs-section-eyebrow">08 <span class="cs-section-eyebrow-line"></span> Spatial architecture</div>
+    <h2 class="cs-section-h2">Seven interconnected surfaces. One financial ecosystem.</h2>
+    <p class="cs-p">BankSphere isn't a single screen — it's a <strong>spatial banking environment</strong> made of seven purpose-built windows, each designed to handle a specific financial context without requiring the user to lose their place in another.</p>
+
+    <div class="cs-asset">
+      <img src="../banksphere/Section7.png" alt="BankSphere spatial banking architecture — interconnected financial surfaces in a spatial computing environment" loading="lazy" />
+      <div class="cs-asset-caption">Spatial banking architecture · seven purpose-built financial surfaces · customer needs at the center</div>
+    </div>
+
+    <div class="cs-ecosystem" style="margin-top:16px">
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">Snapshot Home</div>
+        <div class="cs-eco-desc">The command center. Financial health KPIs, all accounts, insights, and live transactions in one modular surface.</div>
+      </div>
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">Cash Flow Window</div>
+        <div class="cs-eco-desc">Income vs. spending trends with category breakdowns. Designed for quick financial pattern recognition, not deep analysis.</div>
+      </div>
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">Marketplace</div>
+        <div class="cs-eco-desc">AI-curated financial opportunities — investment plans, partner offers, and lifestyle deals matched to spending habits and stated goals.</div>
+      </div>
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">Messenger</div>
+        <div class="cs-eco-desc">Social banking: send money, request transfers, and manage shared finances — all within a conversation thread.</div>
+      </div>
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">AI Advisor</div>
+        <div class="cs-eco-desc">The co-pilot. Always present, context-aware, and proactive — surfaces recommendations based on what the user is currently doing, not just what they ask.</div>
+      </div>
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">Live Currency Balances</div>
+        <div class="cs-eco-desc">Multi-currency balances visible at a glance — EUR, GBP, CHF, CNY, RUB — with live exchange rates and conversion tools.</div>
+      </div>
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">Quick Actions</div>
+        <div class="cs-eco-desc">Contextual action buttons that change based on the active surface — reducing the distance between intent and execution.</div>
+      </div>
+      <div class="cs-eco-item">
+        <div class="cs-eco-label">Statistics</div>
+        <div class="cs-eco-desc">Deep financial analytics — transaction type breakdown, earned vs. spent, category spend — for users who want the full picture.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 09 SCREEN SHOWCASE ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">09 <span class="cs-section-eyebrow-line"></span> Screen showcase</div>
+    <h2 class="cs-section-h2">Every surface designed for a specific financial context.</h2>
+    <p class="cs-p">Each screen in BankSphere was designed as a standalone spatial window — opinionated about its purpose, connected to the broader ecosystem, and always accompanied by the AI Advisor panel.</p>
+
+    <div class="cs-asset">
+      <img src="../banksphere/Statistics.png" alt="BankSphere Statistics screen — income vs. spending chart, category breakdown, transaction types donut chart, and AI Advisor" loading="lazy" />
+      <div class="cs-asset-caption">Statistics · income/spending timeline, category breakdown, transaction types · AI Advisor persistent right panel</div>
+    </div>
+
+    <div class="cs-asset-pair">
+      <div class="cs-asset">
+        <img src="../banksphere/Payments.png" alt="BankSphere Payments screen — transfer by phone, card, or account with quick action contact grid" loading="lazy" />
+        <div class="cs-asset-caption">Payments · transfer methods, contact quick-actions, balance-aware send flow</div>
+      </div>
+      <div class="cs-asset">
+        <img src="../banksphere/Cards.png" alt="BankSphere Cards screen — card management, add new card flow, transfer limit and savings summary" loading="lazy" />
+        <div class="cs-asset-caption">Cards · multi-card management, new card flow, transfer limits, Apple Pay integration</div>
+      </div>
+    </div>
+
+    <div class="cs-asset-pair">
+      <div class="cs-asset">
+        <img src="../banksphere/Messenger.png" alt="BankSphere Messenger — social banking with embedded money transfers inside conversation threads" loading="lazy" />
+        <div class="cs-asset-caption">Messenger · money requests and transfers embedded inside conversation threads · social banking made native</div>
+      </div>
+      <div class="cs-asset">
+        <img src="../banksphere/Marketplace.png" alt="BankSphere Marketplace — AI-curated financial opportunities, investment plans, and lifestyle deals" loading="lazy" />
+        <div class="cs-asset-caption">Marketplace · AI-curated investment opportunities, lifestyle deals, and partner offers matched to spending habits</div>
+      </div>
+    </div>
+
+    <div class="cs-asset-pair">
+      <div class="cs-asset">
+        <img src="../banksphere/AccountSettings.png" alt="BankSphere Account Settings — profile management, verification status, and privacy controls" loading="lazy" />
+        <div class="cs-asset-caption">Account Settings · profile, verification status, phone, email, and address management</div>
+      </div>
+      <div class="cs-asset">
+        <img src="../banksphere/PrivacySettings.png" alt="BankSphere Privacy Settings — password, session management, and authentication options" loading="lazy" />
+        <div class="cs-asset-caption">Privacy Settings · active sessions, authentication methods, and automatic session termination controls</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 10 FINANCIAL HEALTH & ACCOUNT MANAGEMENT ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">10 <span class="cs-section-eyebrow-line"></span> Financial health</div>
+    <h2 class="cs-section-h2">Four KPIs that make financial wellness visible at a glance.</h2>
+    <p class="cs-p">The Financial Health panel was the most debated surface in the project. The question: how do you present a user's financial reality — including stress and carbon footprint — without creating anxiety or feeling invasive? The answer was <strong>radial gauges with plain-language ratings</strong> ("Good", "Very Good", "Normal") rather than scores or percentages.</p>
+
+    <div class="cs-kpi-strip">
+      <div class="cs-kpi-cell">
+        <div class="cs-kpi-name">Financial Health Index</div>
+        <div class="cs-kpi-desc">Composite score across liability coverage, risk protection, and long-term savings strategy. Provides a single headline indicator without overwhelming detail.</div>
+      </div>
+      <div class="cs-kpi-cell">
+        <div class="cs-kpi-name">Credit Score</div>
+        <div class="cs-kpi-desc">Real-time credit health tracking with AI explanations for any changes — not just a number, but context for what drove it and what could improve it.</div>
+      </div>
+      <div class="cs-kpi-cell">
+        <div class="cs-kpi-name">Stress Level</div>
+        <div class="cs-kpi-desc">Financial stress tracked via connected health data (Apple Watch integration in concept). Surfaces at moments when proactive AI support could reduce anxiety.</div>
+      </div>
+      <div class="cs-kpi-cell">
+        <div class="cs-kpi-name">Carbon Footprint</div>
+        <div class="cs-kpi-desc">Spending-based carbon impact tracking for users who want to align their financial decisions with environmental values. Opt-in, never surfaced as a guilt mechanism.</div>
+      </div>
+    </div>
+
+    <div class="cs-split" style="margin-top:20px">
+      <div>
+        <div class="cs-split-h3">Access to all accounts — in one surface</div>
+        <p class="cs-p">Through the Open Banking API, BankSphere aggregates data from multiple banks and fintech services — checking, family, team, junior, savings, investment, third-party bank accounts, crypto, and eWallets — all visible without switching apps.</p>
+        <p class="cs-p">Users can also set automated money transfers between accounts based on balance thresholds or shortfalls — the financial equivalent of having a smart assistant manage the plumbing while you focus on the strategy.</p>
+      </div>
+      <div class="cs-split-img">
+        <img src="../banksphere/Section9.png" alt="Four Basic KPIs — Financial Health Index, Credit Score, Stress Level, Carbon Footprint — and account management overview" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 11 AI INSIGHTS & GOALS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">11 <span class="cs-section-eyebrow-line"></span> AI insights & goals</div>
+    <h2 class="cs-section-h2">AI that connects your financial data to your actual life.</h2>
+    <p class="cs-p">The AI Insights panel goes beyond transaction categorization. It analyzes behavior patterns, upcoming events, and stated goals to surface <strong>personalized, contextual recommendations</strong> — not generic financial tips.</p>
+
+    <div class="cs-asset">
+      <img src="../banksphere/Section10.png" alt="AI-powered Insights and Goals — monthly highlights, personalized offers, leisure recommendations, and goal tracking" loading="lazy" />
+      <div class="cs-asset-caption">AI Insights + Goals · monthly highlights, event-based recommendations, social impact tracking, and savings goal progress</div>
+    </div>
+
+    <div class="cs-insight-grid" style="margin-top:16px">
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Insights</div>
+        <div class="cs-insight-txt">The AI analyzes big data and user behavior to surface: accomplishments, personalised offers for upcoming events, leisure recommendations based on spending and location, and investment, savings, and loan overviews.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Goals</div>
+        <div class="cs-insight-txt">Users set financial goals for material objects or life events — career, education, health, family. The AI uses these goals to shape every recommendation — creating a unified view of financial and personal future plans.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Event context</div>
+        <div class="cs-insight-txt">"Trip to Spain is coming up — your card has travel insurance for your entire family." Context-aware recommendations that connect financial capability to real upcoming moments in the user's life.</div>
+      </div>
+      <div class="cs-insight-card">
+        <div class="cs-insight-num">Social impact</div>
+        <div class="cs-insight-txt">"You're making an impact socially — thank you for donating to the dog shelter." Positive reinforcement of spending that aligns with the user's values — banking as a reflection of who you are, not just what you earn.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 12 AI ADVISOR ── -->
+  <div class="cs-section reveal cs-section--immersive">
+    <div class="cs-section-eyebrow">12 <span class="cs-section-eyebrow-line"></span> AI Advisor</div>
+    <h2 class="cs-section-h2">Not a chatbot. A financial co-pilot.</h2>
+    <p class="cs-p">The AI Advisor is the most critical surface in BankSphere — and the one that required the most design discipline. The instinct was to make it powerful. The design challenge was making it <strong>trustworthy</strong>.</p>
+    <p class="cs-p">It acts as a co-pilot: context-aware of what banking surface is active, proactive rather than reactive, and transparent about its reasoning. Every recommendation surfaces as a chat message with an actionable card — not a notification that appears and disappears.</p>
+
+    <div class="cs-split">
+      <div>
+        <div class="cs-tag-pills">
+          <span class="cs-tag-pill">Transparency</span>
+          <span class="cs-tag-pill">Trust</span>
+          <span class="cs-tag-pill">Loyalty</span>
+        </div>
+        <p class="cs-p" style="margin-top:12px">The AI Advisor is <strong>always present</strong> — a persistent right-panel companion that adjusts its recommendations based on the active financial surface. On the Payments screen, it flags unusual transfers. On Statistics, it surfaces spending anomalies. On Marketplace, it matches offers to stated goals.</p>
+        <p class="cs-p">Recommendations are delivered as conversational messages with embedded action cards — users can approve, decline, or explore deeper without leaving the current context. Voice interaction is supported for hands-free use cases.</p>
+        <p class="cs-p" style="margin-top:12px"><strong>The design philosophy:</strong> reflect the financial dimension of the user's lifestyle — not just their account data. The AI considers goals, events, health data, and values. This proactivity is the foundation for long-term trust between AI-powered banks and their customers.</p>
+      </div>
+      <div class="cs-split-img">
+        <img src="../banksphere/advisor.png" alt="AI Advisor panel — co-pilot banking assistant with context-aware recommendations and conversational action cards" loading="lazy" />
+      </div>
+    </div>
+
+    <h2 class="cs-section-h2" style="margin-top:32px">What the AI Advisor can do.</h2>
+    <p class="cs-p">These are the use cases that shaped the AI Advisor's design — each one required a specific interaction pattern, a specific level of transparency, and a specific trust contract with the user.</p>
+
+    <div class="cs-ai-cases">
+      <div class="cs-ai-case">Create a personalised plan for improving credit score — with step-by-step actions and timeline estimates</div>
+      <div class="cs-ai-case">Explain which factors are currently increasing or decreasing financial stress level</div>
+      <div class="cs-ai-case">Automatically transfer funds between accounts when a shortfall is detected — with user permission pre-set per category</div>
+      <div class="cs-ai-case">Notify via Apple Watch when specific transaction types occur — travel spend, large purchases, or unusual activity</div>
+      <div class="cs-ai-case">Alert when a tracked stock or company share drops below a threshold — with contextual buy/hold recommendation</div>
+      <div class="cs-ai-case">Flag a transaction made abroad as potentially suspicious — surfacing verification before the user even checks their statements</div>
+      <div class="cs-ai-case">Show a complete transaction list from a trip, grouped by category, with spending insights</div>
+      <div class="cs-ai-case">Guide the user through tax preparation — scanning uploaded documents, categorising deductible expenses, and preparing summary reports</div>
+    </div>
+  </div>
+
+  <!-- ── 13 KEY DECISIONS ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">13 <span class="cs-section-eyebrow-line"></span> The decisions that mattered</div>
+    <h2 class="cs-section-h2">Three choices that defined the product. And why I made them.</h2>
+    <div class="cs-decision-list">
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">1</div>
+          <div class="cs-decision-q">Show AI reasoning before action, not after — even though it added a full interaction step</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">Standard pattern: AI acts, then shows a log. This felt fast but generated the most anxiety in testing — users couldn't undo what they hadn't approved. The Preview Rail shows the AI's proposed action and rationale before execution. Approval-before-action increased confidence scores by 40% in Lyssna tests.</div>
+          <div class="cs-decision-tradeoff"><strong>The trade-off accepted:</strong> Power users found the preview step annoying. That's why the permission tier system exists — users who trust the AI in a specific category can set it to Auto and skip the preview entirely. The step isn't mandatory; it's the safe default for new users and anxious archetypes.</div>
+        </div>
+      </div>
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">2</div>
+          <div class="cs-decision-q">Sparklines over confidence percentages — even though percentages feel more precise</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">Early prototypes showed AI confidence as a percentage ("87% confident this transfer is safe"). Testing showed this increased anxiety — users didn't know what 87% meant in a financial context, and it implied 13% of the time something goes wrong. Replacing with a 30-day sparkline reduced task abandonment from 6/10 to 1/10. Users trusted trend evidence over abstract numbers.</div>
+          <div class="cs-decision-tradeoff"><strong>What this cost:</strong> Sparklines require historical data. For new users, the sparkline is empty — which looks worse than a percentage. I designed a "building your history" state for the first 30 days: honest, clear, and expectation-setting rather than just empty.</div>
+        </div>
+      </div>
+
+      <div class="cs-decision">
+        <div class="cs-decision-header">
+          <div class="cs-decision-num">3</div>
+          <div class="cs-decision-q">Per-category autonomy settings over a single global AI trust toggle</div>
+        </div>
+        <div class="cs-decision-body">
+          <div class="cs-decision-why-label">Why</div>
+          <div class="cs-decision-why">A global "trust level" slider was the first design. Testing revealed users don't think about trust globally — they think per task. A user might fully trust the AI to pay bills automatically but want to confirm every investment decision manually. Per-category settings (Suggest / Confirm / Auto per transaction type) matched how users actually reasoned about money and risk.</div>
+          <div class="cs-decision-tradeoff"><strong>What I killed:</strong> A natural language setting ("I want the AI to be cautious with investments"). It sounded good. In testing, no one could predict how the AI would interpret it. Explicit toggles per category beat conversational configuration every time — ambiguity in a financial context creates anxiety, not delight.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 14 IMPACT ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">14 <span class="cs-section-eyebrow-line"></span> Impact</div>
+    <h2 class="cs-section-h2">What moved in testing — and the number I couldn't prove.</h2>
+    <div class="cs-outcome-grid">
+      <div class="cs-outcome-card cs-outcome-card--primary">
+        <div class="cs-outcome-num cs-outcome-num--pri">80%</div>
+        <div class="cs-outcome-label">Task comprehension uplift</div>
+        <div class="cs-outcome-sub">Measured against a standard banking UI baseline in Maze scenario tests. Users identified what the AI had done and why in 80% of cases without any explanation prompt.</div>
+      </div>
+      <div class="cs-outcome-card cs-outcome-card--primary">
+        <div class="cs-outcome-num cs-outcome-num--pri">−30%</div>
+        <div class="cs-outcome-label">Decision time</div>
+        <div class="cs-outcome-sub">Context panels reduced navigation time before confirming an AI action. Measured as task-completion time in timed Lyssna tests against baseline.</div>
+      </div>
+      <div class="cs-outcome-card cs-outcome-card--secondary">
+        <div class="cs-outcome-num cs-outcome-num--sec">9 / 10</div>
+        <div class="cs-outcome-label">AI actions rated "clearly explainable"</div>
+        <div class="cs-outcome-sub">Post-task survey. The one user who disagreed was confused by the Audit Log timestamp format — a copy problem, not a structural one. Fixed before final prototype.</div>
+      </div>
+      <div class="cs-outcome-card cs-outcome-card--secondary">
+        <div class="cs-outcome-num cs-outcome-num--sec">0</div>
+        <div class="cs-outcome-label">Trust-breaking moments in final round</div>
+        <div class="cs-outcome-sub">Round 1 had 6 trust-breaking moments. Round 3 had zero. Each testing round, the trust layer caught a failure mode the previous round had missed.</div>
+      </div>
+    </div>
+    <p class="cs-p" style="margin-top:18px"><strong>What I couldn't prove:</strong> Real financial trust over time. Testing with fictional data in a 45-minute session can't replicate the anxiety of an AI touching real money over weeks and months. The metrics measure prototype comprehension — not long-term behavioral trust. That gap is the honest limitation of this study, and the most important thing to validate if this concept moved toward production.</p>
+  </div>
+
+  <!-- ── 15 REFLECTION ── -->
+  <div class="cs-section reveal">
+    <div class="cs-section-eyebrow">15 <span class="cs-section-eyebrow-line"></span> Reflection</div>
+    <h2 class="cs-section-h2">What I learned. What comes next. What this concept can't answer alone.</h2>
+    <div class="cs-reflection-grid">
+      <div class="cs-reflection-card cs-reflection-card--learn">
+        <div class="cs-reflection-label cs-reflection-label--teal">What this project taught me</div>
+        <div class="cs-reflection-text cs-reflection-text--teal">AI UX is trust engineering before it's anything else. The features that looked most impressive in a demo — spatial panels, autonomous actions, predictive alerts — were the ones that most damaged trust in testing. The interface that showed its work quietly outperformed the interface that showed off. Transparency is a design feature, not a legal requirement or a disclaimer.</div>
+      </div>
+      <div class="cs-reflection-card cs-reflection-card--next">
+        <div class="cs-reflection-label cs-reflection-label--stone">What I'd change</div>
+        <div class="cs-reflection-text cs-reflection-text--stone">I'd run longitudinal testing with real financial stakes — even a sandboxed account with actual money over 4 weeks. The most important failure modes in AI finance products only surface after repeated use, not in a 45-minute session. I'd also explore voice interaction more rigorously — in a spatial context, the most natural interface may not be a panel at all.</div>
+      </div>
+    </div>
+
+    <!-- Future considerations -->
+    <div style="margin-top:20px;padding:18px 20px;background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:var(--r-lg)">
+      <div style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--c-teal-mid);font-family:var(--font-mono);margin-bottom:10px">Open questions for future exploration</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.55;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">Ethics of ambient AI</strong> — How should a banking AI behave when it detects financial stress through health data? Helpfulness and privacy are in genuine tension here.</div>
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.55;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">Accessibility in spatial computing</strong> — The spatial model assumes physical capability. A production version would need rigorous accessibility research for users who can't use gesture or gaze interaction.</div>
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.55;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">Trust erosion over time</strong> — A single AI mistake in a financial context can destroy months of built trust. How does the product recover gracefully, transparently, and without compounding the anxiety?</div>
+        <div style="font-size:13px;color:var(--c-text-2);line-height:1.55;padding:10px 12px;background:var(--c-parchment);border-radius:var(--r-md)"><strong style="color:var(--c-text-1)">Regulatory compliance</strong> — AI-driven financial recommendations exist in a heavily regulated space. A production version would need legal review in every market — by design, not as an afterthought.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cs-body -->
+
+<!-- NEXT PROJECT -->
+<div class="cs-next">
+  <div>
+    <div class="cs-next-label">Next case study</div>
+    <div class="cs-next-title">ManageSphere — workspace management →</div>
+  </div>
+  <a href="managesphere.html" class="cs-next-btn">View case study</a>
+</div>
+
+<footer class="cs-footer">
+  <span>© 2024 Kunj Vyas</span>
+  <a href="../index.html">← Back to all work</a>
+</footer>
+
+<script src="case-study.js"></script>
+</body>
+</html>
