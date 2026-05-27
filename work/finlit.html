@@ -693,6 +693,19 @@
         grid-template-columns: 1fr !important;
       }
     }
+
+    /* ── Nav right spacing — match homepage ── */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-right .nav-link { padding: 0 8px; }
+    .nav-right .nav-cta  { margin-left: 8px; }
+    @media (max-width: 860px) {
+      .nav-right { display: none; }
+      .nav-hamburger { display: flex; }
+    }
   </style>
 </head>
 

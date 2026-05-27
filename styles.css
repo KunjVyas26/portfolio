@@ -709,6 +709,7 @@ img { display: block; max-width: 100%; }
     grid-template-columns: 1fr 1fr;
   }
   .proof-cell:nth-child(2) { border-right: none; }
+  .proof-cell:nth-child(odd) { padding-left: 0; }
   .proof-cell:nth-child(3) { border-right: 0.5px solid rgba(255,255,255,0.07); }
   .proof-cell:nth-child(3),
   .proof-cell:nth-child(4) {

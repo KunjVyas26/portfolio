@@ -14,91 +14,97 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="case-study.css" />
   <style>
-    /* ── BigBattery accent: Amber/Orange energy ── */
-    .cs-section-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--c-text-3);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    /* ══════════════════════════════════════════════════
+       BigBattery LLC — Brand Color System
+       Primary:   #165EA0 (BigBattery Blue)
+       Secondary: #208220 (BigBattery Green)
+       Dark:      #333333 (Charcoal)
+       White:     #FFFFFF
+       ══════════════════════════════════════════════════ */
 
-    .cs-section-eyebrow-line {
-      flex: 1;
-      height: 0.5px;
-      background: var(--c-border);
-      display: block;
-    }
-
+    /* Hero — dark navy matching BB website header */
     .cs-hero-bg {
-      background: #0D0A00;
+      background: #0A1A2E;
     }
 
+    /* Eyebrow dot — BB green */
     .cs-eyebrow-dot {
-      background: #F5A623;
+      background: #208220;
     }
 
+    /* H1 emphasis — BB blue */
     .cs-h1 em {
-      color: #F5A623;
+      color: #165EA0;
     }
 
+    /* Timeline week labels */
     .cs-tl-week {
-      color: #C47D0A;
+      color: #165EA0;
     }
 
+    /* Metric numbers */
     .cs-metric-num {
-      color: #C47D0A;
+      color: #165EA0;
     }
 
+    /* Insight numbers */
     .cs-insight-num {
-      color: #C47D0A;
+      color: #165EA0;
     }
 
     .cs-outcome-num--pri {
-      color: #C47D0A;
+      color: #165EA0;
     }
 
     .cs-outcome-num--sec {
-      color: var(--c-teal-mid);
+      color: #208220;
     }
 
+    /* Decision number badges */
     .cs-decision-num {
-      background: #FFF3DC;
-      color: #7A4E00;
+      background: #E8F1FA;
+      color: #0E4070;
     }
 
+    /* Quote block — blue left border */
     .cs-quote {
-      background: #FFF3DC;
-      border-color: #F5A623;
+      background: #EBF3FB;
+      border-color: #165EA0;
     }
 
     .cs-quote-text {
-      color: #5C3800;
+      color: #0E2E50;
     }
 
     .cs-quote-attr {
-      color: #C47D0A;
+      color: #165EA0;
     }
 
+    /* Nav progress — BB blue */
     .nav-progress-bar {
-      background: #F5A623;
+      background: #165EA0;
     }
 
+    /* Next button — BB blue */
     .cs-next-btn {
-      background: #C47D0A;
+      background: #165EA0;
     }
 
-    /* amber token overrides */
-    --c-amber: #F5A623;
-    --c-amber-tint: #FFF3DC;
-    --c-amber-bdr: #FADDAA;
-    --c-amber-dark: #7A4E00;
-    --c-amber-mid: #C47D0A;
+    /* ── Override global indigo accent → BB Blue + BB Green ── */
+    .cs-tl-flag--shipped   { background: #E8F5E8; color: #145214; border-color: #A8D8A8; }
+    .cs-tl-flag--pivot     { background: #E8F1FA; color: #0E4070; border-color: #9EC4E8; }
+    .cs-decision-callout   { background: #EBF3FB; border-left-color: #165EA0; }
+    .cs-challenge-card     { border-top: 2px solid #9EC4E8; }
+    .cs-challenge-label    { color: #0E4070; }
+    .cs-component-tag      { background: #E8F1FA; color: #0E4070; }
+    .cs-brand-metric-num   { color: #165EA0; }
+    .cs-tool-pill          { background: #E8F1FA; color: #0E4070; border-color: #9EC4E8; }
+    .cs-analytics-tool     { color: #165EA0; }
+    .cs-app-callout        { border-color: #9EC4E8; background: #EBF3FB; }
+    .cs-app-callout-label  { color: #165EA0; }
+    .cs-vertical-icon      { background: #E8F1FA; }
+    .cs-reflection-label--teal { color: #165EA0; }
+    .cs-reflection-card--learn { border-top-color: #165EA0; }
 
     /* ── Asset containers — self-contained card, no CSS variable dependencies ── */
     .cs-asset {
@@ -158,7 +164,7 @@
       margin: 20px 0;
       border-radius: var(--r-lg);
       border: 1.5px dashed #E8D5A3;
-      background: #FFFBF2;
+      background: #F0F6FC;
       padding: 40px 28px;
       display: flex;
       flex-direction: column;
@@ -175,13 +181,13 @@
       font-weight: 500;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: #C47D0A;
+      color: #165EA0;
       margin-bottom: 4px;
     }
 
     .cs-placeholder-desc {
       font-size: 13px;
-      color: #B8924A;
+      color: #3A7AB8;
       line-height: 1.5;
       max-width: 340px;
     }
@@ -220,9 +226,9 @@
       text-transform: uppercase;
       padding: 4px 10px;
       border-radius: 100px;
-      background: #FFF3DC;
-      color: #7A4E00;
-      border: 0.5px solid #FADDAA;
+      background: #E8F1FA;
+      color: #0E4070;
+      border: 0.5px solid #9EC4E8;
     }
 
     /* ── Challenge grid ── */
@@ -257,16 +263,16 @@
     .cs-decision-callout {
       margin: 14px 0;
       padding: 14px 18px;
-      background: #FFF3DC;
-      border-left: 2px solid #F5A623;
+      background: #E8F1FA;
+      border-left: 2px solid #165EA0;
       border-radius: 0 var(--r-md) var(--r-md) 0;
       font-size: 13px;
-      color: #5C3800;
+      color: #0E2E50;
       line-height: 1.65;
     }
 
     .cs-decision-callout strong {
-      color: #7A4E00;
+      color: #0E4070;
     }
 
     /* ── Collab team grid ── */
@@ -318,7 +324,7 @@
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #C47D0A;
+      color: #165EA0;
       margin-bottom: 8px;
     }
 
@@ -369,14 +375,14 @@
       border-radius: 100px;
       display: inline-block;
       width: fit-content;
-      background: #FFF3DC;
-      color: #7A4E00;
-      border: 0.5px solid #FADDAA;
+      background: #E8F1FA;
+      color: #0E4070;
+      border: 0.5px solid #9EC4E8;
     }
 
     /* ── Dark section ── */
     .cs-section--dark {
-      background: #0D0A00;
+      background: #0A1A2E;
       margin-left: -40px;
       margin-right: -40px;
       padding: 44px 40px;
@@ -404,12 +410,12 @@
     }
 
     .cs-section--dark .cs-placeholder {
-      background: #1A1200;
+      background: #0D1E33;
       border-color: #3A2A00;
     }
 
     .cs-section--dark .cs-placeholder-label {
-      color: #F5A623;
+      color: #165EA0;
     }
 
     .cs-section--dark .cs-placeholder-desc {
@@ -462,7 +468,7 @@
     .cs-chapter-divider {
       margin: 0 -40px;
       padding: 36px 40px;
-      background: linear-gradient(135deg, #0D0A00 0%, #1A1200 100%);
+      background: linear-gradient(135deg, #0A1A2E 0%, #0D1E33 100%);
       border-radius: var(--r-lg);
       display: flex;
       align-items: center;
@@ -477,7 +483,7 @@
       font-weight: 500;
       letter-spacing: 0.09em;
       text-transform: uppercase;
-      color: #C47D0A;
+      color: #165EA0;
       margin-bottom: 8px;
     }
 
@@ -499,8 +505,8 @@
 
     .cs-chapter-divider-badge {
       flex-shrink: 0;
-      background: #F5A623;
-      color: #0D0A00;
+      background: #165EA0;
+      color: #0A1A2E;
       font-family: var(--font-mono);
       font-size: 10px;
       font-weight: 500;
@@ -534,7 +540,7 @@
     .cs-brand-metric-num {
       font-size: clamp(22px, 2.6vw, 30px);
       font-weight: 500;
-      color: #C47D0A;
+      color: #165EA0;
       letter-spacing: -0.025em;
       line-height: 1;
       margin-bottom: 5px;
@@ -614,7 +620,7 @@
       font-weight: 500;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #C47D0A;
+      color: #165EA0;
       margin-top: 6px;
       display: block;
     }
@@ -636,14 +642,14 @@
       text-transform: uppercase;
       padding: 4px 10px;
       border-radius: var(--r-pill);
-      background: #FFF3DC;
-      color: #7A4E00;
-      border: 0.5px solid #FADDAA;
+      background: #E8F1FA;
+      color: #0E4070;
+      border: 0.5px solid #9EC4E8;
     }
 
     .cs-tool-pill--dark {
-      background: #1A1200;
-      color: #C47D0A;
+      background: #0D1E33;
+      color: #165EA0;
       border-color: #3A2A00;
     }
 
@@ -668,7 +674,7 @@
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #C47D0A;
+      color: #165EA0;
       margin-bottom: 6px;
     }
 
@@ -707,41 +713,45 @@
     /* App hero — phone mockup + hero banner layout */
     .cs-app-hero-split {
       display: grid;
-      grid-template-columns: 3fr 7fr;
-      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
       align-items: stretch;
       margin: 20px 0;
     }
 
     .cs-app-hero-phones {
-      display: flex;
-      align-items: stretch;
-      border-radius: var(--r-lg);
+      border-radius: 14px;
       overflow: hidden;
-      border: 0.5px solid var(--c-border);
+      border: 1px solid #D8D5CC;
       background: #EAF4FB;
-      min-height: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .cs-app-hero-phones img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      object-position: center top;
       display: block;
+      flex-shrink: 0;
     }
 
     .cs-app-hero-banner {
-      border-radius: var(--r-lg);
+      border-radius: 14px;
       overflow: hidden;
-      border: 0.5px solid var(--c-border);
+      border: 1px solid #D8D5CC;
       display: flex;
+      flex-direction: column;
     }
 
     .cs-app-hero-banner img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 16/10;
       object-fit: cover;
+      object-position: center;
       display: block;
+      flex-shrink: 0;
     }
 
     /* Phone screens grid */
@@ -1123,6 +1133,178 @@
         object-fit: contain;
       }
     }
+
+    /* ── CHANGE 2: Fix nav-right spacing — match homepage gap ── */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-right .nav-link {
+      padding: 0 8px;
+    }
+    .nav-right .nav-cta {
+      margin-left: 8px;
+    }
+
+    /* ── CHANGE 3: Mobile nav — clean hamburger menu ── */
+    @media (max-width: 860px) {
+      .nav-right { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* ── CHANGE 4 + 5: Global mobile responsive fixes ── */
+    @media (max-width: 860px) {
+      /* Survey results — single column on mobile */
+      .cs-survey-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      /* All inline 4-col grids → 2-col */
+      [style*="grid-template-columns:repeat(4"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      /* All inline 3-col grids → 1-col */
+      [style*="grid-template-columns:1fr 1fr 1fr"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      /* Asset pairs → single col */
+      .cs-asset-pair {
+        grid-template-columns: 1fr !important;
+      }
+      /* Inline 2-col grids → 1-col on mobile */
+      .mobile-stack {
+        grid-template-columns: 1fr !important;
+      }
+      /* Chapter divider text sizing */
+      .cs-chapter-divider-h2 {
+        font-size: clamp(20px, 5vw, 32px) !important;
+      }
+      /* Before/after comparison → stack */
+      .cs-compare-strip {
+        grid-template-columns: 1fr !important;
+      }
+      /* Timeline cards full width */
+      .cs-tl-item {
+        grid-template-columns: 54px 1fr;
+      }
+      /* Measured impact grid → 2 col */
+      .cs-impact-strip {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      /* Decision callout padding */
+      .cs-decision-callout {
+        font-size: 12px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      /* Survey results → 2-col even on smallest */
+      [style*="grid-template-columns:repeat(4"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      /* All inline 2-col → 1-col on very small */
+      .cs-asset-pair,
+      [style*="grid-template-columns:1fr 1fr;gap:16px"],
+      [style*="grid-template-columns:1fr 1fr;gap:10px"],
+      [style*="grid-template-columns:1fr 1fr;gap:12px"] {
+        grid-template-columns: 1fr !important;
+      }
+      /* Search result grids → 1-col */
+      [style*="grid-template-columns:1fr 1fr;gap:8px"] {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="grid-template-columns:1fr 1fr 1fr;gap:8px"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      /* Figma video split → 1-col */
+      [style*="grid-template-columns:7fr 3fr"] {
+        grid-template-columns: 1fr !important;
+      }
+      /* User journey steps → 2-col */
+      [style*="grid-template-columns:repeat(7,1fr)"] {
+        grid-template-columns: repeat(4,1fr) !important;
+      }
+      /* Section padding */
+      .cs-section {
+        padding: 32px 0 !important;
+      }
+    }
+
+    /* ── CHANGE 6: Husky app phones — fix on mobile (contain not cover) ── */
+    @media (max-width: 860px) {
+      .cs-app-hero-split {
+        grid-template-columns: 1fr !important;
+      }
+      .cs-app-hero-phones {
+        background: #EAF4FB;
+      }
+      .cs-app-hero-phones img {
+        max-width: 200px;
+        margin: 0 auto;
+      }
+      .cs-app-hero-banner img {
+        aspect-ratio: 16/10;
+        object-fit: cover;
+      }
+    }
+
+    /* ── Brand carousel CSS ── */
+    .brand-carousel {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #D8D5CC;
+      background: #FAFAF8;
+      user-select: none;
+      margin-bottom: 12px;
+    }
+    .brand-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+      will-change: transform;
+    }
+    .brand-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+    }
+    .brand-slide img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+    .brand-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      background: #F4F2EC;
+      border-top: 1px solid #D8D5CC;
+    }
+    .brand-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #C8D8E8;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .brand-dot.active { background: #165EA0; transform: scale(1.4); }
+    .brand-dot:hover { background: #165EA0; opacity: 0.7; }
+
+    /* ── Whiteboard Carousel (same pattern as brand carousel) ── */
+    .wb-carousel { position:relative;border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;user-select:none; }
+    .wb-track { display:flex;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);will-change:transform; }
+    .wb-slide { flex:0 0 100%;min-width:0; }
+    .wb-slide img { width:100%;display:block;aspect-ratio:4/3;object-fit:cover;vertical-align:bottom; }
+    .wb-dots { display:flex;justify-content:center;align-items:center;gap:6px;padding:10px 14px;background:#F4F2EC;border-top:1px solid #D8D5CC; }
+    .wb-dot { width:6px;height:6px;border-radius:50%;background:#C8D8E8;border:none;padding:0;cursor:pointer;transition:background 0.2s,transform 0.2s; }
+    .wb-dot.active { background:#165EA0;transform:scale(1.4); }
+    .wb-dot:hover { background:#165EA0;opacity:0.7; }
   </style>
 </head>
 
@@ -1185,12 +1367,12 @@
           <div class="cs-meta-val">Product & Brand Designer</div>
         </div>
         <div class="cs-meta-cell">
-          <div class="cs-meta-label">Business</div>
-          <div class="cs-meta-val">B2B + B2C ecommerce</div>
-        </div>
-        <div class="cs-meta-cell">
           <div class="cs-meta-label">Duration</div>
           <div class="cs-meta-val">2025 – Current</div>
+        </div>
+        <div class="cs-meta-cell">
+          <div class="cs-meta-label">Business</div>
+          <div class="cs-meta-val">B2B + B2C ecommerce</div>
         </div>
         <div class="cs-meta-cell">
           <div class="cs-meta-label">Collaborators</div>
@@ -1204,22 +1386,22 @@
   <!-- METRICS BAR -->
   <div class="cs-metrics">
     <div class="cs-metric-cell">
-      <div class="cs-metric-num" style="color:#C47D0A">180→30</div>
+      <div class="cs-metric-num" style="color:#165EA0">180→30</div>
       <div class="cs-metric-lbl">Product pages consolidated — fragmented catalog restructured into 30 SEO-focused pages
       </div>
     </div>
     <div class="cs-metric-cell">
-      <div class="cs-metric-num" style="color:#C47D0A">850</div>
+      <div class="cs-metric-num" style="color:#165EA0">850</div>
       <div class="cs-metric-lbl">Survey respondents — mixed-method user research informing every major design decision
       </div>
     </div>
     <div class="cs-metric-cell">
-      <div class="cs-metric-num" style="color:#C47D0A">CEO+CTO</div>
+      <div class="cs-metric-num" style="color:#165EA0">CEO+CTO</div>
       <div class="cs-metric-lbl">Direct collaboration with business leadership — design framed as revenue argument, not
         UX theory</div>
     </div>
     <div class="cs-metric-cell">
-      <div class="cs-metric-num" style="color:#C47D0A">+28%</div>
+      <div class="cs-metric-num" style="color:#165EA0">+28%</div>
       <div class="cs-metric-lbl">Conversion uplift on product pages after infographic integration — verified via HYROS
         attribution</div>
     </div>
@@ -1251,7 +1433,7 @@
           alt="BigBattery LLC website — homepage hero and product navigation" loading="lazy" />
         <div
           style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">
-          BigBattery.com · Homepage · Live ecommerce environment serving B2B + B2C customers across 6 energy verticals
+          BigBattery.com · Product Page · Live ecommerce environment serving B2B + B2C customers across 6 energy verticals
         </div>
       </div>
     </div>
@@ -1295,64 +1477,149 @@
         </div>
       </div>
 
-      <!-- <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;" style="min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#FFFBF2;border-style:dashed;">
+      <!-- <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;" style="min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#F0F6FC;border-style:dashed;">
       <div style="font-size:22px;opacity:0.4">📊</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;">Add screenshot here</div>
-      <div style="font-size:12px;color:#B8924A;text-align:center;max-width:320px;line-height:1.5">Hotjar Site Overview · Session data, bounce rates, and behavioral signals · 931 sessions tracked</div>
+      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#165EA0;">Add screenshot here</div>
+      <div style="font-size:12px;color:#3A7AB8;text-align:center;max-width:320px;line-height:1.5">Hotjar Site Overview · Session data, bounce rates, and behavioral signals · 931 sessions tracked</div>
     </div> -->
     </div>
 
     <!-- ── 03 THE PROBLEM SPACE ── -->
     <div class="cs-section reveal">
       <div class="cs-section-eyebrow">03 <span class="cs-section-eyebrow-line"></span> The problem space</div>
-      <h2 class="cs-section-h2">The product was technically strong. The experience wasn't keeping pace.</h2>
-      <p class="cs-p">BigBattery's core product offering was competitive. The challenge wasn't the inventory — it was
-        how that inventory was being communicated. Technical product pages written for engineers were being read by
-        first-time buyers. Navigation designed for a smaller catalog had grown brittle as the product range expanded.
-        Mobile experience was an afterthought in a market increasingly driven by mobile-first research behavior.</p>
+      <h2 class="cs-section-h2">Strong products. A site that couldn't sell them.</h2>
+      <p class="cs-p">BigBattery offers advanced energy storage solutions across multiple industries — residential, commercial, marine, RV, golf, and off-grid. The products were technically competitive. The website wasn't converting. Despite real traffic and genuine demand, the experience was creating friction at every stage — discovery, evaluation, and purchase.</p>
 
-      <div class="cs-challenge-grid">
-        <div class="cs-challenge-card">
-          <div class="cs-challenge-label">Information overload</div>
-          <div class="cs-challenge-desc">Technical product pages were dense, spec-heavy, and assumed prior knowledge.
-            B2C buyers in particular were overwhelmed before they could find the product that matched their need.</div>
+      <!-- 4-image strip showing the product range -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;">
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/ethos.webp" alt="Eagle 2 battery system" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Residential · ETHOS Series</div>
         </div>
-        <div class="cs-challenge-card">
-          <div class="cs-challenge-label">Weak product discoverability</div>
-          <div class="cs-challenge-desc">Navigation and filtering didn't reflect how customers actually searched for
-            battery products. Users reached dead ends or couldn't distinguish between product categories that required
-            clear differentiation.</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/husky.webp" alt="Husky battery for RV" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">RV · HUSKY2 Series</div>
         </div>
-        <div class="cs-challenge-card">
-          <div class="cs-challenge-label">Mobile experience gaps</div>
-          <div class="cs-challenge-desc">A significant share of traffic was mobile, but key flows — product comparison,
-            technical spec review, and checkout — were optimized for desktop only. Mobile users were dropping off at
-            critical decision points.</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/omni.webp" alt="Indoor ESS battery" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Commercial · OMNI</div>
         </div>
-        <div class="cs-challenge-card">
-          <div class="cs-challenge-label">Inconsistent UI patterns</div>
-          <div class="cs-challenge-desc">Components had been added and modified across the site by different people over
-            time, resulting in visual inconsistency that eroded trust and made future scaling harder. No shared design
-            language existed.</div>
-        </div>
-        <div class="cs-challenge-card">
-          <div class="cs-challenge-label">Conversion friction</div>
-          <div class="cs-challenge-desc">The path from product discovery to purchase was longer than it needed to be.
-            Key trust signals (warranty, compatibility, installation support) weren't surfaced at the moments where
-            buying confidence needed reinforcing.</div>
-        </div>
-        <div class="cs-challenge-card">
-          <div class="cs-challenge-label">B2B vs B2C tension</div>
-          <div class="cs-challenge-desc">Commercial buyers needed specification depth and bulk-order context. Individual
-            consumers needed clarity, confidence, and simplified decision paths. The same surface was trying to serve
-            both, satisfying neither fully.</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/eagle48v.webp" alt="Golf cart battery" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Golf · EAGLE Series</div>
         </div>
       </div>
 
-      <div class="cs-quote">
-        <p class="cs-quote-text">"The customers who call us are already confused by the website. They've read the specs
-          but they don't know which battery is right for them. We're losing people before they even get to the point of
-          asking."</p>
+      <!-- 4-image strip showing the product range -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;">
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/ethos.webp" alt="Eagle 2 battery system" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Residential · ETHOS Series</div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/husky.webp" alt="Husky battery for RV" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">RV · HUSKY2 Series</div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/omni.webp" alt="Indoor ESS battery" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Commercial · OMNI</div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:4/3;object-fit:cover;" src="../bigbattery/eagle48v.webp" alt="Golf cart battery" loading="lazy" />
+          <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Golf · EAGLE Series</div>
+        </div>
+      </div>
+
+      <!-- The Problem -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:14px;">The Problem</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+          <div style="background:#EBF3FB;border:1px solid #9EC4E8;border-radius:12px;padding:18px 16px;">
+            <div style="font-size:28px;font-weight:600;color:#165EA0;letter-spacing:-0.03em;line-height:1;margin-bottom:8px;">180+</div>
+            <div style="font-size:13px;font-weight:500;color:#0A1A2E;margin-bottom:5px;line-height:1.3;">Fragmented product pages</div>
+            <div style="font-size:12px;color:#1A5080;line-height:1.55;">Confused users and search engines alike. Finding one product meant wading through dozens of near-identical listings.</div>
+          </div>
+          <div style="background:#EBF3FB;border:1px solid #9EC4E8;border-radius:12px;padding:18px 16px;">
+            <div style="font-size:28px;font-weight:600;color:#165EA0;letter-spacing:-0.03em;line-height:1;margin-bottom:8px;">↓↓</div>
+            <div style="font-size:13px;font-weight:500;color:#0A1A2E;margin-bottom:5px;line-height:1.3;">Technical complexity overwhelmed buyers</div>
+            <div style="font-size:12px;color:#1A5080;line-height:1.55;">Non-expert buyers couldn't decode spec-heavy pages written for engineers. They left instead of asking.</div>
+          </div>
+          <div style="background:#EBF3FB;border:1px solid #9EC4E8;border-radius:12px;padding:18px 16px;">
+            <div style="font-size:28px;font-weight:600;color:#165EA0;letter-spacing:-0.03em;line-height:1;margin-bottom:8px;">70%</div>
+            <div style="font-size:13px;font-weight:500;color:#0A1A2E;margin-bottom:5px;line-height:1.3;">Checkout abandonment</div>
+            <div style="font-size:12px;color:#1A5080;line-height:1.55;">Users who made it all the way to checkout were still dropping off. Friction at the final step was costing real revenue.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why This Was a Business Risk -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:14px;">Why This Was a Business Risk</div>
+        <div class="cs-challenge-grid">
+          <div class="cs-challenge-card">
+            <div class="cs-challenge-label">↓ Diluted SEO · less discoverability</div>
+            <div class="cs-challenge-desc">180+ fragmented pages split search authority across near-duplicate listings. Google couldn't determine the most relevant page — and neither could users. Organic traffic was being actively harmed by the site's own structure.</div>
+          </div>
+          <div class="cs-challenge-card">
+            <div class="cs-challenge-label">↓ Poor UX directly impacted revenue</div>
+            <div class="cs-challenge-desc">Users were abandoning after reaching product pages. Sales team calls confirmed it — customers who called were already frustrated. Every friction point between landing and checkout was a measurable revenue leak.</div>
+          </div>
+          <div class="cs-challenge-card">
+            <div class="cs-challenge-label">↓ Confusing page layout eroded trust</div>
+            <div class="cs-challenge-desc">Inconsistent navigation, dense spec tables, and no clear visual hierarchy left users disoriented. A confused buyer isn't just a missed sale — they're a customer who tells others the site is hard to use.</div>
+          </div>
+          <div class="cs-challenge-card">
+            <div class="cs-challenge-label">↓ Scaling complexity hinders growth</div>
+            <div class="cs-challenge-desc">As the product range expanded, the site became harder to manage, not easier. New variations were added as new pages — making the catalog exponentially more fragmented over time.</div>
+          </div>
+          <div class="cs-challenge-card">
+            <div class="cs-challenge-label">↓ Technical complexity overwhelmed users</div>
+            <div class="cs-challenge-desc">Battery specs — voltage, amp-hours, cell chemistry, BMS ratings — are genuinely complex. Without a design layer that translated that complexity into decision-making clarity, most buyers simply couldn't self-serve.</div>
+          </div>
+          <div class="cs-challenge-card">
+            <div class="cs-challenge-label">↓ B2B vs B2C tension unresolved</div>
+            <div class="cs-challenge-desc">Commercial buyers needed specification depth. Individual consumers needed simplified decision paths. One surface was trying to serve both — satisfying neither fully and creating a ceiling on growth in each segment.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Goals -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:14px;">Design Goals</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">🔍</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:4px;line-height:1.3;">Simplify product discovery</div>
+              <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Rebuild navigation around how customers think — not how BigBattery organizes its internal catalog. Application-based entry points, guided filtering, clarity without losing richness.</div>
+            </div>
+          </div>
+          <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">⚡</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:4px;line-height:1.3;">Increase conversion by reducing checkout friction</div>
+              <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Streamline the purchase path. Remove every unnecessary step between "I want this" and "I bought this." Surface trust signals exactly where buying confidence breaks down.</div>
+            </div>
+          </div>
+          <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">📐</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:4px;line-height:1.3;">Build a scalable UX system</div>
+              <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Create a design system that grows with the product range — not one that breaks under it. Every new battery or inverter should slot into an existing pattern, not require a new page architecture.</div>
+            </div>
+          </div>
+          <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">🧠</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:4px;line-height:1.3;">Reduce confusion from technical complexity</div>
+              <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Don't dumb it down — structure it better. Use progressive disclosure so specs are accessible to experts but not overwhelming to first-time buyers. Outcome-first, spec-second.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-quote" style="margin-top:24px;">
+        <p class="cs-quote-text">"The customers who call us are already confused by the website. They've read the specs but they don't know which battery is right for them. We're losing people before they even get to the point of asking."</p>
         <cite class="cs-quote-attr">Stakeholder feedback · CEO, BigBattery LLC</cite>
       </div>
     </div>
@@ -1361,31 +1628,57 @@
     <div class="cs-section reveal">
       <div class="cs-section-eyebrow">04 <span class="cs-section-eyebrow-line"></span> Research & discovery</div>
       <h2 class="cs-section-h2">Research happened in the real environment — not in a controlled setting.</h2>
-      <p class="cs-p">At BigBattery, research wasn't a formal process with dedicated sprints. It was embedded in the
-        operation. I learned from what the data showed, what stakeholders shared, and what customers communicated
-        directly through their behavior on the site.</p>
+      <p class="cs-p">At BigBattery, research wasn't a formal process with dedicated sprints. It was embedded in the operation. I learned from what the data showed, what stakeholders shared, and what customers communicated directly through their behavior on the site.</p>
+
+      <!-- Data Backed Research Evidence -->
+      <div style="margin:24px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Data Backed Research Evidence</div>
+        <div style="font-size:18px;font-weight:500;color:var(--c-text-1);letter-spacing:-0.01em;margin-bottom:12px;line-height:1.3;">Data-driven design decisions</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+          <div>
+            <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 10px;">Our analytics revealed <strong style="color:var(--c-text-1);">high bounce rates</strong> on product pages — indicating confusion, not disinterest. Users were arriving with buying intent and leaving without engaging.</p>
+            <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 10px;">Difficult to find a product and, if found, impossible to navigate between product variations. The catalog structure created dead ends instead of discovery paths.</p>
+            <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 10px;">Users expressed a clear need for visual clarity and transparent pricing to navigate effectively through options.</p>
+            <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0;"><strong style="color:var(--c-text-1);">70% of users abandoned checkout</strong> even after navigating all the way there — the final purchase step was broken on its own.</p>
+          </div>
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/bounceratedashboard.png" alt="Hotjar analytics dashboard showing behavioral data and bounce rates" loading="lazy" />
+            <div style="padding:8px 12px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Hotjar · Site Overview · 931 sessions · 53.3% bounce rate on product pages</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;">
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/researchissues.png" alt="Hotjar bounce rate dashboard" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Hotjar · Bounce rate · 53.3%</div>
+          </div>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/researchissues.png" alt="Research issues documentation" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">UX Research · Friction points mapped</div>
+          </div>
+        </div>
+      </div>
 
       <div class="cs-insight-grid">
         <div class="cs-insight-card">
-          <div class="cs-insight-num" style="color:#C47D0A">Analytics</div>
+          <div class="cs-insight-num" style="color:#165EA0">Analytics</div>
           <div class="cs-insight-txt">Hotjar data revealed 53.3% average bounce rate on product pages. Session
             recordings showed users landing on high-ticket energy system pages, scrolling past dense spec tables, and
             leaving without reaching the CTA.</div>
         </div>
         <div class="cs-insight-card">
-          <div class="cs-insight-num" style="color:#C47D0A">User Survey</div>
+          <div class="cs-insight-num" style="color:#165EA0">User Survey</div>
           <div class="cs-insight-txt">850-respondent mixed-methods survey. 44% said they found it difficult to find the
             right product. 47% couldn't understand the products they found. 6/10 struggled with site navigation. Primary
             open-text signal: "I can't tell which battery is right for my system."</div>
         </div>
         <div class="cs-insight-card">
-          <div class="cs-insight-num" style="color:#C47D0A">Stakeholder interviews</div>
+          <div class="cs-insight-num" style="color:#165EA0">Stakeholder interviews</div>
           <div class="cs-insight-txt">The CEO and sales team had direct, daily contact with customers. Their pattern
             recognition about why customers called, what confused them, and what made them buy was primary research with
             real signal. Checkout confusion was cited as the #1 reason for inbound support calls.</div>
         </div>
         <div class="cs-insight-card">
-          <div class="cs-insight-num" style="color:#C47D0A">Competitor analysis</div>
+          <div class="cs-insight-num" style="color:#165EA0">Competitor analysis</div>
           <div class="cs-insight-txt">Mapped how competing battery and energy storage retailers structured their product
             pages, navigation, and checkout flows. Identified that leading competitors used application-based discovery
             ("I need backup power for my home") rather than taxonomy-based navigation.</div>
@@ -1397,80 +1690,69 @@
         restructuring and prioritizing it so that customers at different knowledge levels could each find a path to
         confidence.</p>
 
-      <!-- Research evidence — real data -->
-      <div
-        style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;">
-        <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/researchissues.png"
-          alt="BigBattery LLC website — homepage hero and product navigation" loading="lazy" />
-        <div
-          style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">
-          BigBattery.com · Homepage · Live ecommerce environment serving B2B + B2C customers across 6 energy verticals
-        </div>
-      </div>
-      <!-- <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;" style="min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#FFFBF2;border-style:dashed;">
-      <div style="font-size:22px;opacity:0.4">🔍</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;">Add screenshot here</div>
-      <div style="font-size:12px;color:#B8924A;text-align:center;max-width:320px;line-height:1.5">UX Research Documentation · Identified friction points mapped from analytics, stakeholder interviews, and behavioral data</div>
-    </div> -->
-
       <!-- Survey results data block -->
       <div
         style="margin:16px 0;padding:18px 20px;background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:var(--r-lg)">
         <div
-          style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;font-family:var(--font-mono);margin-bottom:14px">
+          style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#165EA0;font-family:var(--font-mono);margin-bottom:14px">
           User Research Survey Results · 850 Respondents · Mixed Methods</div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-          <div
-            style="background:#FFF3DC;border:0.5px solid #FADDAA;border-radius:var(--r-md);padding:14px 16px;text-align:center">
-            <div style="font-size:28px;font-weight:500;color:#C47D0A;letter-spacing:-0.02em;line-height:1">44%</div>
-            <div style="font-size:11px;color:#7A4E00;margin-top:4px;line-height:1.4">Difficult finding products</div>
+        <div class="cs-survey-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+          <div style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:var(--r-md);padding:14px 16px;text-align:center">
+            <div style="font-size:28px;font-weight:500;color:#165EA0;letter-spacing:-0.02em;line-height:1">44%</div>
+            <div style="font-size:11px;color:#0E4070;margin-top:4px;line-height:1.4">Difficult finding products</div>
           </div>
-          <div
-            style="background:#FFF3DC;border:0.5px solid #FADDAA;border-radius:var(--r-md);padding:14px 16px;text-align:center">
-            <div style="font-size:28px;font-weight:500;color:#C47D0A;letter-spacing:-0.02em;line-height:1">38%</div>
-            <div style="font-size:11px;color:#7A4E00;margin-top:4px;line-height:1.4">Navigation issues reported</div>
+          <div style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:var(--r-md);padding:14px 16px;text-align:center">
+            <div style="font-size:28px;font-weight:500;color:#165EA0;letter-spacing:-0.02em;line-height:1">38%</div>
+            <div style="font-size:11px;color:#0E4070;margin-top:4px;line-height:1.4">Navigation issues reported</div>
           </div>
-          <div
-            style="background:#FFF3DC;border:0.5px solid #FADDAA;border-radius:var(--r-md);padding:14px 16px;text-align:center">
-            <div style="font-size:28px;font-weight:500;color:#C47D0A;letter-spacing:-0.02em;line-height:1">32%</div>
-            <div style="font-size:11px;color:#7A4E00;margin-top:4px;line-height:1.4">Checkout abandonment</div>
+          <div style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:var(--r-md);padding:14px 16px;text-align:center">
+            <div style="font-size:28px;font-weight:500;color:#165EA0;letter-spacing:-0.02em;line-height:1">70%</div>
+            <div style="font-size:11px;color:#0E4070;margin-top:4px;line-height:1.4">Checkout abandonment</div>
           </div>
-          <div
-            style="background:#FFF3DC;border:0.5px solid #FADDAA;border-radius:var(--r-md);padding:14px 16px;text-align:center">
-            <div style="font-size:28px;font-weight:500;color:#C47D0A;letter-spacing:-0.02em;line-height:1">47%</div>
-            <div style="font-size:11px;color:#7A4E00;margin-top:4px;line-height:1.4">Struggled understanding products
-            </div>
+          <div style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:var(--r-md);padding:14px 16px;text-align:center">
+            <div style="font-size:28px;font-weight:500;color:#165EA0;letter-spacing:-0.02em;line-height:1">47%</div>
+            <div style="font-size:11px;color:#0E4070;margin-top:4px;line-height:1.4">Struggled understanding products</div>
           </div>
         </div>
         <div
           style="margin-top:12px;padding:10px 14px;background:var(--c-parchment);border-radius:var(--r-md);font-size:12px;color:var(--c-text-2);line-height:1.55">
           <strong style="color:var(--c-text-1)">Key qualitative signal:</strong> "I can't tell which battery is right
           for my system" — the single most common user complaint, surfaced across session recordings, sales call logs,
-          and survey open-text responses. 6/10 users struggled with site navigation. 54% of users dropped off during
-          checkout flow.
+          and survey open-text responses. 6/10 users struggled with site navigation. 70% of users dropped off at checkout — even after reaching that final step.
         </div>
       </div>
 
-      <div
-        style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;">
-        <img style="width:100%;display:block;height:auto;vertical-align:bottom;"
-          src="../bigbattery/bounceratedashboard.png"
-          alt="BigBattery LLC website — homepage hero and product navigation" loading="lazy" />
-        <div
-          style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">
-          BigBattery.com · Homepage · Live ecommerce environment serving B2B + B2C customers across 6 energy verticals
+      <!-- Competitive Analysis -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Competitive Analysis</div>
+        <div style="font-size:18px;font-weight:500;color:var(--c-text-1);letter-spacing:-0.01em;margin-bottom:12px;line-height:1.3;">What the market was doing better</div>
+        <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 16px;">I mapped direct and adjacent competitors — battery retailers, solar equipment sellers, and energy system vendors. The goal wasn't benchmarking for the sake of it — it was understanding exactly where BigBattery's experience was being outpaced, and what the specific design gaps were.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;">
+          <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;">
+            <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Navigation pattern</div>
+            <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Application-first discovery</div>
+            <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Leading competitors led with "What do you need power for?" — not product category names. Entry points like "Home Backup", "RV & Van", "Solar" mapped directly to buyer intent, not internal taxonomy. BigBattery forced users to already know what they were looking for.</div>
+          </div>
+          <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;">
+            <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Product pages</div>
+            <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Progressive spec disclosure</div>
+            <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Competitors surfaced "what it does and who it's for" first — full spec tables collapsible below. BigBattery led with the spec table, the exact opposite of optimal buying psychology for non-expert customers.</div>
+          </div>
+          <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;">
+            <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Conversion path</div>
+            <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Trust at the buy moment</div>
+            <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Warranty, compatibility, and support signals were placed adjacent to the add-to-cart button — not buried in a footer. On BigBattery, those signals were clicks away from where the buying decision was being made.</div>
+          </div>
+        </div>
+        <div class="cs-decision-callout">
+          <strong>The competitive gap wasn't the product — it was the presentation.</strong> BigBattery's batteries were technically comparable or superior to competitors. What those competitors had was a UX layer that made the decision to buy feel safe and simple. That was the exact gap I was designing to close.
         </div>
       </div>
-      <!-- <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;" style="min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#FFFBF2;border-style:dashed;">
-      <div style="font-size:22px;opacity:0.4">📉</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;">Add screenshot here</div>
-      <div style="font-size:12px;color:#B8924A;text-align:center;max-width:320px;line-height:1.5">Hotjar Bounce Rate Analysis · 53.3% bounce rate on product pages — concentrated on high-ticket energy system pages</div>
-    </div> -->
     </div>
 
-    <!-- ── 04b DESIGN PROCESS ── -->
+        <!-- ── 04b DESIGN PROCESS ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">04b <span class="cs-section-eyebrow-line"></span> Design process</div>
+      <div class="cs-section-eyebrow">05 <span class="cs-section-eyebrow-line"></span> Design process</div>
       <h2 class="cs-section-h2">Eight phases from discovery to measurement — each one grounded in live production
         reality.</h2>
       <p class="cs-p">The design process wasn't a textbook double-diamond. It was shaped by the constraints of a live
@@ -1479,7 +1761,7 @@
 
       <div class="cs-timeline" style="margin-top:20px">
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 1</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 1</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">Information Architecture</div>
             <div class="cs-tl-note">Consolidated 180 fragmented product pages into 30 SEO-focused pages. Restructured
@@ -1488,7 +1770,7 @@
           </div>
         </div>
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 2</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 2</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">Wireframes + Low-Fi Prototyping</div>
             <div class="cs-tl-note">Pen-and-paper wireframes for key flows. Created low-fidelity wireframes for
@@ -1498,7 +1780,7 @@
           </div>
         </div>
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 3</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 3</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">User Flows — Homepage to Checkout</div>
             <div class="cs-tl-note">Mapped full user journeys from homepage to checkout for desktop and mobile.
@@ -1508,7 +1790,7 @@
           </div>
         </div>
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 4</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 4</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">UI Design — Responsive Visual System</div>
             <div class="cs-tl-note">Developed a responsive visual system for all devices. Component library built for
@@ -1518,7 +1800,7 @@
           </div>
         </div>
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 5</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 5</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">Checkout Redesign</div>
             <div class="cs-tl-note">Streamlined the checkout process for better user flow. Reduced friction points
@@ -1528,7 +1810,7 @@
           </div>
         </div>
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 6</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 6</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">Design Feedback + Iteration Cycles</div>
             <div class="cs-tl-note">Weekly review sessions with CEO and CTO. Designs reviewed against business
@@ -1538,7 +1820,7 @@
           </div>
         </div>
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 7</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 7</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">SEO Content + Visual System</div>
             <div class="cs-tl-note">Created optimised content to enhance search visibility alongside infographic visual
@@ -1548,7 +1830,7 @@
           </div>
         </div>
         <div class="cs-tl-item">
-          <div class="cs-tl-week" style="color:#C47D0A">Phase 8</div>
+          <div class="cs-tl-week" style="color:#165EA0">Phase 8</div>
           <div class="cs-tl-card">
             <div class="cs-tl-phase">Performance Measurement + Continuous Testing</div>
             <div class="cs-tl-note">Analyzed results across HYROS, Hotjar, and platform analytics to measure impact on
@@ -1560,9 +1842,386 @@
       </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════
+         CHAPTER DIVIDER — PRODUCT DESIGN EXECUTION
+         ═══════════════════════════════════════════════════════ -->
+    <div class="cs-chapter-divider reveal" style="background:linear-gradient(135deg,#0A1A2E 0%,#113060 100%);">
+      <div class="cs-chapter-divider-eyebrow" style="color:#165EA0;">Product Design Execution</div>
+      <h2 class="cs-chapter-divider-h2" style="color:#F5E8C0;">From problem to shipped solution — the design journey</h2>
+      <p class="cs-chapter-divider-sub" style="color:#6A4E1A;">Seeing the problem visually · IA reframing · UX strategy · Step-by-step solution · Usability testing · Live result</p>
+    </div>
+
+    <!-- ── 04c LET'S SEE THE PROBLEM VISUALLY ── -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">06 <span class="cs-section-eyebrow-line"></span> The problem, visually</div>
+      <h2 class="cs-section-h2">A return user searches for "EG4 ESS." Here's what they find.</h2>
+      <p class="cs-p">Abstract UX problems become undeniable when you see them. A returning customer — someone who already knows what they want — searches for a specific product. This is what they experience.</p>
+
+      <!-- Search result chaos -->
+      <div style="margin:20px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Search: "EG4 ESS" · Result: 5 pages, 100+ products</div>
+        <div style="background:#EBF3FB;border:1px solid #9EC4E8;border-radius:12px;padding:16px 20px;margin-bottom:16px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#0E4070;font-weight:500;">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="width:20px;height:20px;border-radius:50%;background:#9EC4E8;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;">✗</span>
+              Difficult to find what they want
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="width:20px;height:20px;border-radius:50%;background:#9EC4E8;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;">✗</span>
+              Difficult to know which one to buy
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="width:20px;height:20px;border-radius:50%;background:#9EC4E8;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;">✗</span>
+              Click back = repeat the whole process
+            </div>
+          </div>
+        </div>
+
+        <!-- 5-image strip of search results -->
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:8px;">
+          <div style="border-radius:10px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;aspect-ratio:3/4;object-fit:cover;vertical-align:bottom;" src="../bigbattery/searchresult1.png" alt="EG4 ESS search results page 1" loading="lazy" />
+            <div style="padding:6px 8px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Results · Page 1</div>
+          </div>
+          <div style="border-radius:10px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;aspect-ratio:3/4;object-fit:cover;vertical-align:bottom;" src="../bigbattery/searchresult2.png" alt="EG4 ESS search results page 2" loading="lazy" />
+            <div style="padding:6px 8px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Results · Page 2</div>
+          </div>
+          <div style="border-radius:10px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;aspect-ratio:3/4;object-fit:cover;vertical-align:bottom;" src="../bigbattery/searchresult3.png" alt="EG4 ESS search results page 3" loading="lazy" />
+            <div style="padding:6px 8px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Results · Page 3</div>
+          </div>
+          <div style="border-radius:10px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;aspect-ratio:3/4;object-fit:cover;vertical-align:bottom;" src="../bigbattery/searchresult4.png" alt="EG4 ESS search results page 4" loading="lazy" />
+            <div style="padding:6px 8px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Results · Page 4</div>
+          </div>
+          <div style="border-radius:10px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;aspect-ratio:3/4;object-fit:cover;vertical-align:bottom;" src="../bigbattery/searchresult5.png" alt="EG4 ESS search results page 5" loading="lazy" />
+            <div style="padding:6px 8px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Results · Page 5</div>
+          </div>
+        </div>
+        <div style="padding:10px 14px;background:#EBF3FB;border-radius:0 0 10px 10px;border:1px solid #9EC4E8;border-top:none;font-size:11px;color:#0E4070;font-family:'DM Mono',monospace;">5 pages · 100+ near-identical products · No way to compare · No guidance on which to choose</div>
+      </div>
+
+      <!-- If user clicks a product -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">If the user clicks any product →</div>
+        <div style="font-size:16px;font-weight:500;color:var(--c-text-1);margin-bottom:12px;line-height:1.3;">They land on a product page that creates more confusion, not less.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
+          <div>
+            <div style="background:#EBF3FB;border:1px solid #9EC4E8;border-radius:12px;padding:14px 16px;margin-bottom:12px;">
+              <div style="font-size:12px;font-weight:500;color:#0A1A2E;margin-bottom:8px;">On this page, the user faces:</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="font-size:12px;color:#1A5080;line-height:1.5;display:flex;gap:8px;"><span style="color:#165EA0;flex-shrink:0;">→</span>Dense spec table at the top — voltage, amp-hours, cell chemistry with no context</div>
+                <div style="font-size:12px;color:#1A5080;line-height:1.5;display:flex;gap:8px;"><span style="color:#165EA0;flex-shrink:0;">→</span>No application guidance — is this right for my system?</div>
+                <div style="font-size:12px;color:#1A5080;line-height:1.5;display:flex;gap:8px;"><span style="color:#165EA0;flex-shrink:0;">→</span>No way to compare with similar products without going back</div>
+                <div style="font-size:12px;color:#1A5080;line-height:1.5;display:flex;gap:8px;"><span style="color:#165EA0;flex-shrink:0;">→</span>Going back = starting the 100-product search all over again</div>
+              </div>
+            </div>
+            <div class="cs-decision-callout">
+              <strong>This is the loop users were trapped in.</strong> Search → overwhelmed → click something → confused → go back → overwhelmed again. No exit ramp. No guidance. No confidence.
+            </div>
+          </div>
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/oldpdp.png" alt="Original product page — dense specs, no guidance, no comparison" loading="lazy" />
+            <div style="padding:8px 12px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">Before · EG4 ESS product page · Spec-first, no outcome context, no comparison path</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 04d REFRAMING THE INFORMATION ARCHITECTURE ── -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">07 <span class="cs-section-eyebrow-line"></span> Information architecture</div>
+      <h2 class="cs-section-h2">Reframing the information architecture — mapping user journeys before touching any UI.</h2>
+      <p class="cs-p">Before any wireframe or visual, I mapped the information architecture — both as it existed and as it needed to be. The goal was to understand how different types of users moved through the site and where the structure was creating failure states.</p>
+      <p class="cs-p">The IA work wasn't just an exercise — it was the foundation for consolidating 180 fragmented pages into 30. Every structural decision that followed came from this map.</p>
+
+      <!-- Desktop IA — full width -->
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;">
+        <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/iadesktop.png" alt="Information architecture — desktop product page data flow diagram" loading="lazy" />
+        <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Product Page IA · Desktop Data Flow Diagram · User journeys mapped for B2C buyer, B2B buyer, and return user</div>
+      </div>
+
+      <!-- Mobile IA — full width -->
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;">
+        <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/iamobile.png" alt="Information architecture — mobile product page data flow diagram" loading="lazy" />
+        <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Product Page IA · Mobile Data Flow Diagram · Thumb-zone navigation, collapsed specs, persistent CTA behaviour</div>
+      </div>
+    </div>
+
+    <!-- ── 04e UX STRATEGY ── -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">08 <span class="cs-section-eyebrow-line"></span> UX strategy</div>
+      <h2 class="cs-section-h2">Brainstorming before building. Paper before pixels.</h2>
+      <p class="cs-p">Every design that shipped started on a whiteboard or a piece of paper. The fastest way to test a structure is with a pen — not a prototype. These sessions helped sharpen the core UX principles that guided every subsequent design decision.</p>
+
+      <!-- Strategy principles -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:16px 0 20px;">
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:14px 16px;">
+          <div style="font-size:20px;margin-bottom:8px;">👥</div>
+          <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Design for both archetypes</div>
+          <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Expert buyer and first-time buyer — both valid, both different. One page needed to serve both without compromising either. The solution: outcome-first layout with depth accessible on demand.</div>
+        </div>
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:14px 16px;">
+          <div style="font-size:20px;margin-bottom:8px;">📐</div>
+          <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Progressive disclosure</div>
+          <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Show what the user needs to make a decision. Hide what they don't — until they need it. Specs, wiring diagrams, and installation guides available, but not forced on every user at entry.</div>
+        </div>
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:14px 16px;">
+          <div style="font-size:20px;margin-bottom:8px;">⚡</div>
+          <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Persistent CTAs</div>
+          <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Reduce decision fatigue by keeping the path to purchase always visible. No hunting for the buy button. No having to scroll back up. The CTA follows the user — it doesn't wait for them.</div>
+        </div>
+      </div>
+
+      <!-- Whiteboard carousel — auto 2.5s, pauses on hover -->
+      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:10px;">Brainstorming sessions · Pen & paper wireframes · Low-fidelity concepts</div>
+      <div class="wb-carousel" id="wbCarousel">
+        <div class="wb-track" id="wbTrack">
+          <div class="wb-slide"><img src="../bigbattery/whiteboard1.png" alt="Whiteboard brainstorm session 1" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard2.png" alt="Whiteboard brainstorm session 2" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard3.png" alt="Pen paper wireframe 1" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard4.png" alt="Pen paper wireframe 2" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard5.png" alt="Low-fidelity sketch 1" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard6.png" alt="Low-fidelity sketch 2" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard7.png" alt="Low-fidelity sketch 3" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard8.png" alt="UX strategy sketch" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard9.png" alt="User flow sketch" loading="lazy" /></div>
+          <div class="wb-slide"><img src="../bigbattery/whiteboard10.png" alt="Product hierarchy sketch" loading="lazy" /></div>
+        </div>
+        <div class="wb-dots" id="wbDots"></div>
+      </div>
+    </div>
+
+    <!-- ── 04f SOLUTION: STEP BY STEP ── -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">09 <span class="cs-section-eyebrow-line"></span> The solution — step by step</div>
+      <h2 class="cs-section-h2">Three steps from chaos to clarity. Each one shipped, tested, and iterated.</h2>
+      <p class="cs-p">The product page redesign didn't happen in one move. It was an incremental process — each step solving a specific problem, each one building on the last. Here's how it evolved.</p>
+
+      <!-- Step 1 -->
+      <div style="margin:24px 0 0;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#E8F1FA;border:1px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#165EA0;flex-shrink:0;">1</div>
+          <div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;">Step 1</div>
+            <div style="font-size:17px;font-weight:500;color:var(--c-text-1);line-height:1.2;">Quantity consolidation</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 14px;">The first and most structurally impactful change: consolidating quantity variations of the same product onto a single parent page. Instead of 8 separate listings for "EG4 10kWh", "EG4 15kWh", "EG4 20kWh" — one page with a quantity selector. Clear technical specifications surfaced below the selector so the comparison happened in one place.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:#FCEBEB;border:1px solid #F5C6C6;border-radius:12px;padding:12px 14px;">
+            <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;color:#C0392B;margin-bottom:6px;">Before</div>
+            <div style="font-size:12px;color:#7A2020;line-height:1.6;">8 separate product pages for capacity variations of the same unit · User had to open each one individually to compare · No way to see the difference at a glance</div>
+          </div>
+          <div style="background:#EAF3DE;border:1px solid #B8DFA0;border-radius:12px;padding:12px 14px;">
+            <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;color:#27500A;margin-bottom:6px;">After</div>
+            <div style="font-size:12px;color:#2A5010;line-height:1.6;">1 parent page · Quantity selector with inline spec updates · Users see all variations in context · No navigating back and forth</div>
+          </div>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:14px 0 0;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/step1consolidation.png" alt="Step 1 — quantity consolidation on parent page with inline spec selector" loading="lazy" />
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Step 1 · Quantity consolidation · Single parent page with quantity selector · Technical specifications below the fold</div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="margin:32px 0 0;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#E8F1FA;border:1px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#165EA0;flex-shrink:0;">2</div>
+          <div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;">Step 2</div>
+            <div style="font-size:17px;font-weight:500;color:var(--c-text-1);line-height:1.2;">Tech specs inclusion — below the fold</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 14px;">With variations consolidated, the next problem was spec accessibility. Expert buyers needed full technical data. First-time buyers were being overwhelmed by it. The solution: specs exist, but below the fold — surfaced on demand, structured clearly, not dominating the above-fold experience.</p>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0 0 0;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/step2techspecs.png" alt="Step 2 — technical specifications added below the fold in structured format" loading="lazy" />
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Step 2 · Technical specifications below the fold · Structured, scannable, not overwhelming · Available to experts, not forced on everyone</div>
+        </div>
+      </div>
+
+      <!-- Figma design videos — Step 1 & 2 -->
+      <div style="margin:32px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Figma Design · Steps 1 & 2 in motion</div>
+        <div style="font-size:15px;font-weight:500;color:var(--c-text-1);margin-bottom:12px;line-height:1.3;">Desktop and mobile designs — side by side</div>
+        <div style="display:grid;grid-template-columns:7fr 3fr;gap:10px;align-items:stretch;">
+          <!-- Desktop video — 70% -->
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+            <video style="width:100%;display:block;flex:1;object-fit:contain;" src="../bigbattery/desktopv2figma.mp4" autoplay muted loop playsinline>
+              Your browser does not support the video tag.
+            </video>
+            <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Figma · Desktop design · Steps 1 & 2 · Product page consolidation flow</div>
+          </div>
+          <!-- Mobile video — 30% -->
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+            <video style="width:100%;display:block;flex:1;object-fit:contain;" src="../bigbattery/mobilev2figma.mp4" autoplay muted loop playsinline>
+              Your browser does not support the video tag.
+            </video>
+            <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Figma · Mobile design · Steps 1 & 2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="margin:32px 0 0;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#E8F1FA;border:1px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#165EA0;flex-shrink:0;">3</div>
+          <div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;">Step 3</div>
+            <div style="font-size:17px;font-weight:500;color:var(--c-text-1);line-height:1.2;">Iterations towards final consolidation — multiple inverters & batteries on one parent page</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 16px;">The most complex step: consolidating not just quantity variations, but multiple inverter and battery configurations onto a single parent page. This required 6 iteration rounds — each one testing a different approach to selection UI, configuration display, and spec comparison.</p>
+
+        <!-- v1-v6 grid -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px;">
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/pdpv1.png" alt="PDP iteration V1" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">V1 · First consolidation attempt</div>
+          </div>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/pdpv2.png" alt="PDP iteration V2" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">V2 · Inverter selector added</div>
+          </div>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/pdpv3.png" alt="PDP iteration V3" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">V3 · Battery + inverter combined</div>
+          </div>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/pdpv4.png" alt="PDP iteration V4" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">V4 · Grid/off-grid segmentation</div>
+          </div>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/pdpv5.png" alt="PDP iteration V5" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">V5 · Below-fold structure refined</div>
+          </div>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;aspect-ratio:16/10;object-fit:cover;" src="../bigbattery/pdpv6.png" alt="PDP iteration V6 — final" loading="lazy" />
+            <div style="padding:8px 10px;font-size:10px;color:#9a9895;font-family:monospace;border-top:1px solid #D8D5CC;background:#F4F2EC;">V6 · Final · Shipped December 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 04g USABILITY TESTING ── -->
+    <div class="cs-section reveal cs-section--dark">
+      <div class="cs-section-eyebrow">10 <span class="cs-section-eyebrow-line"></span> Usability testing</div>
+      <h2 class="cs-section-h2">My favourite part — where assumptions meet reality.</h2>
+      <p class="cs-p">Usability testing on a live site isn't theoretical. Every session recording is a real customer. Every rage click is a real frustration. Every drop-off is a real missed sale. Hotjar gave us a continuous window into how the changes were landing — and what still needed work.</p>
+
+      <div class="cs-decision-callout" style="margin-bottom:20px;">
+        <strong>Testing revealed things I hadn't designed for.</strong> The initial consolidation solved the fragmentation problem — but exposed new questions about how users made configuration decisions. Each round of testing fed the next design iteration.
+      </div>
+
+      <!-- Studies findings -->
+      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:14px;">What the studies showed →</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#E8F1FA;border:1px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#165EA0;flex-shrink:0;">1</div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:4px;">Add battery selection — same interaction pattern as inverter selection</div>
+            <div style="font-size:12px;color:var(--c-text-2);line-height:1.6;">Users who understood inverter selection expected the same behavior for battery selection. The inconsistency broke the mental model they'd just built. Unified the selection UI so both behaved identically.</div>
+          </div>
+        </div>
+
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#E8F1FA;border:1px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#165EA0;flex-shrink:0;">2</div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:4px;">Add grid-tied and off-grid segmentation — several products work for both</div>
+            <div style="font-size:12px;color:var(--c-text-2);line-height:1.6;">Users were filtering by application type, but some products appeared in only one category — even though they were compatible with both. Missing products from searches created false impressions of the catalog. Added dual-application tagging with explicit "Works for both" labelling.</div>
+          </div>
+        </div>
+
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#E8F1FA;border:1px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#165EA0;flex-shrink:0;">3</div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:4px;">Build the below-fold into a complete decision engine — five layers</div>
+            <div style="font-size:12px;color:var(--c-text-2);line-height:1.6;margin-bottom:12px;">Users who scrolled below the fold were signalling high intent. The below-fold section needed to close the sale, not just provide more information. Rebuilt it around 5 specific user needs identified in testing:</div>
+            <div style="display:flex;flex-direction:column;gap:7px;">
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--c-text-2);line-height:1.5;">
+                <span style="width:18px;height:18px;border-radius:4px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#165EA0;flex-shrink:0;">A</span>
+                <span><strong style="color:var(--c-text-1);">Visual descriptions + infographics</strong> — product information in scannable, visual format. Not walls of text.</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--c-text-2);line-height:1.5;">
+                <span style="width:18px;height:18px;border-radius:4px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:font-size:9px;font-weight:600;color:#165EA0;flex-shrink:0;">B</span>
+                <span><strong style="color:var(--c-text-1);">Videos</strong> — installation process, trust-building reviews, real-world use demonstrations. Moving images do what specs cannot.</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--c-text-2);line-height:1.5;">
+                <span style="width:18px;height:18px;border-radius:4px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#165EA0;flex-shrink:0;">C</span>
+                <span><strong style="color:var(--c-text-1);">Downloads and specifications</strong> — spec sheets, wiring diagrams, manuals. Simple, easy access for those who need it.</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--c-text-2);line-height:1.5;">
+                <span style="width:18px;height:18px;border-radius:4px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#165EA0;flex-shrink:0;">D</span>
+                <span><strong style="color:var(--c-text-1);">Comparison tables</strong> — batteries and inverters side by side. The question "which one is right for me?" answered inline, not on a separate page.</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--c-text-2);line-height:1.5;">
+                <span style="width:18px;height:18px;border-radius:4px;background:#E8F1FA;border:0.5px solid #9EC4E8;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#165EA0;flex-shrink:0;">E</span>
+                <span><strong style="color:var(--c-text-1);">Warranty + policy</strong> — clearly visible, clearly linked. Not buried in a footer. The most common pre-purchase anxiety, addressed directly.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 04h CURRENT VERSION — SHIPPED ── -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">11 <span class="cs-section-eyebrow-line"></span> Current version · Shipped</div>
+      <h2 class="cs-section-h2">From Figma to live — December 2025. Multiple configurations, one parent page.</h2>
+      <p class="cs-p">The final version consolidated multiple inverters and battery configurations onto a single parent page. Above the fold: a clean configuration selector. Below the fold: a structured decision engine. Here's what shipped.</p>
+
+      <!-- Above + below fold — 2 images side by side -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/finalabovefold.png" alt="Final product page — above the fold" loading="lazy" />
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Final · Above the fold · Configuration selector · Multiple inverters & batteries</div>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/finalbelowfold.png" alt="Final product page — below the fold" loading="lazy" />
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Final · Below the fold · Visual descriptions · Videos · Downloads · Comparison · Warranty</div>
+        </div>
+      </div>
+
+      <!-- Figma prototype video -->
+      <div style="margin:20px 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Figma prototype · End-to-end user flow</div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/figmaprototype.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Figma prototype · Full product page flow · Selection → specs → below fold → checkout</div>
+        </div>
+      </div>
+
+      <!-- Live website video + link -->
+      <div style="margin:20px 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Live website · December 2025</div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;margin-bottom:12px;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/livewebsite.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Live · BigBattery.com · Shipped December 2025 · From Figma design to production reality</div>
+        </div>
+        <!-- Journey callout + link -->
+        <div style="background:linear-gradient(135deg,#0A1A2E,#0D1E33);border:0.5px solid #3A2A00;border-radius:12px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+          <div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Figma → Production</div>
+            <div style="font-size:14px;font-weight:500;color:#F5E8C0;line-height:1.3;">Journey from design to reality · December 2025 live</div>
+            <div style="font-size:12px;color:#6A4E1A;margin-top:4px;">From pen-and-paper wireframe to shipping on a live ecommerce site serving real customers</div>
+          </div>
+          <a href="https://bigbattery.com" target="_blank" style="flex-shrink:0;background:#208220;color:#FFFFFF;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;">View Live Site ↗</a>
+        </div>
+      </div>
+    </div>
+
+
     <!-- ── 05 STRATEGIC DESIGN DECISIONS ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">05 <span class="cs-section-eyebrow-line"></span> Strategic decisions</div>
+      <div class="cs-section-eyebrow">12 <span class="cs-section-eyebrow-line"></span> Strategic decisions</div>
       <h2 class="cs-section-h2">Five decisions that shaped the product direction. Each one grounded in business and user
         reality.</h2>
 
@@ -1676,12 +2335,46 @@
 
     <!-- ── 06 DESIGN SYSTEM ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">06 <span class="cs-section-eyebrow-line"></span> Design system</div>
-      <h2 class="cs-section-h2">A component system built for a live production environment — not a design showcase.</h2>
-      <p class="cs-p">The BigBattery design system wasn't a Figma presentation. It was a working library of components
-        that developers could reference and implement consistently across the site. Every component was documented with
-        usage rules, responsive behavior, and content variation guidelines — because in a CMS environment, content
-        changes constantly.</p>
+      <div class="cs-section-eyebrow">13 <span class="cs-section-eyebrow-line"></span> Design system</div>
+      <h2 class="cs-section-h2">Team Library — consistency in user experience design, scalability in process.</h2>
+      <p class="cs-p">A cohesive visual system enhances user understanding. Incorporating a <strong>consistent grid layout</strong>, color-coded use cases, and simplified infographics fosters clarity and engagement across all platforms. The BigBattery design system wasn't a Figma presentation — it was a working team library that developers could reference and implement consistently across the site.</p>
+      <p class="cs-p">Components, variants, Autolayouts, variables — built for simple, fast, easy future iterations. Every pattern was documented with usage rules, responsive behavior, and content variation guidelines. Maintaining consistency, scalability, and process standardization.</p>
+
+      <!-- Design System overview image -->
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;">
+        <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/designsystem.png" alt="Design System — Team Library overview showing foundations, UI components, layouts, variables and documentation" loading="lazy" />
+        <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Design System · Team Library · Foundations · UI Components · Layouts & Patterns · Variables & Tokens · Documentation</div>
+      </div>
+
+      <!-- System structure overview -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;">
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Foundations</div>
+          <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Brand guidelines · Font files</div>
+          <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Color system, typography scales, spacing tokens, and grid rules — the base layer every component inherits from.</div>
+        </div>
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">UI Components</div>
+          <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Buttons · Inputs · Cards · Product page components</div>
+          <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Every interactive element built as a Figma component with variants, states, and responsive behavior documented.</div>
+        </div>
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Layouts & Patterns</div>
+          <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Product page layout · Grid rules · Responsive behavior · Reusable page sections</div>
+          <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Structural patterns that define how components assemble into full pages — consistent across desktop, tablet, and mobile.</div>
+        </div>
+        <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Variables & Tokens</div>
+          <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Color variables · Typography styles · Spacing tokens · Component variants</div>
+          <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Single source of truth for all design decisions — change a token, everything updates. No manual find-and-replace across files.</div>
+        </div>
+      </div>
+
+      <div style="background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:12px;padding:16px;margin-bottom:20px;">
+        <div style="font-size:10px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#165EA0;margin-bottom:8px;">Documentation</div>
+        <div style="font-size:13px;font-weight:500;color:var(--c-text-1);margin-bottom:5px;">Figma annotations · Interaction notes · Dev ready Figma links</div>
+        <div style="font-size:12px;color:var(--c-text-2);line-height:1.55;">Every component handed off with usage context, not just a frame. Developers got interaction specs, content guidelines, and direct Figma links — reducing back-and-forth on every sprint.</div>
+      </div>
 
       <div class="cs-component-grid">
         <div class="cs-component-card">
@@ -1733,28 +2426,71 @@
       </div>
 
       <div class="cs-asset-pair">
-        <div
-          style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;">
-          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/led.png"
-            alt="Product card component variants" loading="lazy" />
-          <div
-            style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">
-            Component · LED Indicator system design</div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/led.png" alt="Product card component variants" loading="lazy" />
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Component · LED Indicator system design</div>
         </div>
-        <div
-          style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;">
-          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/certification.png"
-            alt="Trust and certification components" loading="lazy" />
-          <div
-            style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">
-            Component · Certification and trust badge system</div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/certification.png" alt="Trust and certification components" loading="lazy" />
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Component · Certification and trust badge system</div>
+        </div>
+      </div>
+
+      <!-- Component Library subsection -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Component Library</div>
+        <div style="font-size:17px;font-weight:500;color:var(--c-text-1);margin-bottom:12px;line-height:1.3;">UI components, variables, and variants — built in Figma with styles, Autolayouts, and responsiveness across all platforms.</div>
+        <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 16px;">Important for: easy scalability, consistency, process standardization, and governance. Every component uses Figma variables so global changes — color shifts, spacing adjustments, typography updates — cascade across the entire system automatically, not manually.</p>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/componentlibrary.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Component Library · Figma · Variables, variants, Autolayout, and responsive behaviour</div>
+        </div>
+      </div>
+
+      <!-- Brand Guidelines subsection -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Brand Guidelines</div>
+        <div style="font-size:17px;font-weight:500;color:var(--c-text-1);margin-bottom:12px;line-height:1.3;">A cohesive visual system across every touchpoint — from product pages to paid ads to email.</div>
+        <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 16px;">Incorporating a consistent grid layout, color-coded use cases, and simplified infographics fosters clarity and engagement across all platforms. The brand guidelines ensured every designer, developer, and marketer worked from the same visual language — no drift, no inconsistency.</p>
+        <!-- Brand Guidelines carousel — 11 images, auto 2.5s, pauses on hover -->
+        <div class="brand-carousel" id="brandCarousel">
+          <div class="brand-track" id="brandTrack">
+            <div class="brand-slide"><img src="../bigbattery/brandguidelines.png" alt="Brand Guidelines — overview" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand01.png" alt="Brand color system" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand02.png" alt="Brand typography" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand03.png" alt="Brand grid system" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand04.png" alt="Brand visual language" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand05.png" alt="Brand iconography" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand06.png" alt="Brand usage examples" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand07.png" alt="Brand across platforms" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand08.png" alt="Brand digital applications" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand09.png" alt="Brand print applications" loading="lazy" /></div>
+            <div class="brand-slide"><img src="../bigbattery/brand10.png" alt="Brand marketing assets" loading="lazy" /></div>
+          </div>
+          <div class="brand-dots" id="brandDots"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+            <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/brandcanva.mp4" autoplay muted loop playsinline>
+              Your browser does not support the video tag.
+            </video>
+            <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Canva Brand Guidelines · BigBattery visual system · Color, layout, and brand consistency</div>
+          </div>
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+            <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/fontfiles.mp4" autoplay muted loop playsinline>
+              Your browser does not support the video tag.
+            </video>
+            <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Font Files · Typography system · Primary and secondary typefaces used across the project</div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- ── 07 KEY SCREENS ── -->
     <div class="cs-section reveal cs-section--dark">
-      <div class="cs-section-eyebrow">07 <span class="cs-section-eyebrow-line"></span> Key surfaces</div>
+      <div class="cs-section-eyebrow">14 <span class="cs-section-eyebrow-line"></span> Key surfaces</div>
       <h2 class="cs-section-h2">From homepage to checkout — every surface designed with conversion in mind.</h2>
       <p class="cs-p">These are the highest-impact surfaces I designed and iterated on during my time at BigBattery.
         Each one had a specific conversion goal and a specific user behavior problem to solve.</p>
@@ -1802,12 +2538,12 @@
         </div>
         <div
           style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;"
-          style="min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#FFFBF2;border-style:dashed;">
+          style="min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#F0F6FC;border-style:dashed;">
           <div style="font-size:22px;opacity:0.4">🧪</div>
           <div
-            style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;">
+            style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#165EA0;">
             Add screenshot here</div>
-          <div style="font-size:12px;color:#B8924A;text-align:center;max-width:260px;line-height:1.5">Checkout Redesign
+          <div style="font-size:12px;color:#3A7AB8;text-align:center;max-width:260px;line-height:1.5">Checkout Redesign
             · Hotjar usability testing · Issues identified + improvements shipped</div>
         </div>
       </div>
@@ -1825,7 +2561,7 @@
 
     <!-- ── 08 CROSS-FUNCTIONAL COLLABORATION ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">08 <span class="cs-section-eyebrow-line"></span> Collaboration</div>
+      <div class="cs-section-eyebrow">15 <span class="cs-section-eyebrow-line"></span> Collaboration</div>
       <h2 class="cs-section-h2">Design aligned to business — not presented to it.</h2>
       <p class="cs-p">At BigBattery, design reviews weren't formal presentations to a design team. They were working
         sessions with the CEO, CTO, and marketing leads — people with strong opinions, real business context, and
@@ -1877,7 +2613,7 @@
 
     <!-- ── 09 UX IMPACT ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">09 <span class="cs-section-eyebrow-line"></span> Impact</div>
+      <div class="cs-section-eyebrow">16 <span class="cs-section-eyebrow-line"></span> Impact</div>
       <h2 class="cs-section-h2">What improved — in the language that mattered to the business.</h2>
       <p class="cs-p">I won't claim metrics I can't verify. But the qualitative signal from stakeholders, customers, and
         the data was clear across several dimensions. These are the outcomes that reflected genuine UX improvement in a
@@ -1931,17 +2667,17 @@
           BigBattery.com · Homepage · Live ecommerce environment serving B2B + B2C customers across 6 energy verticals
         </div>
       </div>
-      <!-- <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;" style="min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#FFFBF2;border-style:dashed;">
+      <!-- <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:20px 0;" style="min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#F0F6FC;border-style:dashed;">
       <div style="font-size:22px;opacity:0.4">📈</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;">Add screenshot here</div>
-      <div style="font-size:12px;color:#B8924A;text-align:center;max-width:320px;line-height:1.5">Data-Driven Insights · HYROS attribution + Hotjar behavioral analysis · Design decisions tied to measurable behavioral outcomes</div>
+      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#165EA0;">Add screenshot here</div>
+      <div style="font-size:12px;color:#3A7AB8;text-align:center;max-width:320px;line-height:1.5">Data-Driven Insights · HYROS attribution + Hotjar behavioral analysis · Design decisions tied to measurable behavioral outcomes</div>
     </div> -->
 
       <!-- IA Consolidation callout -->
       <div
         style="margin:16px 0;padding:18px 20px;background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:var(--r-lg)">
         <div
-          style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;font-family:var(--font-mono);margin-bottom:14px">
+          style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#165EA0;font-family:var(--font-mono);margin-bottom:14px">
           Information Architecture Consolidation · Biggest structural win</div>
         <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center">
           <div
@@ -1969,6 +2705,137 @@
       </div>
     </div>
 
+    <!-- ── 10 AFTER SUPPORT + CONTINUOUS TESTING ── -->
+    <div class="cs-section reveal">
+      <div class="cs-section-eyebrow">17 <span class="cs-section-eyebrow-line"></span> After support + continuous testing</div>
+      <h2 class="cs-section-h2">Shipping was never the finish line. Every release opened a new feedback loop.</h2>
+      <p class="cs-p">Post-launch testing with Hotjar gave us a live window into how real customers were interacting with the new designs. Not assumptions — recordings. Not bounce rates alone — rage clicks, scroll depth, heatmaps, and full session journeys. Each finding fed the next iteration.</p>
+
+      <!-- Rage clicks / visual banners -->
+      <div style="margin:20px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Hotjar Video Recording — Rage Clicks</div>
+        <div style="font-size:16px;font-weight:500;color:var(--c-text-1);margin-bottom:10px;line-height:1.3;">Users clicking visual banners expecting them to be interactive</div>
+        <div style="background:#EBF3FB;border:1px solid #9EC4E8;border-radius:12px;padding:14px 16px;margin-bottom:14px;">
+          <div style="font-size:12px;color:#1A5080;line-height:1.6;"><strong style="color:#0A1A2E;">Finding:</strong> Session recordings revealed users rage-clicking on infographic banners — they perceived them as interactive buttons or product links. The visual design was strong enough to create intent, but there was no feedback confirming or redirecting that intent. This was a usability win disguised as an issue — it confirmed the infographics were compelling. The fix was adding hover states and CTA overlays to banners where click intent was evident.</div>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/rageclicks.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Hotjar Session Recording · Rage clicks on visual banners · Users expecting clickthrough → fixed with hover states + CTA overlays</div>
+        </div>
+      </div>
+
+      <!-- Checkout UX improvements -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Checkout UX Improvements</div>
+        <div style="font-size:16px;font-weight:500;color:var(--c-text-1);margin-bottom:10px;line-height:1.3;">From friction-heavy to smooth — documented through Hotjar evidence</div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0 0 0;">
+          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/checkoutimprovements.png" alt="Checkout UX improvements — Hotjar usability testing findings and changes made" loading="lazy" />
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Checkout UX Improvements · Hotjar session analysis · Issues identified · Changes shipped · Abandonment rate reduced 30%</div>
+        </div>
+      </div>
+
+      <!-- Order Placed Successfully -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Hotjar Recording — Checkout Redesign Success</div>
+        <div style="font-size:16px;font-weight:500;color:var(--c-text-1);margin-bottom:10px;line-height:1.3;">Order placed successfully — the redesign confirmed working</div>
+        <div style="background:#EAF3DE;border:1px solid #B8DFA0;border-radius:12px;padding:14px 16px;margin-bottom:14px;">
+          <div style="font-size:12px;color:#2A5010;line-height:1.6;"><strong style="color:#1A3A08;">Confirmation:</strong> Post-redesign session recordings showed users completing checkout smoothly — no rage clicks, no hesitation loops, clear progress indicators, and trust signals visible throughout. Order placed confirmation screens showing clean, clear success states with next-step guidance.</div>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/orderplaced.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Hotjar Recording · Order Placed Successfully · Checkout redesign confirmed · Clean completion flow from cart to confirmation</div>
+        </div>
+      </div>
+
+      <!-- Heatmaps - Landing Page -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Heatmaps — Landing Page</div>
+        <div style="font-size:16px;font-weight:500;color:var(--c-text-1);margin-bottom:8px;line-height:1.3;">Clicks · Move · Scrolling</div>
+        <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;">
+          <span style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:100px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;color:#0E4070;font-weight:500;">Click heatmap</span>
+          <span style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:100px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;color:#0E4070;font-weight:500;">Mouse move map</span>
+          <span style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:100px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;color:#0E4070;font-weight:500;">Scroll depth</span>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/heatmaplanding.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Hotjar Heatmaps · Landing Page · Clicks / Move / Scroll depth · Visual proof of above-fold engagement and CTA interaction</div>
+        </div>
+      </div>
+
+      <!-- Heatmaps - Checkout Page -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Heatmaps — Checkout Page</div>
+        <div style="font-size:16px;font-weight:500;color:var(--c-text-1);margin-bottom:8px;line-height:1.3;">Clicks · Move · Scrolling</div>
+        <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;">
+          <span style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:100px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;color:#0E4070;font-weight:500;">Click heatmap</span>
+          <span style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:100px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;color:#0E4070;font-weight:500;">Mouse move map</span>
+          <span style="background:#E8F1FA;border:0.5px solid #9EC4E8;border-radius:100px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;color:#0E4070;font-weight:500;">Scroll depth</span>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/heatmapcheckout.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Hotjar Heatmaps · Checkout Page · Clicks / Move / Scroll depth · Trust signal interaction and form completion behaviour</div>
+        </div>
+      </div>
+
+      <!-- User Journey Confirmation -->
+      <div style="margin:28px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Hotjar Recording — User Journey Confirmation</div>
+        <div style="font-size:16px;font-weight:500;color:var(--c-text-1);margin-bottom:10px;line-height:1.3;">Product Sale Banner Flow — the complete intended journey, end to end</div>
+        <p style="font-size:13px;color:var(--c-text-2);line-height:1.7;margin:0 0 14px;">This recording confirms the designed user journey is working exactly as intended — with clear confirmation, guidance, and trust maintained at every step. The new design doesn't just look right. It converts right.</p>
+
+        <!-- Journey steps -->
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:16px;">
+          <div style="background:#E8F1FA;border:1px solid #9EC4E8;border-radius:8px;padding:10px 6px;text-align:center;">
+            <div style="font-size:16px;margin-bottom:4px;">🏠</div>
+            <div style="font-size:10px;font-weight:500;color:#0E4070;line-height:1.3;font-family:'DM Mono',monospace;">Homepage<br/>banner<br/>5% off + $239<br/>shipping</div>
+          </div>
+          <div style="background:#E8F1FA;border:1px solid #9EC4E8;border-radius:8px;padding:10px 6px;text-align:center;">
+            <div style="font-size:16px;margin-bottom:4px;">→</div>
+            <div style="font-size:10px;font-weight:500;color:#0E4070;line-height:1.3;font-family:'DM Mono',monospace;">Deals page<br/>banner<br/>scroll<br/>down</div>
+          </div>
+          <div style="background:#E8F1FA;border:1px solid #9EC4E8;border-radius:8px;padding:10px 6px;text-align:center;">
+            <div style="font-size:16px;margin-bottom:4px;">→</div>
+            <div style="font-size:10px;font-weight:500;color:#0E4070;line-height:1.3;font-family:'DM Mono',monospace;">Deals page<br/>products<br/>click</div>
+          </div>
+          <div style="background:#E8F1FA;border:1px solid #9EC4E8;border-radius:8px;padding:10px 6px;text-align:center;">
+            <div style="font-size:16px;margin-bottom:4px;">→</div>
+            <div style="font-size:10px;font-weight:500;color:#0E4070;line-height:1.3;font-family:'DM Mono',monospace;">Product<br/>page<br/>add to<br/>cart</div>
+          </div>
+          <div style="background:#E8F1FA;border:1px solid #9EC4E8;border-radius:8px;padding:10px 6px;text-align:center;">
+            <div style="font-size:16px;margin-bottom:4px;">→</div>
+            <div style="font-size:10px;font-weight:500;color:#0E4070;line-height:1.3;font-family:'DM Mono',monospace;">Cart page<br/>click<br/>checkout</div>
+          </div>
+          <div style="background:#E8F1FA;border:1px solid #9EC4E8;border-radius:8px;padding:10px 6px;text-align:center;">
+            <div style="font-size:16px;margin-bottom:4px;">→</div>
+            <div style="font-size:10px;font-weight:500;color:#0E4070;line-height:1.3;font-family:'DM Mono',monospace;">Checkout<br/>page<br/>place<br/>order</div>
+          </div>
+          <div style="background:#EAF3DE;border:1px solid #B8DFA0;border-radius:8px;padding:10px 6px;text-align:center;">
+            <div style="font-size:16px;margin-bottom:4px;">✓</div>
+            <div style="font-size:10px;font-weight:500;color:#27500A;line-height:1.3;font-family:'DM Mono',monospace;">Order<br/>placed<br/>success</div>
+          </div>
+        </div>
+
+        <div style="background:#0A1A2E;border:0.5px solid #1A3A60;border-radius:12px;padding:14px 16px;margin-bottom:14px;">
+          <div style="font-size:12px;color:#5A8A6A;line-height:1.7;">Smoothly — with <strong style="color:#A3D9B4;">clear confirmation</strong> and <strong style="color:#A3D9B4;">trust throughout the process.</strong> No hesitation. No rage clicks. No drop-off. The user sees the 5% off promotion, follows the intended path, and completes the purchase — exactly as designed. This recording is the proof.</div>
+        </div>
+
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#0A1A2E;display:flex;flex-direction:column;">
+          <video style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/userjourney.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;">Hotjar Recording · Full User Journey · Homepage → Deals → Product → Cart → Checkout → Order Placed · 5% off banner flow confirmed</div>
+        </div>
+      </div>
+    </div>
+
     <!-- ══════════════════════════════════════════════════════
        CHAPTER BREAK — BRANDING & CONVERSION DESIGN
        ══════════════════════════════════════════════════════ -->
@@ -1985,7 +2852,7 @@
 
     <!-- ── 11 BRANDING CONTEXT ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">11 <span class="cs-section-eyebrow-line"></span> The branding challenge</div>
+      <div class="cs-section-eyebrow">18 <span class="cs-section-eyebrow-line"></span> The branding challenge</div>
       <h2 class="cs-section-h2">Complex energy systems. Six customer segments. One visual language to make them all
         legible.</h2>
       <p class="cs-p">BigBattery's product range spans residential, commercial, marine, and industrial use cases — each
@@ -2038,7 +2905,7 @@
 
     <!-- ── 12 BRAND METRICS ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">12 <span class="cs-section-eyebrow-line"></span> Measured impact</div>
+      <div class="cs-section-eyebrow">19 <span class="cs-section-eyebrow-line"></span> Measured impact</div>
       <h2 class="cs-section-h2">Design with a feedback loop. Every visual was tracked, tested, and iterated.</h2>
       <p class="cs-p">These outcomes are drawn from HYROS attribution tracking, Hotjar behavioral analysis, and
         platform-native analytics across Meta, Google, and Klaviyo. They represent the measurable performance of
@@ -2073,34 +2940,68 @@
         metrics — they were changes to the bottom-line conversion behavior of high-consideration, high-ticket buyers.
       </div>
 
-      <!-- Real analytics evidence -->
-      <div class="cs-asset-pair" style="margin-top:16px">
-        <div
-          style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;"
-          style="min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#FFFBF2;border-style:dashed;">
-          <div style="font-size:22px;opacity:0.4">📊</div>
-          <div
-            style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;">
-            Add screenshot here</div>
-          <div style="font-size:12px;color:#B8924A;text-align:center;max-width:260px;line-height:1.5">HYROS Attribution
-            · Performance Insights Dashboard · Nov–Dec 2025</div>
+      <!-- HYROS Revenue Growth — 2 images side by side -->
+      <div style="margin:20px 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">HYROS · Revenue Growth Evidence</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;">
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/hyros1.png" alt="HYROS attribution dashboard — revenue and performance data" loading="lazy" />
+            <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">HYROS · Performance Insights Dashboard · Nov–Dec 2025 · Paid channel attribution</div>
+          </div>
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;">
+            <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/hyros2.png" alt="HYROS revenue growth — accounting overview Nov vs Dec" loading="lazy" />
+            <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Nov vs Dec · Accounting Overview · Revenue comparison · Business impact of design changes</div>
+          </div>
         </div>
-        <div
-          style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:0;"
-          style="min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#FFFBF2;border-style:dashed;">
-          <div style="font-size:22px;opacity:0.4">💰</div>
-          <div
-            style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;">
-            Add screenshot here</div>
-          <div style="font-size:12px;color:#B8924A;text-align:center;max-width:260px;line-height:1.5">Accounting
-            Overview · Nov vs Dec Revenue Comparison · Business impact of design changes</div>
+      </div>
+
+      <!-- Measured Impact — from HYROS data with order math -->
+      <div style="margin:0 0 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#165EA0;margin-bottom:6px;">Measured Impact <span style="color:var(--c-text-3);text-transform:none;letter-spacing:0;font-size:11px;font-family:var(--font-sans);font-weight:400;">· Original order baseline: 10</span></div>
+        <div style="font-size:17px;font-weight:500;color:var(--c-text-1);margin-bottom:16px;line-height:1.3;">The numbers — verified through HYROS attribution, not estimated.</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;">
+          <div style="background:#EAF3DE;border:1px solid #B8DFA0;border-radius:14px;padding:20px 18px;text-align:center;">
+            <div style="font-size:34px;font-weight:600;color:#27500A;letter-spacing:-0.03em;line-height:1;margin-bottom:4px;">75% ↑</div>
+            <div style="font-size:12px;font-weight:500;color:#2A5010;margin-bottom:4px;">Organic Traffic</div>
+            <div style="font-size:11px;color:#4A7020;font-family:'DM Mono',monospace;">17.5 orders / baseline 10</div>
+          </div>
+          <div style="background:#EAF3DE;border:1px solid #B8DFA0;border-radius:14px;padding:20px 18px;text-align:center;">
+            <div style="font-size:34px;font-weight:600;color:#27500A;letter-spacing:-0.03em;line-height:1;margin-bottom:4px;">68% ↑</div>
+            <div style="font-size:12px;font-weight:500;color:#2A5010;margin-bottom:4px;">Product Discovery</div>
+            <div style="font-size:11px;color:#4A7020;font-family:'DM Mono',monospace;">Users finding the right product</div>
+          </div>
+          <div style="background:#EAF3DE;border:1px solid #B8DFA0;border-radius:14px;padding:20px 18px;text-align:center;">
+            <div style="font-size:34px;font-weight:600;color:#27500A;letter-spacing:-0.03em;line-height:1;margin-bottom:4px;">125% ↑</div>
+            <div style="font-size:12px;font-weight:500;color:#2A5010;margin-bottom:4px;">Total Completed Orders</div>
+            <div style="font-size:11px;color:#4A7020;font-family:'DM Mono',monospace;">22.5 orders / baseline 10</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
+          <div style="background:#EBF3FB;border:2px solid #165EA0;border-radius:14px;padding:20px 18px;text-align:center;">
+            <div style="font-size:34px;font-weight:600;color:#165EA0;letter-spacing:-0.03em;line-height:1;margin-bottom:4px;">18% ↑</div>
+            <div style="font-size:12px;font-weight:500;color:#0E4070;margin-bottom:4px;">Average Order Value</div>
+            <div style="font-size:11px;color:#3A7AB8;font-family:'DM Mono',monospace;">Higher basket per transaction</div>
+          </div>
+          <div style="background:#EAF3DE;border:1px solid #B8DFA0;border-radius:14px;padding:20px 18px;text-align:center;">
+            <div style="font-size:34px;font-weight:600;color:#27500A;letter-spacing:-0.03em;line-height:1;margin-bottom:4px;">22% ↑</div>
+            <div style="font-size:12px;font-weight:500;color:#2A5010;margin-bottom:4px;">Customer Lifetime Value</div>
+            <div style="font-size:11px;color:#4A7020;font-family:'DM Mono',monospace;">Repeat purchase + retention</div>
+          </div>
+          <div style="background:#FCEBEB;border:1px solid #F5C6C6;border-radius:14px;padding:20px 18px;text-align:center;">
+            <div style="font-size:34px;font-weight:600;color:#C0392B;letter-spacing:-0.03em;line-height:1;margin-bottom:4px;">30% ↓</div>
+            <div style="font-size:12px;font-weight:500;color:#7A2020;margin-bottom:4px;">Checkout Abandonment</div>
+            <div style="font-size:11px;color:#9A5050;font-family:'DM Mono',monospace;">From 70% → 40% abandonment rate</div>
+          </div>
+        </div>
+        <div class="cs-decision-callout">
+          <strong>What 125% order growth means in real terms:</strong> Starting from a baseline of 10 completed orders, the combined impact of IA consolidation, product page redesign, checkout optimization, and infographic integration drove total completed orders to 22.5. On a product with average order values of $2,000–$15,000, this is a transformative revenue outcome — not a UX metric.
         </div>
       </div>
     </div>
 
     <!-- ── 13 INFOGRAPHIC SYSTEM ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">13 <span class="cs-section-eyebrow-line"></span> Visual system design</div>
+      <div class="cs-section-eyebrow">20 <span class="cs-section-eyebrow-line"></span> Visual system design</div>
       <h2 class="cs-section-h2">A modular infographic system — not individual assets, but a scalable visual language.
       </h2>
       <p class="cs-p">The most important design decision in this work: <strong>build a system, not a library of one-off
@@ -2531,7 +3432,7 @@
 
     <!-- ── 14 CHANNEL DISTRIBUTION ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">14 <span class="cs-section-eyebrow-line"></span> Channel distribution</div>
+      <div class="cs-section-eyebrow">21 <span class="cs-section-eyebrow-line"></span> Channel distribution</div>
       <h2 class="cs-section-h2">The same visual system — adapted and deployed across every acquisition channel.</h2>
       <p class="cs-p">Infographic assets were designed as a system first and adapted for each channel second — not
         created separately for each platform. That modular approach meant a visual built for a product page could be
@@ -2569,7 +3470,7 @@
 
     <!-- ── 15 DATA & ANALYTICS TOOLS ── -->
     <div class="cs-section reveal cs-section--dark">
-      <div class="cs-section-eyebrow">15 <span class="cs-section-eyebrow-line"></span> Data-driven iteration</div>
+      <div class="cs-section-eyebrow">22 <span class="cs-section-eyebrow-line"></span> Data-driven iteration</div>
       <h2 class="cs-section-h2">Design decisions backed by behavioral data — not intuition alone.</h2>
       <p class="cs-p">Every infographic iteration was informed by a specific data source. The feedback loop between
         design and measurement was the reason these assets improved over time rather than plateauing.</p>
@@ -2631,7 +3532,7 @@
 
     <!-- ── H1: APP INTRO ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">16 <span class="cs-section-eyebrow-line"></span> Husky 2 companion app</div>
+      <div class="cs-section-eyebrow">23 <span class="cs-section-eyebrow-line"></span> Husky 2 companion app</div>
       <h2 class="cs-section-h2">Designing confidence through real-time energy visibility.</h2>
       <p class="cs-p">The ecommerce experience converts a visitor into a buyer. The Husky 2 companion app converts a
         buyer into a <strong>confident, long-term user of a complex energy system.</strong> These are different design
@@ -2650,17 +3551,22 @@
           those moments is not acceptable.</div>
       </div>
 
-      <!-- Hero visual: appcover 30% left, appuse 70% right, equal height -->
+      <!-- Hero visual: both images side-by-side, equal height, fully covered -->
       <div class="cs-app-hero-split" style="margin-top:20px">
         <div class="cs-app-hero-phones">
-          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/appcover.png"
-            alt="BigBattery Husky 2 app cover" loading="lazy" />
+          <img src="../bigbattery/appcover.png" alt="BigBattery Husky 2 app — multiple screens showing charge states" loading="lazy" />
+          <div style="padding:8px 12px;font-size:10px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:0.5px solid var(--c-border);background:#F4F2EC;">Husky 2 · App screens · Multiple charge states</div>
         </div>
         <div class="cs-app-hero-banner">
-          <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/eg4app.png"
-            alt="BigBattery Husky 2 Smart Monitoring App in use — Power and Control at your fingertips"
-            loading="lazy" />
+          <img src="../bigbattery/eg4app.png" alt="BigBattery Husky 2 Smart Monitoring App in use — Power and Control at your fingertips" loading="lazy" />
+          <div style="padding:8px 12px;font-size:10px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:0.5px solid var(--c-border);background:#F4F2EC;">Latest Generation BMS · Live monitoring protects your home and extends backup power life</div>
         </div>
+      </div>
+
+      <!-- CHANGE 4: App use in live infographic — space below the hero images -->
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:12px 0 0;">
+        <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/appinfographic.png" alt="Husky 2 app — in-use infographic showing real-world energy monitoring context" loading="lazy" />
+        <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">App in live use · Husky 2 · Real-world energy monitoring context · B2B + B2C use environments</div>
       </div>
 
       <!-- Live diagnostic data strip -->
@@ -2690,7 +3596,7 @@
 
     <!-- ── H2: SCREEN BREAKDOWN ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">17 <span class="cs-section-eyebrow-line"></span> Screen design breakdown</div>
+      <div class="cs-section-eyebrow">24 <span class="cs-section-eyebrow-line"></span> Screen design breakdown</div>
       <h2 class="cs-section-h2">Three views. One mental model. Designed for field use — not a lab.</h2>
       <p class="cs-p">The app surfaces complex BMS data through three tab views — Summary, Cell Voltage, and Temperature
         — each designed for a specific monitoring intent. The arc gauge is the visual anchor: it communicates charge
@@ -2717,6 +3623,12 @@
             alt="Husky 2 app — Protocol settings, module ID, CAN and RS485 configuration" loading="lazy" />
           <div class="cs-phone-caption">Settings · Bluetooth ID · CAN + RS485 protocol config</div>
         </div>
+      </div>
+
+      <!-- Image below all 4 screens — full width context shot -->
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #D8D5CC;background:#FAFAF8;display:block;margin:12px 0 8px;">
+        <img style="width:100%;display:block;height:auto;vertical-align:bottom;" src="../bigbattery/appscreens.png" alt="Husky 2 app — all screens overview, design system in context" loading="lazy" />
+        <div style="padding:10px 14px;font-size:11px;color:#9a9895;font-family:monospace;letter-spacing:0.03em;border-top:1px solid #D8D5CC;background:#F4F2EC;display:block;margin:0;">Husky 2 · All screens in context · Design system applied across Summary, Cell Voltage, Temperature, and Settings views</div>
       </div>
 
       <div class="cs-insight-grid" style="margin-top:8px">
@@ -2749,7 +3661,7 @@
 
     <!-- ── H3: UX STRATEGY ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">18 <span class="cs-section-eyebrow-line"></span> UX strategy</div>
+      <div class="cs-section-eyebrow">25 <span class="cs-section-eyebrow-line"></span> UX strategy</div>
       <h2 class="cs-section-h2">Reducing cognitive load in technically demanding environments.</h2>
       <p class="cs-p">The users of this app are not engineers sitting at a workstation. They're RV travelers checking
         their power before a night off-grid. They're golf cart fleet managers doing a quick pre-round diagnostic.
@@ -2804,7 +3716,7 @@
 
     <!-- ── H4: USE ENVIRONMENTS ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">19 <span class="cs-section-eyebrow-line"></span> Use environments</div>
+      <div class="cs-section-eyebrow">26 <span class="cs-section-eyebrow-line"></span> Use environments</div>
       <h2 class="cs-section-h2">Five real-world contexts. One monitoring interface designed for all of them.</h2>
       <p class="cs-p">Each use environment creates different monitoring needs, different urgency levels, and different
         user states. The design had to work across all of them without requiring environmental customization.</p>
@@ -2863,7 +3775,7 @@
 
     <!-- ── H5: ECOSYSTEM THINKING ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">20 <span class="cs-section-eyebrow-line"></span> Ecosystem thinking</div>
+      <div class="cs-section-eyebrow">27 <span class="cs-section-eyebrow-line"></span> Ecosystem thinking</div>
       <h2 class="cs-section-h2">The app closes the loop between acquisition and retention.</h2>
       <p class="cs-p">Most ecommerce design stops at the transaction. The Husky 2 app represents a different kind of
         design thinking — one that treats the post-purchase experience as part of the product, not an afterthought.
@@ -2908,7 +3820,7 @@
 
     <!-- ── 10 REFLECTION ── -->
     <div class="cs-section reveal">
-      <div class="cs-section-eyebrow">21 <span class="cs-section-eyebrow-line"></span> Reflection</div>
+      <div class="cs-section-eyebrow">28 <span class="cs-section-eyebrow-line"></span> Reflection</div>
       <h2 class="cs-section-h2">What three years in a live production environment taught me that no concept project
         could.</h2>
       <div class="cs-reflection-grid">
@@ -2933,7 +3845,7 @@
       <div
         style="margin-top:20px;padding:18px 20px;background:var(--c-chalk);border:0.5px solid var(--c-border);border-radius:var(--r-lg)">
         <div
-          style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#C47D0A;font-family:var(--font-mono);margin-bottom:10px">
+          style="font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#165EA0;font-family:var(--font-mono);margin-bottom:10px">
           What this project proves about how I work</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div
@@ -2983,6 +3895,105 @@
   </footer>
 
   <script src="case-study.js"></script>
+
+  <script>
+    /* ── Brand Guidelines Carousel ── */
+    (function () {
+      var track = document.getElementById('brandTrack');
+      var dotsEl = document.getElementById('brandDots');
+      if (!track || !dotsEl) return;
+      var slides = track.querySelectorAll('.brand-slide');
+      var total = slides.length;
+      var current = 0;
+      var timer = null;
+      var paused = false;
+      var INTERVAL = 2500;
+      var dots = [];
+
+      for (var i = 0; i < total; i++) {
+        var btn = document.createElement('button');
+        btn.className = 'brand-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+        btn.dataset.idx = i;
+        btn.addEventListener('click', function () { goTo(parseInt(this.dataset.idx)); resetTimer(); });
+        dotsEl.appendChild(btn);
+        dots.push(btn);
+      }
+
+      function goTo(n) {
+        current = ((n % total) + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+      }
+
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(function () { if (!paused) goTo(current + 1); }, INTERVAL);
+      }
+      function resetTimer() { startTimer(); }
+
+      var car = document.getElementById('brandCarousel');
+      car.addEventListener('mouseenter', function () { paused = true; });
+      car.addEventListener('mouseleave', function () { paused = false; });
+      car.addEventListener('focusin',    function () { paused = true; });
+      car.addEventListener('focusout',   function () { paused = false; });
+
+      var touchStartX = 0;
+      car.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; paused = true; }, { passive: true });
+      car.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+        paused = false; resetTimer();
+      }, { passive: true });
+
+      startTimer();
+    })();
+  </script>
+
+  <script>
+    /* ── Whiteboard Carousel ── */
+    (function () {
+      var track = document.getElementById('wbTrack');
+      var dotsEl = document.getElementById('wbDots');
+      if (!track || !dotsEl) return;
+      var slides = track.querySelectorAll('.wb-slide');
+      var total = slides.length;
+      var current = 0;
+      var timer = null;
+      var paused = false;
+      var INTERVAL = 2500;
+      var dots = [];
+      for (var i = 0; i < total; i++) {
+        var btn = document.createElement('button');
+        btn.className = 'wb-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+        btn.dataset.idx = i;
+        btn.addEventListener('click', function () { goTo(parseInt(this.dataset.idx)); resetTimer(); });
+        dotsEl.appendChild(btn);
+        dots.push(btn);
+      }
+      function goTo(n) {
+        current = ((n % total) + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+      }
+      function startTimer() { clearInterval(timer); timer = setInterval(function () { if (!paused) goTo(current + 1); }, INTERVAL); }
+      function resetTimer() { startTimer(); }
+      var car = document.getElementById('wbCarousel');
+      car.addEventListener('mouseenter', function () { paused = true; });
+      car.addEventListener('mouseleave', function () { paused = false; });
+      car.addEventListener('focusin', function () { paused = true; });
+      car.addEventListener('focusout', function () { paused = false; });
+      var tx = 0;
+      car.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; paused = true; }, { passive: true });
+      car.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - tx;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+        paused = false; resetTimer();
+      }, { passive: true });
+      startTimer();
+    })();
+  </script>
 </body>
 
 </html>
