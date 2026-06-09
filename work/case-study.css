@@ -545,7 +545,7 @@ img { display: block; max-width: 100%; }
   .cs-metric-cell:nth-child(4) { border-top: 0.5px solid var(--c-border); }
   .cs-meta { grid-template-columns: 1fr 1fr; }
   .cs-meta-cell:nth-child(2) { border-right: none; }
-  .cs-meta-cell:nth-child(3) { border-right: 0.5px solid #1E1E1C; border-top: 0.5px solid #1E1E1C; }
+  .cs-meta-cell:nth-child(3) { border-right: 0.5px solid #1E1E1C; border-top: 0.5px solid #1E1E1C; padding-left: 0; }
   .cs-meta-cell:nth-child(4) { border-top: 0.5px solid #1E1E1C; }
   .cs-insight-grid { grid-template-columns: 1fr; }
   .cs-outcome-grid { grid-template-columns: 1fr; }

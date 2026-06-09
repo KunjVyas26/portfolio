@@ -37,6 +37,8 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-inner">
+      <div class="hero-main">
+        <div class="hero-copy">
       <div class="hero-tag">
         <span class="hero-tag-dot"></span>
         <span>Available · Product Designer · Bay Area</span>
@@ -53,14 +55,19 @@
         <a href="#work" class="btn-primary">View work</a>
         <a href="../portfolio/resume.pdf" target="_blank" class="btn-ghost">Download resume ↓</a>
       </div>
+        </div>
+        <div class="hero-photo-wrap" aria-label="Portrait of Kunj Vyas">
+          <img class="hero-photo" src="profile.png" alt="Kunj Vyas" />
+        </div>
+      </div>
       <div class="hero-proof">
         <div class="proof-cell">
-          <div class="proof-num" data-count="80" data-suffix="%">0%</div>
-          <div class="proof-lbl">task comprehension uplift, BankSphere</div>
+          <div class="proof-num" data-count="28" data-prefix="+" data-suffix="%">+0%</div>
+          <div class="proof-lbl">conversion rate, <b>BigBattery</b></div>
         </div>
         <div class="proof-cell">
           <div class="proof-num" data-count="22" data-prefix="−" data-suffix="%">−0%</div>
-          <div class="proof-lbl">bounce rate, FinLit</div>
+          <div class="proof-lbl">bounce rate, <b>FinLit</b></div>
         </div>
         <div class="proof-cell">
           <div class="proof-num" data-count="2" data-suffix="×">0×</div>
@@ -84,9 +91,11 @@
       <div class="cards-grid">
 
         <!-- FinLit -->
-        <article class="card card--default reveal" data-href="work/finlit.html">
+        <article class="card card--wide reveal" data-href="work/finlit.html">
           <div class="card-thumb card-thumb--purple">
-            <span class="card-thumb-glyph">Finance</span>
+            <video class="card-thumb-media" autoplay muted loop playsinline preload="metadata">
+              <source src="fined/IntoVideo.mp4" type="video/mp4" />
+            </video>
             <span class="card-badge badge--purple">Fintech · EdTech</span>
           </div>
           <div class="card-body">
@@ -102,9 +111,9 @@
         </article>
 
         <!-- BankSphere -->
-        <article class="card card--default reveal" data-delay="80" data-href="work/banksphere.html">
+        <article class="card card--wide reveal" data-delay="80" data-href="work/banksphere.html">
           <div class="card-thumb card-thumb--teal">
-            <span class="card-thumb-glyph">Bank</span>
+            <img class="card-thumb-media" src="banksphere/Cover.png" alt="BankSphere AI-powered banking concept" loading="lazy" />
             <span class="card-badge badge--teal">AI · Spatial UI</span>
           </div>
           <div class="card-body">
@@ -121,7 +130,9 @@
         <!-- BigBattery wide -->
         <article class="card card--wide reveal" data-delay="120" data-href="work/bigbattery.html">
           <div class="card-thumb card-thumb--stone">
-            <span class="card-thumb-glyph">Power</span>
+            <video class="card-thumb-media" autoplay muted loop playsinline preload="metadata">
+              <source src="bigbattery/herocarousal.mp4" type="video/mp4" />
+            </video>
             <span class="card-badge badge--stone">B2B · B2C · Ecommerce</span>
           </div>
           <div class="card-body">
